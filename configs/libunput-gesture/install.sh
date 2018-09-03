@@ -1,0 +1,1 @@
+aurman -S libinput-gestures

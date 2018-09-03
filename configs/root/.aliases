@@ -1,0 +1,252 @@
+WIFI_ADAPTOR="wlp2s0"
+
+# clear
+alias c='clear'
+alias cler='clear'
+alias clea='clear'
+alias clewar='clear'
+alias lear='clear'
+
+
+# default for commands
+alias vim="nvim"
+alias ls='ls --color'
+alias grep='grep --color'
+alias _=sudo
+alias chmod='sudo chmod'
+alias pacman='sudo pacman'
+alias dhcpd='sudo dhcpd'
+
+# shorcuts
+alias ~='cd ~'
+alias ..='cd ..'
+alias :q='exit'
+
+# sysadmin
+alias findstr='grep -rnw'
+alias afind='ack -il'
+alias path='echo -e ${PATH//:/\\n}'
+alias history=omz_history
+alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
+# config files
+alias hosts='sudoedit /etc/hosts'
+alias bashrc='vim ~/.bashrc'
+alias zalias='vim ~/.aliases'
+alias zshrc='vim ~/.zshrc'
+alias reload='source ~/.zshrc'
+alias vimrc='vim ~/.config/nvim/init.vim'
+alias vimplug='vim ~/.config/nvim/plugins.vim'
+alias tmuxrc='vim ~/.tmux.conf'
+
+# file system
+alias l='ls -lAhF --group-directories-first'
+alias ll='ls -AF --group-directories-first'
+alias lt='tree -L 1 -I "node_modules" -a --dirsfirst'
+alias lless='l | less'
+alias laless='ll | less'
+alias dls='"ls -l | grep "^d" | awk { print $9 } | tr -d "/"'
+alias rd=rmdir
+alias mkdir='mkdir -pv'
+alias md='mkdir'
+
+# network
+alias getip="curl -s -S https://icanhazip.com"
+alias localip="ip addr show $WIFI_ADAPTOR | grep 'inet ' | awk '{ print $2 }'"
+alias mac="ip link show wlp2s0 | grep link | awk '{ print $2 }'"
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+    alias "$method"="curl -X '$method'"
+done
+alias ping='ping -c 5'
+
+
+# Other packages
+alias pac='pacman -S'
+alias aur='aurman -S'
+
+## vim
+
+
+## npm
+alias nls='npm ls --depth 0'
+alias nr='npm remove'
+alias ni='npm install'
+alias npms='npm start'
+# alias npmD='npm i -D '
+# alias npmE='PATH="$(npm bin)":"$PATH"'
+# alias npmI='npm init'
+# alias npmL='npm list'
+# alias npmL0='npm ls --depth=0'
+# alias npmO='npm outdated'
+# alias npmP='npm publish'
+# alias npmR='npm run'
+# alias npmS='npm i -S '
+# alias npmV='npm -v'
+# alias npmg='npm i -g '
+# alias npms='npm start'
+# alias npmst='npm start'
+# alias npmt='npm test'
+
+
+## yarn
+alias y='yarn '
+alias yrs='yarn start'
+alias yrd='yarn run dev'
+alias ya='yarn add'
+alias yad='yarn add --dev'
+alias yrt='yarn run test'
+alias yrtw='yarn run test:watch'
+alias yrb='yarn run build'
+alias yrbc='yarn run build:client'
+alias yrbs='yarn run build:server'
+alias yr='yarn remove'
+alias ycc='yarn cache clean'
+alias ycc='yarn cache clean'
+alias yui='yarn upgrade-interactive'
+alias ysu='curl --compressed -o- -L https://yarnpkg.com/install.sh | bash'
+
+## git
+alias clone='git clone'
+alias gss='git status -s'
+alias gsss='git status'
+
+alias ga='git add'
+alias gaa='git add --all'
+
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbd='git branch -d'
+
+alias gc='git commit -v'
+alias 'gc!'='git commit -v --amend'
+alias gca='git commit -v -a'
+alias 'gca!'='git commit -v -a --amend'
+alias gcam='git commit -a -m'
+alias gcm='git commit -m'
+
+alias gcb='git checkout -b'
+alias gco='git checkout'
+
+alias gpull='git pull origin $(git_current_branch)'
+alias gpush='git push origin $(git_current_branch)'
+alias gpsup='git push --set-upstream origin $(git_current_branch)'
+
+alias gcount='git shortlog -sn'
+alias glo='git log --oneline --decorate'
+alias glog='git log --oneline --decorate --graph'
+alias gloga='git log --oneline --decorate --graph --all'
+alias glol='git log --graph --pretty="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"'
+alias glola='git log --graph --pretty=""%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --all'
+
+alias gm='git merge'
+alias gma='git merge --abort'
+alias gmom='git merge origin/master'
+alias gmt='git mergetool --no-prompt'
+alias gmtvim='git mergetool --no-prompt --tool=vimdiff'
+alias gmum='git merge upstream/master'
+
+alias gr='git remote'
+alias gra='git remote add'
+alias grmv='git remote rename'
+alias grrm='git remote remove'
+alias grset='git remote set-url'
+alias grup='git remote update'
+alias grv='git remote -v'
+
+alias gsta='git stash save'
+alias gstaa='git stash apply'
+alias gstc='git stash clear'
+alias gstd='git stash drop'
+alias gstl='git stash list'
+alias gstp='git stash pop'
+alias gsts='git stash show --text'
+# alias gpristine='git reset --hard && git clean -dfx'
+# alias gap='git apply'
+# alias gapa='git add --patch'
+# alias gau='git add --update'
+# alias gbda='git branch --no-color --merged | command grep -vE "^(\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d'
+# alias gbl='git blame -b -w'
+# alias gbnm='git branch --no-merged'
+# alias gbr='git branch --remote'
+# alias gbs='git bisect'
+# alias gbsb='git bisect bad'
+# alias gbsg='git bisect good'
+# alias gbsr='git bisect reset'
+# alias gbss='git bisect start'
+# alias 'gcan!'='git commit -v -a --no-edit --amend'
+# alias 'gcans!'='git commit -v -a -s --no-edit --amend'
+# alias gcf='git config --list'
+# alias gcl='git clone --recursive'
+# alias gclean='git clean -fd'
+# alias 'gcn!'='git commit -v --no-edit --amend'
+# alias gcp='git cherry-pick'
+# alias gcpa='git cherry-pick --abort'
+# alias gcpc='git cherry-pick --continue'
+# alias gcs='git commit -S'
+# alias gcsm='git commit -s -m'
+# alias gd='git diff'
+# alias gdca='git diff --cached'
+# alias gdct='git describe --tags `git rev-list --tags --max-count=1`'
+# alias gdcw='git diff --cached --word-diff'
+# alias gdt='git diff-tree -/-no-commit-id --name-only -r'
+# alias gdw='git diff --word-diff'
+# alias gf='git fetch'
+# alias gg='git gui citool'
+# alias gga='git gui citool --amend'
+# alias ggpur=ggu
+# alias gignore='git update-index --assume-unchanged'
+# alias gignored='git ls-files -v | grep "^[[:lower:]]"'
+# alias gist='nocorrect gist'
+# alias git-svn-dcommit-push='git svn dcommit && git push github master:svntrunk'
+# alias gk='\gitk --all --branches'
+# alias gke='\gitk --all $(git log -g --pretty=%h)'
+# alias glg='git log --stat'
+# alias glgg='git log --graph'
+# alias glgga='git log --graph --decorate --all'
+# alias glgm='git log --graph --max-count=10'
+# alias glgp='git log --stat -p'
+# alias grb='git rebase'
+# alias grba='git rebase --abort'
+# alias grbc='git rebase --continue'
+# alias grbi='git rebase -i'
+# alias grbm='git rebase master'
+# alias grbs='git rebase --skip'
+# alias grh='git reset HEAD'
+# alias grhh='git reset HEAD --hard'
+# alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
+# alias gru='git reset --'
+# alias gsd='git svn dcommit'
+# alias gsi='git submodule init'
+# alias gsps='git show --pretty=short --show-signature'
+# alias gsr='git svn rebase'
+# alias gsu='git submodule update'
+# alias gts='git tag -s'
+# alias gtv='git tag | sort -V'
+# alias gunignore='git update-index --no-assume-unchanged'
+# alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
+# alias gup='git pull --rebase'
+# alias gupv='git pull --rebase -v'
+# alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
+# alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify -m "--wip-- [skip ci]"'
+
+alias hls='hadoop fs -ls'
+alias hmd='hadoop fs -mkdir'
+
+# Kills any process that matches a regexp passed to it
+killit() {
+    ps aux | grep -v "grep" | grep "$@" | awk '{print $2}' | xargs sudo kill
+}
+
+# pathes
+alias northcamp='cd /mnt/frontendmonster/projects/northcamp'
+alias blc='cd /mnt/frontendmonster/projects/blockchain'
+alias dotfiles='cd /mnt/frontendmonster/projects/dotfiles'
+alias fem='cd /mnt/frontendmonster/projects/northcamp/dev/app/frontendmonsters'
+alias codebox='cd /mnt/frontendmonster/projects/northcamp/dev/app/codebox'
+alias ma='cd /mnt/frontendmonster/projects/monster-academy'
+alias download='cd /mnt/frontendmonster/downloads'
+alias dnd='cd /mnt/frontendmonster/projects/dnd'
+
+fixWatcher() {
+	sudo sh /mnt/frontendmonster/projects/dotfiles/init-manjaro/fix-jest-watch.sh
+}
