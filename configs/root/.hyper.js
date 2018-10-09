@@ -99,14 +99,10 @@ module.exports = {
     },
   },
 
-  plugins: [
-    'hyper-chesterish',
-    'hyperterm-summon',
-    'hyper-tabs-enhanced',
-    // 'hyper-sync-settings',
-    // 'hyperterm-gruvbox-dark'
-    // 'hyperlayout',
-  ],
+  plugins: ['hyper-chesterish', // 'hyper-sync-settings',
+  'hyperterm-summon', // 'hyperterm-gruvbox-dark'
+  // 'hyperlayout',
+  'hyper-tabs-enhanced', "hyperlayout"],
 
   localPlugins: [],
 
