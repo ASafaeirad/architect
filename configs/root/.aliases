@@ -2,25 +2,43 @@ WIFI_ADAPTOR="wlp2s0"
 
 # clear
 alias c='clear'
+alias cc='clear'
 alias cler='clear'
 alias clea='clear'
+alias clar='clear'
 alias clewar='clear'
 alias lear='clear'
+alias celra='clear'
+alias clera='clear'
 
+# better tools
+alias cat="bat"
+alias vim="nvim"
 
 # default for commands
-alias vim="nvim"
 alias ls='ls --color'
 alias grep='grep --color'
+alias mkdir='mkdir -pv'
 alias _=sudo
 alias chmod='sudo chmod'
 alias pacman='sudo pacman'
-alias dhcpd='sudo dhcpd'
+alias dhcp='sudo dhcpcd'
+alias :q='exit'
+alias reload='source ~/.zshrc'
 
-# shorcuts
+# path shorcuts
 alias ~='cd ~'
 alias ..='cd ..'
-alias :q='exit'
+alias northcamp='cd /mnt/frontendmonster/projects/northcamp'
+alias blc='cd /mnt/frontendmonster/projects/blockchain'
+alias dotfiles='cd /mnt/frontendmonster/projects/dotfiles'
+alias fem='cd /mnt/frontendmonster/projects/northcamp/dev/app/frontendmonsters'
+alias fsk='cd /mnt/frontendmonster/projects/northcamp/dev/app/fullstacks'
+alias codebox='cd /mnt/frontendmonster/projects/northcamp/dev/app/codebox'
+alias ma='cd /mnt/frontendmonster/projects/monster-academy'
+alias download='cd /mnt/frontendmonster/downloads'
+alias dnd='cd /mnt/frontendmonster/projects/dnd'
+alias merns='cd /mnt/frontendmonster/projects/boilerplaits/merns'
 
 # sysadmin
 alias findstr='grep -rnw'
@@ -34,7 +52,6 @@ alias hosts='sudoedit /etc/hosts'
 alias bashrc='vim ~/.bashrc'
 alias zalias='vim ~/.aliases'
 alias zshrc='vim ~/.zshrc'
-alias reload='source ~/.zshrc'
 alias vimrc='vim ~/.config/nvim/init.vim'
 alias vimplug='vim ~/.config/nvim/plugins.vim'
 alias tmuxrc='vim ~/.tmux.conf'
@@ -47,7 +64,6 @@ alias lless='l | less'
 alias laless='ll | less'
 alias dls='"ls -l | grep "^d" | awk { print $9 } | tr -d "/"'
 alias rd=rmdir
-alias mkdir='mkdir -pv'
 alias md='mkdir'
 
 # network
@@ -64,32 +80,26 @@ alias ping='ping -c 5'
 alias pac='pacman -S'
 alias aur='aurman -S'
 
-## vim
-
 
 ## npm
-alias nls='npm ls --depth 0'
-alias nr='npm remove'
-alias ni='npm install'
+alias npmls='npm ls --depth 0'
+alias npmr='npm remove'
+alias npni='npm install'
 alias npms='npm start'
-# alias npmD='npm i -D '
+alias npmt='npm test'
+alias npmd='npm install -D'
 # alias npmE='PATH="$(npm bin)":"$PATH"'
 # alias npmI='npm init'
 # alias npmL='npm list'
-# alias npmL0='npm ls --depth=0'
 # alias npmO='npm outdated'
 # alias npmP='npm publish'
 # alias npmR='npm run'
-# alias npmS='npm i -S '
 # alias npmV='npm -v'
 # alias npmg='npm i -g '
 # alias npms='npm start'
-# alias npmst='npm start'
-# alias npmt='npm test'
-
 
 ## yarn
-alias y='yarn '
+alias y='yarn'
 alias yrs='yarn start'
 alias yrd='yarn run dev'
 alias ya='yarn add'
@@ -103,6 +113,7 @@ alias yr='yarn remove'
 alias ycc='yarn cache clean'
 alias ycc='yarn cache clean'
 alias yui='yarn upgrade-interactive'
+alias yws='yarn workspace'
 alias ysu='curl --compressed -o- -L https://yarnpkg.com/install.sh | bash'
 
 ## git
@@ -145,8 +156,8 @@ alias gmt='git mergetool --no-prompt'
 alias gmtvim='git mergetool --no-prompt --tool=vimdiff'
 alias gmum='git merge upstream/master'
 
-alias gr='git remote'
-alias gra='git remote add'
+alias gr='git reset'
+alias gra='git reset .'
 alias grmv='git remote rename'
 alias grrm='git remote remove'
 alias grset='git remote set-url'
@@ -238,14 +249,6 @@ killit() {
 }
 
 # pathes
-alias northcamp='cd /mnt/frontendmonster/projects/northcamp'
-alias blc='cd /mnt/frontendmonster/projects/blockchain'
-alias dotfiles='cd /mnt/frontendmonster/projects/dotfiles'
-alias fem='cd /mnt/frontendmonster/projects/northcamp/dev/app/frontendmonsters'
-alias codebox='cd /mnt/frontendmonster/projects/northcamp/dev/app/codebox'
-alias ma='cd /mnt/frontendmonster/projects/monster-academy'
-alias download='cd /mnt/frontendmonster/downloads'
-alias dnd='cd /mnt/frontendmonster/projects/dnd'
 
 fixWatcher() {
 	sudo sh /mnt/frontendmonster/projects/dotfiles/init-manjaro/fix-jest-watch.sh
