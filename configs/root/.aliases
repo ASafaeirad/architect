@@ -62,24 +62,26 @@ alias ll='ls -AF --group-directories-first'
 alias lt='tree -L 1 -I "node_modules" -a --dirsfirst'
 alias lless='l | less'
 alias laless='ll | less'
-alias dls='"ls -l | grep "^d" | awk { print $9 } | tr -d "/"'
+alias lsd=listDir
 alias rd=rmdir
 alias md='mkdir'
 
 # network
 alias getip="curl -s -S https://icanhazip.com"
-alias localip="ip addr show $WIFI_ADAPTOR | grep 'inet ' | awk '{ print $2 }'"
-alias mac="ip link show wlp2s0 | grep link | awk '{ print $2 }'"
+alias localip=getLocalIP
+alias mac="getMac $WIFI_ADAPTOR"
+alias netinfo=getNetInfo
+
+alias ping='ping -i 1 -W 1024'
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
     alias "$method"="curl -X '$method'"
 done
-alias ping='ping -c 5'
 
 
 # Other packages
 alias pac='pacman -S'
 alias aur='aurman -S'
-
+alias pacls='pacman -Qi'
 
 ## npm
 alias npmls='npm ls --depth 0'
@@ -88,15 +90,9 @@ alias npni='npm install'
 alias npms='npm start'
 alias npmt='npm test'
 alias npmd='npm install -D'
-# alias npmE='PATH="$(npm bin)":"$PATH"'
-# alias npmI='npm init'
-# alias npmL='npm list'
-# alias npmO='npm outdated'
-# alias npmP='npm publish'
-# alias npmR='npm run'
-# alias npmV='npm -v'
-# alias npmg='npm i -g '
-# alias npms='npm start'
+alias npmo='npm outdated'
+alias npmp='npm publish'
+alias npmv='npm -v'
 
 ## yarn
 alias y='yarn'
@@ -240,16 +236,26 @@ alias gsts='git stash show --text'
 # alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 # alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify -m "--wip-- [skip ci]"'
 
-alias hls='hadoop fs -ls'
-alias hmd='hadoop fs -mkdir'
-
 # Kills any process that matches a regexp passed to it
 killit() {
     ps aux | grep -v "grep" | grep "$@" | awk '{print $2}' | xargs sudo kill
 }
 
-# pathes
+listDir() {
+    ls -l | grep "^d" | awk '{ print $9 }'
+}
 
-fixWatcher() {
-	sudo sh /mnt/frontendmonster/projects/dotfiles/init-manjaro/fix-jest-watch.sh
+getMac() {
+  ip link show "$@" | grep link | awk '{ print $2 }'
+}
+
+getLocalIP() {
+  ip addr show $WIFI_ADAPTOR | grep 'inet ' | awk '{ print $2 }'
+}
+
+getNetInfo() {
+  echo "Local IP: " $(localip)
+  echo "Mac Addr: " $(mac)
+  echo "Global IP:" $(getip)
+
 }
