@@ -61,5 +61,6 @@ export NVM_DIR="$HOME/.nvm"
     . ~/.aliases
  fi
 
- # Export yarn bin file
- export PATH="$PATH:$(yarn global bin)"
+# Export yarn bin file
+export PATH="$PATH:$(yarn global bin)"
+

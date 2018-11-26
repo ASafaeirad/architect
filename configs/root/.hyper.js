@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: "stable",
 
     // fonts
-    fontFamily: '"Meslo LG L for Powerline", "Operator Mono", monospace',    
+    fontFamily: '"Meslo LG L for Powerline", "Operator Mono", monospace',
     fontSize: 12,
     fontWeight: 'normal',
     fontWeightBold: 'bold',
@@ -99,10 +99,13 @@ module.exports = {
     },
   },
 
-  plugins: ['hyper-chesterish', // 'hyper-sync-settings',
-  'hyperterm-summon', // 'hyperterm-gruvbox-dark'
-  // 'hyperlayout',
-  'hyper-tabs-enhanced', "hyperlayout"],
+  plugins: [
+    'hyper-chesterish',
+    'hyper-sync-settings',
+    'hyperterm-summon',
+    'hyper-tabs-enhanced',
+    'hyperlayout'
+  ],
 
   localPlugins: [],
 
