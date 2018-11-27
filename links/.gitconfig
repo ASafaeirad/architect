@@ -1,0 +1,7 @@
+[user]
+	name = [C
+	email = frontendmonster@gmail.com
+[github]
+	user = frontendmonster
+[credential]
+	helper = cache --timeout 3600

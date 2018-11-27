@@ -1,7 +1,7 @@
 #!/bin/bash
 
-BASEDIR=$(dirname "$BASH_SOURCE")
-. $BASEDIR/color.sh
+UTILDIR=$(dirname "$BASH_SOURCE")
+. $UTILDIR/color.sh
 
 title() {
   echo -e "\\n${CYAN}⬢ ${1}${NC}"

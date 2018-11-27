@@ -1,3 +1,5 @@
+#!/bin/bash
+
 WIFI_ADAPTOR="wlp2s0"
 
 # clear
@@ -15,7 +17,7 @@ alias clera='clear'
 alias cat="bat"
 alias vim="nvim"
 
-# default for commands
+# override commands
 alias ls='ls --color'
 alias grep='grep --color'
 alias mkdir='mkdir -pv'
@@ -29,6 +31,7 @@ alias reload='source ~/.zshrc'
 # path shorcuts
 alias ~='cd ~'
 alias ..='cd ..'
+alias dt='cd ~/Desktop'
 alias northcamp='cd /mnt/frontendmonster/projects/northcamp'
 alias blc='cd /mnt/frontendmonster/projects/blockchain'
 alias dotfiles='cd /mnt/frontendmonster/projects/dotfiles'
@@ -59,7 +62,7 @@ alias tmuxrc='vim ~/.tmux.conf'
 # file system
 alias l='ls -lAhF --group-directories-first'
 alias ll='ls -AF --group-directories-first'
-alias lt='tree -L 1 -I "node_modules" -a --dirsfirst'
+alias lst='tree -L 1 -I "node_modules" -a --dirsfirst'
 alias lless='l | less'
 alias laless='ll | less'
 alias lsd=listDir
@@ -77,13 +80,13 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
     alias "$method"="curl -X '$method'"
 done
 
-
 # Other packages
 alias pac='pacman -S'
 alias aur='aurman -S'
 alias pacls='pacman -Qi'
 
 ## npm
+alias loadnvm=". $NVM_DIR/nvm.sh"
 alias npmls='npm ls --depth 0'
 alias npmr='npm remove'
 alias npni='npm install'
@@ -121,6 +124,7 @@ alias ga='git add'
 alias gaa='git add --all'
 
 alias gb='git branch'
+alias gbr='git branch --remote'
 alias gba='git branch -a'
 alias gbd='git branch -d'
 
@@ -134,16 +138,17 @@ alias gcm='git commit -m'
 alias gcb='git checkout -b'
 alias gco='git checkout'
 
-alias gpull='git pull origin $(git_current_branch)'
-alias gpush='git push origin $(git_current_branch)'
-alias gpsup='git push --set-upstream origin $(git_current_branch)'
+alias pull='git pull origin $(git_current_branch)'
+alias push='git push origin $(git_current_branch)'
+alias 'push!'='git push origin $(git_current_branch) --force'
+alias pushu='git push --set-upstream origin $(git_current_branch)'
 
 alias gcount='git shortlog -sn'
-alias glo='git log --oneline --decorate'
-alias glog='git log --oneline --decorate --graph'
-alias gloga='git log --oneline --decorate --graph --all'
-alias glol='git log --graph --pretty="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"'
-alias glola='git log --graph --pretty=""%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --all'
+alias gl='git log --oneline --decorate'
+alias glog='git log --oneline --decorate --graph --all'
+alias gloga='git log --graph --left-right --pretty="%C(yellow)%h%Creset %C(cyan)(%cr)%C(bold blue) <%an>%Creset %s -%C(bold red)%d%Creset" --all'
+alias gls='git log --stat'
+alias glsg='git log --graph --decorate --all'
 
 alias gm='git merge'
 alias gma='git merge --abort'
@@ -154,6 +159,7 @@ alias gmum='git merge upstream/master'
 
 alias gr='git reset'
 alias gra='git reset .'
+
 alias grmv='git remote rename'
 alias grrm='git remote remove'
 alias grset='git remote set-url'
@@ -167,74 +173,18 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash show --text'
-# alias gpristine='git reset --hard && git clean -dfx'
-# alias gap='git apply'
-# alias gapa='git add --patch'
-# alias gau='git add --update'
-# alias gbda='git branch --no-color --merged | command grep -vE "^(\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d'
-# alias gbl='git blame -b -w'
-# alias gbnm='git branch --no-merged'
-# alias gbr='git branch --remote'
-# alias gbs='git bisect'
-# alias gbsb='git bisect bad'
-# alias gbsg='git bisect good'
-# alias gbsr='git bisect reset'
-# alias gbss='git bisect start'
-# alias 'gcan!'='git commit -v -a --no-edit --amend'
-# alias 'gcans!'='git commit -v -a -s --no-edit --amend'
-# alias gcf='git config --list'
-# alias gcl='git clone --recursive'
-# alias gclean='git clean -fd'
-# alias 'gcn!'='git commit -v --no-edit --amend'
-# alias gcp='git cherry-pick'
-# alias gcpa='git cherry-pick --abort'
-# alias gcpc='git cherry-pick --continue'
-# alias gcs='git commit -S'
-# alias gcsm='git commit -s -m'
-# alias gd='git diff'
-# alias gdca='git diff --cached'
-# alias gdct='git describe --tags `git rev-list --tags --max-count=1`'
-# alias gdcw='git diff --cached --word-diff'
-# alias gdt='git diff-tree -/-no-commit-id --name-only -r'
-# alias gdw='git diff --word-diff'
-# alias gf='git fetch'
-# alias gg='git gui citool'
-# alias gga='git gui citool --amend'
-# alias ggpur=ggu
-# alias gignore='git update-index --assume-unchanged'
-# alias gignored='git ls-files -v | grep "^[[:lower:]]"'
-# alias gist='nocorrect gist'
-# alias git-svn-dcommit-push='git svn dcommit && git push github master:svntrunk'
-# alias gk='\gitk --all --branches'
-# alias gke='\gitk --all $(git log -g --pretty=%h)'
-# alias glg='git log --stat'
-# alias glgg='git log --graph'
-# alias glgga='git log --graph --decorate --all'
-# alias glgm='git log --graph --max-count=10'
-# alias glgp='git log --stat -p'
-# alias grb='git rebase'
-# alias grba='git rebase --abort'
-# alias grbc='git rebase --continue'
-# alias grbi='git rebase -i'
-# alias grbm='git rebase master'
-# alias grbs='git rebase --skip'
-# alias grh='git reset HEAD'
-# alias grhh='git reset HEAD --hard'
-# alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
-# alias gru='git reset --'
-# alias gsd='git svn dcommit'
-# alias gsi='git submodule init'
-# alias gsps='git show --pretty=short --show-signature'
-# alias gsr='git svn rebase'
-# alias gsu='git submodule update'
-# alias gts='git tag -s'
-# alias gtv='git tag | sort -V'
-# alias gunignore='git update-index --no-assume-unchanged'
-# alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
-# alias gup='git pull --rebase'
-# alias gupv='git pull --rebase -v'
-# alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
-# alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify -m "--wip-- [skip ci]"'
+
+alias grb='git rebase'
+alias grba='git rebase --abort'
+alias grbc='git rebase --continue'
+alias grbi='git rebase -i'
+alias grbm='git rebase master'
+alias grbs='git rebase --skip'
+alias grh='git reset HEAD'
+alias grhh='git reset HEAD --hard'
+
+alias gt='git tag'
+alias gtv='git tag | sort -V'
 
 # Kills any process that matches a regexp passed to it
 killit() {
@@ -254,8 +204,30 @@ getLocalIP() {
 }
 
 getNetInfo() {
-  echo "Local IP: " $(localip)
-  echo "Mac Addr: " $(mac)
-  echo "Global IP:" $(getip)
+  echo "Local IP: " "$(localip)"
+  echo "Mac Addr: " "$(mac)"
+  echo "Global IP:" "$(getip)"
+}
 
+# ex - archive extractor
+ex ()
+{
+  if [ -f "$1" ] ; then
+    case "$1" in
+      *.tar.bz2)   tar xjf "$1"   ;;
+      *.tar.gz)    tar xzf "$1"   ;;
+      *.bz2)       bunzip2 "$1"   ;;
+      *.rar)       unrar x "$1"     ;;
+      *.gz)        gunzip "$1"    ;;
+      *.tar)       tar xf "$1"    ;;
+      *.tbz2)      tar xjf "$1"   ;;
+      *.tgz)       tar xzf "$1"   ;;
+      *.zip)       unzip "$1"     ;;
+      *.Z)         uncompress "$1";;
+      *.7z)        7z x "$1"      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
 }

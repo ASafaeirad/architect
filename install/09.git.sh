@@ -1,7 +1,8 @@
 #!/bin/bash
+INSTALLDIR=$(dirname "$BASH_SOURCE")
+. "$INSTALLDIR/../utils/echo.sh"
 
-echo -e "$CYAN\\n\\nSetting up Git$NC"
-echo -e "$CYAN==============================$NC"
+title "Setting up Git"
 
 defaultName=$( git config --global user.name )
 defaultEmail=$( git config --global user.email )
@@ -25,4 +26,6 @@ else
         git config --global credential.helper "cache --timeout 3600"
     fi
 fi
+
+progress "Git setup compeleted"
 
