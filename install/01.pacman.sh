@@ -2,7 +2,7 @@
 INSTALLDIR=$(dirname "$BASH_SOURCE")
 . "$INSTALLDIR/../utils/echo.sh"
 
-read -rn 1 -p "Update Mirrors? [Y/n] " umirrors
+read -rn 1 -p "Update Mirrors? [y/N] " umirrors
 echo
 
 if [[ $umirrors =~ ^([Yy])$ ]]; then
@@ -11,7 +11,7 @@ if [[ $umirrors =~ ^([Yy])$ ]]; then
 fi
 
 
-read -rn 1 -p "Sync Mirrors? [Y/n] " sync
+read -rn 1 -p "Sync Mirrors? [y/N] " sync
 echo
 if [[ $sync =~ ^([Yy])$ ]]; then
     title "Sync Mirrors"
