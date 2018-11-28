@@ -15,6 +15,7 @@ read -rp "Github username [$defaultGithub] " github
 git config --global user.name "${name:-$defaultName}"
 git config --global user.email "${email:-$defaultEmail}"
 git config --global github.user "${github:-$defaultGithub}"
+git config --global core.excludesfile ~/.gitignore_global
 
 if [[ "$( uname )" == "Darwin" ]]; then
     git config --global credential.helper "osxkeychain"

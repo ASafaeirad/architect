@@ -143,10 +143,11 @@ alias push='git push origin $(git_current_branch)'
 alias 'push!'='git push origin $(git_current_branch) --force'
 alias pushu='git push --set-upstream origin $(git_current_branch)'
 
+alias g='git'
 alias gcount='git shortlog -sn'
 alias gl='git log --oneline --decorate'
 alias glog='git log --oneline --decorate --graph --all'
-alias gloga='git log --graph --left-right --pretty="%C(yellow)%h%Creset %C(cyan)(%cr)%C(bold blue) <%an>%Creset %s -%C(bold red)%d%Creset" --all'
+alias gloga="git log --graph --pretty=format:'%C(yellow)%h%Creset %C(bold blue)%an%C(reset) - %s - %Creset %C(yellow)%d%Creset %C(green)(%cr)%Creset' --abbrev-commit --date=relative --all"
 alias gls='git log --stat'
 alias glsg='git log --graph --decorate --all'
 
