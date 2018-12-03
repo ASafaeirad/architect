@@ -20,9 +20,9 @@ if ! test "$(nvm --version)"; then
         } >> "$HOME/.profile"
     fi
 
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
     . "$HOME/.profile"
+
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
     nvm install node
     nvm install --lts --latest-npm

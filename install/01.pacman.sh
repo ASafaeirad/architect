@@ -22,8 +22,10 @@ title "Installing pacman packages..."
 formulas=(
     ack
     bat
+    chromium
     flameshot
     git
+    gcc
     grep
     mongodb
     neovim
@@ -31,8 +33,11 @@ formulas=(
     peek
     rofi
     shellcheck
+    telegram-desktop
     tmux
     tree
+    unrar
+    unzip
     wget
     yarn
     z

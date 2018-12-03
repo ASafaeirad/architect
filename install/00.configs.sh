@@ -30,3 +30,6 @@ for config in $config_files; do
 done
 
 progress "Links created!"
+
+timedatectl set-local-rtc 1 --adjust-system-clock
+

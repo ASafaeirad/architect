@@ -1,3 +1,4 @@
+
 // -- hyper-stylesheet-hash:a05582eeed861ad51d27c29bbb3c9304 --
 // Future versions of Hyper may add additional config options,
 // which will not automatically be merged into this file.
@@ -9,7 +10,7 @@ module.exports = {
     updateChannel: "stable",
 
     // fonts
-    fontFamily: '"Meslo LG L for Powerline", "Operator Mono", monospace',
+    fontFamily: '"Meslo LG L", "Operator Mono", monospace',
     fontSize: 12,
     fontWeight: 'normal',
     fontWeightBold: 'bold',
@@ -25,7 +26,7 @@ module.exports = {
     foregroundColor: '#fff',
     backgroundColor: '#222',
     borderColor: '#333',
-    css: '',
+    css: '.notification_indicator{display:none;}',
     termCSS: '',
 
     // set to `true` (without backticks) if you're using a Linux setup that doesn't show native menus
@@ -101,9 +102,9 @@ module.exports = {
 
   plugins: [
     'hyper-chesterish',
-    'hyper-sync-settings',
-    'hyperterm-summon',
-    'hyper-tabs-enhanced',
+    // 'hyper-sync-settings',
+    // 'hyperterm-summon',
+    // 'hyper-tabs-enhanced',
     'hyperlayout'
   ],
 

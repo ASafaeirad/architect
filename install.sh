@@ -7,7 +7,7 @@ for f in "$ROOTDIR"/install/*.sh; do
   read -rn1 -p "" confirm
   echo
 
-  [[ $confirm =~  ^([yY])$ ]] &&  . "$f"
+  [[ $confirm =~  ^([yY])$ ]] && [[ -x "$f" ]] && . "$f"
 
 done
 

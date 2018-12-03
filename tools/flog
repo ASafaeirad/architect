@@ -1,0 +1,4 @@
+#!/bin/bash
+
+clear
+figlet -f 3d.flf -d /usr/share/figlet "$@" | lolcat
