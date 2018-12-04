@@ -1,0 +1,6 @@
+rofi.combi-modi:    window,drun,ssh
+rofi.theme:         solarized
+rofi.font:          hack 10
+rofi.modi:          combi
+
+# -lines 3 -eh 2 -width 100 -padding 500 -opacity "85" -bw 0 -bc "$bg_color" -bg "$bg_color" -fg "$text_color" -hlbg "$bg_color_active" -hlfg "$bg_color_active" -font "System San Francisco Display 20"

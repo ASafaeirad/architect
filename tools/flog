@@ -1,4 +1,11 @@
 #!/bin/bash
 
 clear
-figlet -f 3d.flf -d /usr/share/figlet "$@" | lolcat
+printf "\n\n"
+# figlet -f 3d.flf -d /usr/share/figlet "$@" | lolcat
+figlet -f DOS\ Rebel -d /usr/share/figlet Alias | lolcat
+
+printf "\tjoin us on @full_stacks"
+printf "\n\n\n"
+
+

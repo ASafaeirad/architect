@@ -2,8 +2,7 @@
 INSTALLDIR=$(dirname "$BASH_SOURCE")
 . "$INSTALLDIR/../utils/echo.sh"
 
-configs="$INSTALLDIR/../configs";
-
+configs=$( realpath "$INSTALLDIR/../configs" );
 
 title "Installing configs"
 if [ ! -d "$HOME/.config" ]; then
@@ -11,25 +10,32 @@ if [ ! -d "$HOME/.config" ]; then
     mkdir -p "$HOME/.config"
 fi
 
-config_files=$( find "$(realpath "$configs")" -type f 2>/dev/null )
+config_files=$( find "$configs" -type f 2>/dev/null )
 
 for config in $config_files; do
-    target="$HOME/$( basename "$config" )"
+    target="${config#$configs/}"
 
-    if [ -f "$target" ]; then
+    toDir="$( dirname "$HOME/$target" )"
+    from="$configs/$target"
+    to="$HOME/$target"
+
+    if [ -f "$to" ]; then
         if [ ! -d "$HOME/dotfile-backups" ]; then
           progress "Creating ~/dotfile-backups"
           mkdir -p "$HOME/dotfile-backups"
         fi
 
-        warn "~${target#$HOME} already exists... Make a Backup."
-        mv "$target" "$HOME/dotfile-backups/"
+        warn "~${to} already exists... Make a Backup."
+        mv "$to" "$HOME/dotfile-backups/"
     fi
+
+    [ ! -d "$toDir" ] && mkdir -p "$toDir"
+
     progress "Creating symlink for $config"
-    ln -s "$config" "$target"
+    ln -sf "$from" "$to"
 done
 
 progress "Links created!"
 
-timedatectl set-local-rtc 1 --adjust-system-clock
+# timedatectl set-local-rtc 1 --adjust-system-clock
 

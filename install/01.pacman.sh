@@ -34,6 +34,7 @@ formulas=(
     rofi
     shellcheck
     telegram-desktop
+    termite
     tmux
     tree
     unrar

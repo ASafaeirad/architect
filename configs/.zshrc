@@ -49,3 +49,7 @@ bindkey '^ ' autosuggest-accept
 
 . $ZSH/oh-my-zsh.sh
 
+ if [ -f "$HOME/.aliases" ]; then
+    . "$HOME/.aliases"
+ fi
+

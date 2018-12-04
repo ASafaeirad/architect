@@ -1,0 +1,39 @@
+conky.config = {
+	alignment = 'bottom_left',
+	background = true,
+	color2 = 'C8E690',
+	cpu_avg_samples = 2,
+	default_color = 'C8E690',
+	double_buffer = true,
+	font = 'DejaVu Sans:size=8',
+	draw_shades = false,
+	gap_x = 32,
+	gap_y = 32,
+	minimum_width = 160,
+	maximum_width = 160,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 2.0,
+	use_xft = true,
+}
+conky.text = [[
+${voffset 0}$font${color}CPU${font DejaVu Sans:bold:size=8}$alignr$cpu%
+${voffset 8}$font$color2${top name 1}$alignr$color${top cpu 1}%
+$color2${top name 2}$alignr$color${top cpu 2}%
+$color2${top name 3}$alignr$color${top cpu 3}%
+$color2${top name 4}$alignr$color${top cpu 4}%
+$color2${top name 4}$alignr$color${top cpu 5}%
+#
+${voffset 12}${color}RAM${font DejaVu Sans:bold:size=8}$alignr$memperc%$font
+${voffset 8}$color2${top_mem name 1}$alignr$color${top_mem mem_res 1}
+$color2${top_mem name 2}$alignr$color${top_mem mem_res 2}
+$color2${top_mem name 3}$alignr$color${top_mem mem_res 3}
+$color2${top_mem name 4}$alignr$color${top_mem mem_res 4}
+$color2${top_mem name 5}$alignr$color${top_mem mem_res 5}
+#
+${voffset 12}${color}Swap${font DejaVu Sans:bold:size=8}$alignr${swap}/ ${swapfree}
+#
+
+]]

@@ -10,8 +10,9 @@ module.exports = {
     updateChannel: "stable",
 
     // fonts
-    fontFamily: '"Meslo LG L", "Operator Mono", monospace',
-    fontSize: 12,
+    fontFamily: '"Courier Prime", monospace',
+    fontSize: 13,
+    lineHeight: 1.3,
     fontWeight: 'normal',
     fontWeightBold: 'bold',
 
@@ -102,8 +103,6 @@ module.exports = {
 
   plugins: [
     'hyper-chesterish',
-    // 'hyper-sync-settings',
-    // 'hyperterm-summon',
     // 'hyper-tabs-enhanced',
     'hyperlayout'
   ],
