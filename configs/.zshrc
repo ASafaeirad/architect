@@ -1,7 +1,5 @@
 #!/bin/bash
 
-. "$HOME/.profile"
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -53,3 +51,4 @@ bindkey '^ ' autosuggest-accept
     . "$HOME/.aliases"
  fi
 
+. "$HOME/.profile"

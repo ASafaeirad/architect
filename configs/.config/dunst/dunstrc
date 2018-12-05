@@ -1,5 +1,5 @@
 [global]
-    font = Roboto 10
+    font = DejaVu Sans 10
 
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -65,11 +65,11 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "480x4-0-31"
+    geometry = "191x4-0+30"
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = yes
+    shrink = 0
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
@@ -116,11 +116,11 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 0
+    separator_height = 1
 
     # Padding between text and separator.
     # padding = 8
-    padding = 12
+    padding = 10
 
     # Horizontal padding.
     horizontal_padding = 16
@@ -148,14 +148,14 @@
     icon_position = left
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/Papirus-Adapta-Nokto/32x32/status/:/usr/share/icons/Papirus-Adapta-Nokto/32x32/devices/
+    icon_folders = /usr/share/icons/Papirus-Adapta-Nokto/16x16/actions/:/usr/share/icons/Papirus-Adapta-Nokto/16x16/panel/:/usr/share/icons/Papirus-Adapta-Nokto/16x16/devices/:/usr/share/icons/Papirus-Dark/symbolic/status
 
     # Limit icons size.
     max_icon_size=48
 
 [frame]
     width = 0
-    color = "#24292A"
+    color = "#374350"
 
 [shortcuts]
 
@@ -182,12 +182,12 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#3c4140"
+    background = "#293340"
     foreground = "#ccd2be"
     timeout = 16
 
 [urgency_normal]
-    background = "#3c4140"
+    background = "#293340"
     foreground = "#ccd2be"
     timeout = 16
 
@@ -272,23 +272,23 @@
 #    background = "#A8EB41"
 #    foreground = "#FFFFFF"
 #
-[irc]
-        appname = weechat
-        timeout = 0
-        background = "#0033bb"
-        foreground = "#dddddd"
-#
-[weechat hl]
-     appname = weechat
-     category = weechat.HL
-     background = "#FF5C47"
-     foreground = "#FFFFFF"
-#
-[weechat pn]
-     appname = weechat
-     category = weechat.PM
-     background = "#D53B84"
-     foreground = "#FFFFFF"
+# [irc]
+#         appname = weechat
+#         timeout = 0
+#         background = "#0033bb"
+#         foreground = "#dddddd"
+# #
+# [weechat hl]
+#      appname = weechat
+#      category = weechat.HL
+#      background = "#FF5C47"
+#      foreground = "#FFFFFF"
+# #
+# [weechat pn]
+#      appname = weechat
+#      category = weechat.PM
+#      background = "#D53B84"
+#      foreground = "#FFFFFF"
 #
 #[CMUS]
 #    appname = CMUS

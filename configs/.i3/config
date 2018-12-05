@@ -16,7 +16,6 @@ set $workspace8  8:
 set $workspace9  9:
 set $workspace10 10:
 
-
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
@@ -33,13 +32,15 @@ set_from_resource $bg_color             background
 set_from_resource $text_color           foreground
 
 set_from_resource $bg_color_inactive    background
-set_from_resource $text_color_inactive  background
+set_from_resource $text_color_inactive  color8
 
 set_from_resource $bg_color_active      color2
 set_from_resource $text_color_active    background
 
 set_from_resource $text_color_urgent    background
 set_from_resource $bg_color_urgent      color3
+
+set_from_resource $color_indc           color2
 
 
 # set default desktop layout (default is tiling)
@@ -48,6 +49,8 @@ set_from_resource $bg_color_urgent      color3
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 0
 new_float normal
+
+workspace_auto_back_and_forth no
 
 # Hide borders
 hide_edge_borders none
@@ -91,31 +94,35 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
-# Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec chromium
-bindsym $mod+F3 exec code
-bindsym $mod+F4 exec thunar
-# bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec gksu pcmanfm
-bindsym $mod+F5 exec --no-startup-id terminal -name 'mocp' -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print --release exec --no-startup-id flameshot full -c
-bindsym $mod+Print --release exec --no-startup-id flameshot full -p $HOME/Pictures/
-bindsym $mod+Shift+Print --release exec --no-startup-id flameshot gui
+# Keybindings
 
-bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+F2                                 exec chromium
+bindsym $mod+F3                                 exec code
+bindsym $mod+F4                                 exec thunar
+bindsym $mod+F5                                 exec --no-startup-id terminal --title 'mocp' -e 'mocp'
+bindsym $mod+Shift+F4                           exec gksu thunar
+
+
+bindsym $mod+t                                  [instance="flyterm"] scratchpad show
+bindsym $mod+shift+t                            exec --no-startup-id terminal --name "flyterm" -e tmux
+bindsym $mod+Ctrl+t                             exec --no-startup-id compton -b
+bindsym $mod+Ctrl+x             --release       exec --no-startup-id xkill
+bindsym $mod+Shift+d            --release       exec "killall dunst; exec notify-send 'restart dunst'"
+
+# Screenshot
+
+bindsym Print                   --release       exec --no-startup-id flameshot full -c
+bindsym $mod+Print              --release       exec --no-startup-id flameshot full -p '/home/frontendmonster/pictures/screenshots/'
+bindsym $mod+Shift+Print        --release       exec --no-startup-id flameshot gui
+
 
 # focus_follows_mouse no
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+l focus down
+bindsym $mod+h focus left
+bindsym $mod+j focus down
 bindsym $mod+k focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -124,24 +131,23 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
+bindsym $mod+Shift+h move left
 bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move down
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
+bindsym $mod+backspace workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 bindsym $mod+v split v
 # bindsym $mod+q split toggle
 
@@ -158,8 +164,7 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
-bindsym $mod+space exec rofi -show run -lines 3 -eh 2 -width 100 -padding 500 -opacity "85" -bw 0 -bc "$bg_color" -bg "$bg_color" -fg "$text_color" -hlbg "$bg_color_active" -hlfg "$bg_color_active" -font "System San Francisco Display 20"
-
+bindsym $mod+space exec rofi -show run
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
@@ -353,12 +358,12 @@ bar {
 bindsym $mod+m bar mode toggle
 
 # Theme colors
-# class                   border              backgr.             text                indic.   child_border
-  client.focused          $bg_color           $bg_color           $bg_color_active #FDF6E3
-  client.focused_inactive $bg_color_inactive    #2F3D44         #1ABC9C        #454948
-  client.unfocused        $bg_color_inactive  $bg_color_inactive #1ABC9C #454948
-  client.urgent           $bg_color_urgent    $bg_color_urgent    $text_color_urgent #268BD2
-  client.placeholder      $bg_color           $bg_color           $bg_color #000000
+# class                   border              backgr.             text                 indic.      child_border
+  client.focused          $bg_color           $bg_color           $bg_color_active     $color_indc
+  client.focused_inactive $bg_color_inactive  $bg_color_inactive  $text_color_inactive $color_indc
+  client.unfocused        $bg_color_inactive  $bg_color_inactive  $text_color_inactive $color_indc
+  client.urgent           $bg_color_urgent    $bg_color_urgent    $text_color_urgent   $color_indc
+  client.placeholder      $bg_color           $bg_color           $bg_color            $color_indc
 
   client.background       $bg_color
 
@@ -367,7 +372,7 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 0
+gaps inner 3
 gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
@@ -424,6 +429,18 @@ exec_always --no-startup-id xmodmap -e "clear lock"
 exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
 exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
+
+exec "setxkbmap -layout us,ir"
+
+# for_window [instance="flyterm"] floating enable
+for_window [instance="flyterm"] resize set 625 400
+for_window [instance="flyterm"] move scratchpad
+
+exec --no-startup-id terminal --name "flyterm" -e tmux
 exec --no-startup-id polybar -r skill
+exec --no-startup-id terminal
+exec --no-startup-id telegram-desktop
+exec --no-startup-id chromium
+exec --no-startup-id terminal --title 'mocp' -e 'mocp'
 
 # amixer set Master toggle
