@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ $# -eq 0 ]
+  then
+    echo "Usage: newscript [-d] filename"
+    echo "-d     deletes the file"
+    exit 0
+fi
+
 SCRIPTPATH="$HOME/.local/bin"
 
 [ ! -d "$SCRIPTPATH" ] && mkdir -p "$SCRIPTPATH"
