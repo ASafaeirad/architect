@@ -77,6 +77,7 @@ alias getip="curl -s -S https://icanhazip.com"
 alias localip=getLocalIP
 alias mac="getMac $WIFI_ADAPTOR"
 alias netinfo=getNetInfo
+alias nextvpn='vpn next'
 
 alias ping='ping -i 1 -W 1024'
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
