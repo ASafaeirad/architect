@@ -32,7 +32,7 @@ packages=(
     @storybook/cli@next
     create-react-app
     eslint
-    flow
+    flow-bin
     fx
     hyperlayout
     lerna
