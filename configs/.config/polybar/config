@@ -1,11 +1,11 @@
 [colors]
 background      = #293340
-background-alt  = #cf3C5A46
-background-unf  = #cf2E463E
-background-mod0 = #cf3C5A46
-background-mod1 = #cf546E53
-background-mod2 = #cf708963
-background-alrt = #cfA1BB76
+background-alt  = #546E53
+background-unf  = #293340
+background-mod0 = #3C5A46
+background-mod1 = #546E53
+background-mod2 = #668F51
+background-alrt = #E60053
 
 foreground      = #F3F3BA
 foreground-alt  = #F3F3BA
@@ -33,20 +33,17 @@ border-size = 0
 border-color = #f00
 
 ; Fonts are defined using <font-name>;<vertical-offset>
-font-0 = DejaVu Sans:size=9;1
-font-1 = Hack Nerd Font Mono:size=13;3
-font-2 = Material Icons:pixelsize=10;2
-font-3 = FontAwesome:fontformat=truetype:size=12;1
-font-4 = Font Awesome 5 Free:style=Regular:pixelsize=8;1
-font-5 = Font Awesome 5 Free:style=Solid:pixelsize=8;1
-font-6 = Font Awesome 5 Brands:pixelsize=8;1
-font-7 = Misc Termsyn:size=8;1
-font-8 = sm4tik:pixelsize=10;1
+font-0 = DejaVu Sans:size=8;1
+font-1 = Font Awesome 5 Free:style=Regular:pixelsize=8;1
+font-2 = Font Awesome 5 Free:style=Solid:pixelsize=8;1
+font-3 = Font Awesome 5 Brands:pixelsize=8;1
+font-4 = Hack Nerd Font Mono:size=11;3
 
 modules-left = i3
-modules-center =
 
-modules-right = battery wireless-network date
+modules-center = title
+
+modules-right = network wireless-network battery pulseaudio keyboard date
 
 ; Position of the system tray window
 ; If empty or undefined, tray support will be disabled
@@ -115,6 +112,81 @@ double-click-right =
 cursor-click =
 cursor-scroll =
 
+[module/network]
+type = internal/network
+interface = wlp2s0
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 1
+
+; Test connectivity every Nth update
+; A value of 0 disables the feature
+; NOTE: Experimental (needs more testing)
+; Default: 0
+;ping-interval = 3
+
+; @deprecated: Define min width using token specifiers (%downspeed:min% and %upspeed:min%)
+; Minimum output width of upload/download rate
+; Default: 3
+udspeed-minwidth = 5
+
+; Accumulate values from all interfaces
+; when querying for up/downspeed rate
+; Default: false
+accumulate-stats = true
+
+; Consider an `UNKNOWN` interface state as up.
+; Some devices have an unknown state, even when they're running
+; Default: false
+unknown-as-up = true
+
+; Available tokens:
+;   %ifname%    [wireless+wired]
+;   %local_ip%  [wireless+wired]
+;   %local_ip6% [wireless+wired]
+;   %essid%     [wireless]
+;   %signal%    [wireless]
+;   %upspeed%   [wireless+wired]
+;   %downspeed% [wireless+wired]
+;   %linkspeed% [wired]
+; Default: %ifname% %local_ip%
+label-connected = "%upspeed% %downspeed%    "
+label-connected-foreground = ${colors.foreground}
+
+; Available tokens:
+;   %ifname%    [wireless+wired]
+; Default: (none)
+label-disconnected = " "
+label-disconnected-foreground = ${colors.foreground}
+
+[module/keyboard]
+type = internal/xkeyboard
+
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+; Available tags:
+;   <label-layout> (default)
+;   <label-indicator> (default)
+format = "<label-layout> <label-indicator>"
+format-spacing = 0
+
+; Available tokens:
+;   %layout%
+;   %name%
+;   %number%
+; Default: %layout%
+label-layout = %layout%
+label-layout-padding = 0
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-indicator = %name%
+label-indicator-padding = 0
+label-indicator-background = ${colors.background-alrt}
 
 [module/wlan]
 type= internal/wlan
@@ -131,7 +203,7 @@ format-connected = "  <label-connected>  "
 format-connected-underline = #9f78e1
 label-connected = "   %essid% "
 
-format-disconnected = "    No Wifi   "
+format-disconnected = "    "
 format-disconnected-background = ${colors.background-unf}
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -249,13 +321,13 @@ adapter = AC
 full-at = 97
 
 format-full-background = ${colors.background-mod2}
-format-charging-background = ${colors.background-mod2}
+format-charging-background = ${colors.background-mod1}
 format-charging = "⁣   <animation-charging> <label-charging>"
 format-charging-underline = #ffb52a
 
 format-charging-suffix = "   "
 
-format-discharging-background = ${colors.background-alt}
+format-discharging-background = ${colors.background}
 format-discharging = "⁣    <ramp-capacity> <label-discharging>  "
 format-discharging-underline = ${self.format-charging-underline}
 
@@ -278,3 +350,77 @@ animation-charging-3 = ""
 animation-charging-4 = ""
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points) (unreleased)
+; Default: 5
+interval = 5
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = "  <ramp-volume> <label-volume>  "
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+label-muted = "   Muted  "
+label-muted-foreground = ${colors.secondary}
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = "  "
+ramp-volume-1 = "  "
+ramp-volume-2 = "  "
+
+
+[module/backlight]
+type = internal/backlight
+
+; Use the following command to list available cards:
+; $ ls -1 /sys/class/backlight/
+card = intel_backlight
+; Available tags:
+;   <label> (default)
+;   <ramp>
+;   <bar>
+format = "<ramp> <bar>   "
+
+; Available tokens:
+;   %percentage% (default)
+label = %percentage%%
+
+; Only applies if <ramp> is used
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+; Only applies if <bar> is used
+bar-width = 10
+bar-indicator = |
+bar-fill = |
+bar-empty = " "
+
+[module/title]
+type = internal/xwindow
