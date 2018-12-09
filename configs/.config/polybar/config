@@ -34,10 +34,10 @@ border-color = #f00
 
 ; Fonts are defined using <font-name>;<vertical-offset>
 font-0 = DejaVu Sans:size=8;1
+font-4 = DejaVuSansMono Nerd Font Mono:size=11;3
 font-1 = Font Awesome 5 Free:style=Regular:pixelsize=8;1
 font-2 = Font Awesome 5 Free:style=Solid:pixelsize=8;1
 font-3 = Font Awesome 5 Brands:pixelsize=8;1
-font-4 = Hack Nerd Font Mono:size=11;3
 
 modules-left = i3
 

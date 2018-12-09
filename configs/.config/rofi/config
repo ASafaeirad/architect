@@ -1,4 +1,4 @@
-rofi.combi-modi:    drun,ssh
+rofi.combi-modi:    run,drun,ssh
 rofi.font:          DejaVu Sans 10
 rofi.modi:          combi
 rofi.lines:         5

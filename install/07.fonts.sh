@@ -25,6 +25,7 @@ done
 
 nerds=(
   ttf-yosemite-san-francisco-font-git
+  nerd-fonts-dejavu-complete
   fonts-rajdhani
   otf-exo
   ttf-ms-fonts

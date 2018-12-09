@@ -10,7 +10,7 @@ module.exports = {
     updateChannel: "stable",
 
     // fonts
-    fontFamily: '"Courier Prime", monospace',
+    fontFamily: '"DejaVuSansMono Nerd Font Mono", monospace',
     fontSize: 13,
     lineHeight: 1.3,
     fontWeight: 'normal',
