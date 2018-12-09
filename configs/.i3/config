@@ -11,7 +11,7 @@ set $workspace3  3:
 set $workspace4  4:
 set $workspace5  5:
 set $workspace6  6:
-set $workspace7  7:
+set $workspace7  7:ﱘ
 set $workspace8  8:
 set $workspace9  9:
 set $workspace10 10:
@@ -247,7 +247,7 @@ for_window [title="MuseScore: Play Panel"]          floating enable
 #################
 
 # System mode
-bindsym $mod+0 mode "$mode_system"
+bindsym $mod+shift+Pause mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 
 mode "$mode_system" {
@@ -368,14 +368,13 @@ exec        --no-startup-id     xautolock -time 10 -locker blurlock
 exec        --no-startup-id     flashfocus -l never -t 200 -o 0.9
 exec        --no-startup-id     volumeicon
 
-exec        --no-startup-id     'conky -c ~/.conky/date.pacsave'
-exec        --no-startup-id     'conky -c ~/.conky/stats.pacsave'
+exec_always --no-startup-id     "$HOME/.conky/start-conky.sh"
 
 # Swap caps lock and escape
 exec        --no-startup-id     "setxkbmap -layout us,ir"
-exec        --no-startup-id     xmodmap -e "clear lock"
-exec        --no-startup-id     xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
-exec        --no-startup-id     xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+exec_always --no-startup-id     xmodmap -e "clear lock"
+exec_always --no-startup-id     xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
+exec_always --no-startup-id     xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
 # Initial Workspace
 exec        --no-startup-id     terminal --name "flyterm" -e tmux
