@@ -32,7 +32,7 @@ cursor_foreground = #293340
 highlight = #44475a
 
 # black
-color0  = #556570
+color0  = #293340
 color8  = #556570
 
 # red
