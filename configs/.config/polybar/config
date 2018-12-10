@@ -21,7 +21,7 @@ monitor =
 
 bottom = false
 width = 100%
-height = 30
+height = 25
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -57,7 +57,7 @@ tray-position = right
 
 ; If true, the bar will not shift its
 ; contents when the tray changes
-tray-detached = true
+tray-detached = false
 
 ; Tray icon max size
 tray-maxsize = 16
