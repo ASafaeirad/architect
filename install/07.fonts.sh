@@ -34,6 +34,7 @@ nerds=(
   nerd-fonts-source-code-pro
   nerd-fonts-ubuntu-mono
   nerd-fonts-hack
+  ttf-emojione
   vazir-fonts
 )
 
