@@ -19,8 +19,8 @@ Xft.lcdfilter: lcddefault
 *pointerColorForeground:          #16A085
 
 !! black dark/light
-*color0:                          #293340
-*color8:                          #778899
+*color0:                          #556570
+*color8:                          #556570
 
 
 !! red dark/light
@@ -49,8 +49,8 @@ Xft.lcdfilter: lcddefault
 *color14:                        #2DCED0
 
 !! white dark/light
-*color7:                         #f8f8f8
-*color15:                        #ffffff
+*color7:                         #999999
+*color15:                        #999999
 
 Xcursor.theme: xcursor-breeze
 Xcursor.size:                    0

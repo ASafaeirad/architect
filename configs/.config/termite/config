@@ -1,18 +1,18 @@
 [options]
-scroll_on_output = false
-scroll_on_keystroke = true
-audible_bell = false
-mouse_autohide = false
-allow_bold = true
-dynamic_title = true
-urgent_on_bell = true
-clickable_url = true
 font = DejaVuSansMono Nerd Font Mono 9
-scrollback_lines = 10000
-search_wrap = true
-cursor_blink = off
-cursor_shape = block
-#icon_name = terminal
+scroll_on_output    = false
+scroll_on_keystroke = true
+audible_bell        = false
+mouse_autohide      = false
+allow_bold          = true
+dynamic_title       = true
+urgent_on_bell      = true
+clickable_url       = true
+scrollback_lines    = 10000
+search_wrap         = true
+cursor_blink        = off
+cursor_shape        = block
+# icon_name = terminal
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
 #browser = xdg-open
@@ -32,12 +32,12 @@ cursor_foreground = #293340
 highlight = #44475a
 
 # black
-color0  = #293340
-color8=   #778899
+color0  = #556570
+color8  = #556570
 
 # red
 color1  = #E17E85
-color9=   #E17E85
+color9  = #E17E85
 
 # green
 color2  =  #61BA86
