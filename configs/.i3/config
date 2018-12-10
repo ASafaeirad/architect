@@ -1,3 +1,4 @@
+
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -167,6 +168,11 @@ bindsym $mod+Shift+Down                     move down
 bindsym $mod+Shift+Up                       move up
 bindsym $mod+Shift+Right                    move right
 
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume                exec --no-startup-id "pactl -- set-sink-volume 0 +5%"
+bindsym XF86AudioLowerVolume                exec --no-startup-id "pactl -- set-sink-volume 0 -5%"
+bindsym XF86AudioMute                       exec --no-startup-id "pactl set-sink-mute 0 toggle"
+
 # Apps
 
 ## Essential
@@ -189,7 +195,7 @@ bindsym $mod+shift+t                        exec --no-startup-id terminal --name
 bindsym $mod+Ctrl+t                         exec --no-startup-id compton -b
 bindsym $mod+Ctrl+x             --release   exec --no-startup-id xkill
 bindsym $mod+Shift+d            --release   exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+shift+f            --release   exec --no-startup-id killall flash_window
+bindsym $mod+shift+f            --release   exec restart-flashfocus
 
 ## Screenshot
 bindsym Print                   --release   exec --no-startup-id flameshot full -c
@@ -203,7 +209,7 @@ bindsym $mod+Ctrl+m                         exec pavucontrol
 ############################
 
 # Switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+for_window  [urgent=latest] focus
 
 # Applications workspaces
 assign      [class="Chromium"]                      $workspace2
@@ -234,6 +240,7 @@ for_window [class="Simple-scan"]                    floating enable border norma
 for_window [class="Skype"]                          floating enable border normal
 for_window [class="Timeset-gui"]                    floating enable border normal
 for_window [class="Xfburn"]                         floating enable
+for_window [class="persepoli"]                      floating enable
 for_window [instance="flyterm"]                     move scratchpad
 for_window [instance="flyterm"]                     resize set 625 400
 for_window [title="About Pale Moon"]                floating enable
@@ -241,6 +248,9 @@ for_window [title="alsamixer"]                      floating enable border pixel
 for_window [title="File Transfer*"]                 floating enable
 for_window [title="i3_help"]                        floating enable sticky enable border normal
 for_window [title="MuseScore: Play Panel"]          floating enable
+for_window [title="Sign in - Google Accounts - Chromium"] floating enable border normal
+for_window [title="Sign in - Google Accounts - Chromium"] resize set 360 600
+for_window [title="Sign in - Google Accounts - Chromium"] move absolute position center
 
 #################
 ##    Modes    ##
@@ -320,39 +330,39 @@ mode "$mode_gaps_outer" {
     bindsym Escape mode "default"
 }
 
-#################
-##    i3bar    ##
-#################
+# #################
+# ##    i3bar    ##
+# #################
 
-bindsym $mod+m bar mode toggle
+# bindsym $mod+m bar mode toggle
 
-bar {
-    i3bar_command i3bar
-    # status_command i3status
-    position bottom
+# bar {
+#     i3bar_command i3bar
+#     # status_command i3status
+#     position bottom
 
-    ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-    #	tray_output primary
-    #	tray_output eDP1
+#     ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+#     #	tray_output primary
+#     #	tray_output eDP1
 
-    bindsym button4 nop
-    bindsym button5 nop
-    font pango: Font Awesome Solid 9m
-    strip_workspace_numbers yes
+#     bindsym button4 nop
+#     bindsym button5 nop
+#     font pango: Font Awesome Solid 9m
+#     strip_workspace_numbers yes
 
-    colors {
-        background $bg_color
-        statusline $color_unknown
-        separator  $color_unknown
+#     colors {
+#         background $bg_color
+#         statusline $color_unknown
+#         separator  $color_unknown
 
-        #class              border              background          text
-        focused_workspace   $bg_color_active    $bg_color_active    $text_color_active
-        inactive_workspace  $bg_color_inactive  $bg_color_inactive  $text_foreground
-        urgent_workspace    $bg_color_urgent    $bg_color_urgent    $text_color_urgent
-        active_workspace    $color_unknown      $color_unknown      $color_unknown
-        binding_mode        $bg_color_active    $bg_color_active    $bg_color
-    }
-}
+#         #class              border              background          text
+#         focused_workspace   $bg_color_active    $bg_color_active    $text_color_active
+#         inactive_workspace  $bg_color_inactive  $bg_color_inactive  $text_foreground
+#         urgent_workspace    $bg_color_urgent    $bg_color_urgent    $text_color_urgent
+#         active_workspace    $color_unknown      $color_unknown      $color_unknown
+#         binding_mode        $bg_color_active    $bg_color_active    $bg_color
+#     }
+# }
 
 #####################
 ##    Autostart    ##
@@ -365,9 +375,9 @@ exec        --no-startup-id     nm-applet
 exec        --no-startup-id     xfce4-power-manager
 exec        --no-startup-id     clipit
 exec        --no-startup-id     xautolock -time 10 -locker blurlock
-exec        --no-startup-id     flashfocus -l never -t 200 -o 0.9
-exec        --no-startup-id     volumeicon
+# exec        --no-startup-id     volumeoicon
 
+exec_always --no-startup-id     "restart-flashfocus"
 exec_always --no-startup-id     "$HOME/.conky/start-conky.sh"
 
 # Swap caps lock and escape
