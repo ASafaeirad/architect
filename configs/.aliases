@@ -31,7 +31,7 @@ alias reload='source ~/.zshrc'
 # path shorcuts
 alias ~='cd ~'
 alias ..='cd ..'
-alias dt='cd ~/Desktop'
+alias dt='cd ~/desktop'
 alias northcamp='cd /home/frontendmonster/projects/northcamp'
 alias blc='cd /home/frontendmonster/projects/blockchain'
 alias dotfiles='cd /home/frontendmonster/projects/dotfiles'
