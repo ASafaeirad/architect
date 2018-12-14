@@ -4,5 +4,6 @@ INSTALLDIR=$(dirname "$BASH_SOURCE")
 
 title "Start MongoDB Service"
 sudo systemctl enable mongodb.service
+sudo systemctl start mongodb.service
 progress "MongoDB Service enabled"
 
