@@ -150,5 +150,5 @@
 	instructionFormat = "[%an - %ar] %s"
 	autoStash = true
 [pager]
-    diff = "diff-so-fancy | less --tabs=4 -RFX"
-    show = "diff-so-fancy | less --tabs=4 -RFX"
+    # diff = "diff-so-fancy | less --tabs=4 -RFX"
+    # show = "diff-so-fancy | less --tabs=4 -RFX"
