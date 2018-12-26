@@ -27,22 +27,13 @@ alias pacman='sudo pacman'
 alias dhcp='sudo dhcpcd'
 alias :q='exit'
 alias reload='source ~/.zshrc'
+alias tree='tree -I node_modules'
 
 # path shorcuts
 alias ~='cd ~'
 alias ..='cd ..'
 alias dt='cd ~/desktop'
-alias northcamp='cd /home/frontendmonster/projects/northcamp'
-alias blc='cd /home/frontendmonster/projects/blockchain'
-alias dotfiles='cd /home/frontendmonster/projects/dotfiles'
-alias fem='cd /home/frontendmonster/projects/northcamp/dev/app/frontendmonsters'
-alias fsk='cd /home/frontendmonster/projects/northcamp/dev/app/fullstacks'
-alias codebox='cd /home/frontendmonster/projects/northcamp/dev/app/codebox'
-alias ma='cd /home/frontendmonster/projects/monster-academy'
-alias download='cd /home/frontendmonster/downloads'
-alias dnd='cd /home/frontendmonster/projects/dnd'
-alias merns='cd /home/frontendmonster/projects/boilerplaits/merns'
-alias wf='cd /home/frontendmonster/projects/northcamp/Fullstacks/Courses/web-fundamentals'
+[[ -f "$HOME/.projects" ]] && . "$HOME/.projects"
 
 # sysadmin
 alias findstr='grep -rnw'
@@ -63,9 +54,9 @@ alias i3conf='code ~/.i3/config'
 alias smachin='code /home/frontendmonster/projects/dotfiles/smachine'
 
 # file system
-alias l='ls -lAhF --group-directories-first'
-alias ll='ls -AF --group-directories-first'
-alias lst='tree -L 1 -I "node_modules" -a --dirsfirst'
+alias l='tree -L 1 -I node_modules -a --dirsfirst'
+alias ll='ls -lAhF --group-directories-first'
+alias lsa='ls -AF --group-directories-first'
 alias lless='l | less'
 alias laless='ll | less'
 alias lsd=listDir
@@ -100,6 +91,7 @@ alias npmd='npm install -D'
 alias npmo='npm outdated'
 alias npmp='npm publish'
 alias npmv='npm -v'
+alias cleannm='find . -name "node_modules" -type d -exec rm -rf {} \;'
 
 ## yarn
 alias y='yarn'
