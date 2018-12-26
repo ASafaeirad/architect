@@ -52,3 +52,8 @@ bindkey '^ ' autosuggest-accept
  fi
 
 . "$HOME/.profile"
+
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[[ -f /home/monster/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh ]] && . /home/monster/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh
