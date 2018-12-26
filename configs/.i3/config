@@ -191,7 +191,7 @@ bindsym $mod+Shift+F4                       exec gksu thunar
 
 ## Utility
 bindsym $mod+t                              [instance="flyterm"] scratchpad show
-bindsym $mod+shift+t                        exec --no-startup-id terminal --name "flyterm" -e tmux
+bindsym $mod+shift+t                        exec --no-startup-id terminal --name "flyterm" -e tmux attach
 bindsym $mod+Ctrl+t                         exec --no-startup-id compton -b
 bindsym $mod+Ctrl+x             --release   exec --no-startup-id xkill
 bindsym $mod+Shift+d            --release   exec "killall dunst; exec notify-send 'restart dunst'"
@@ -214,7 +214,7 @@ for_window  [urgent=latest] focus
 # Applications workspaces
 assign      [class="Chromium"]                      $workspace2
 assign      [class="Code"]                          $workspace3
-assign      [class="Thunar"]                        $workspace4
+# assign      [class="Thunar"]                        $workspace4
 assign      [class="TelegramDesktop"]               $workspace8
 assign      [title="mocp"]                          $workspace7
 
@@ -242,7 +242,8 @@ for_window [class="Timeset-gui"]                    floating enable border norma
 for_window [class="Xfburn"]                         floating enable
 for_window [class="persepoli"]                      floating enable
 for_window [instance="flyterm"]                     move scratchpad
-for_window [instance="flyterm"]                     resize set 625 400
+for_window [instance="flyterm"]                     resize set 650 450
+for_window [instance="flyterm"]                     move absolute position center
 for_window [title="About Pale Moon"]                floating enable
 for_window [title="alsamixer"]                      floating enable border pixel 1
 for_window [title="File Transfer*"]                 floating enable
@@ -277,10 +278,10 @@ mode "$mode_system" {
 bindsym $mod+r mode "resize"
 
 mode "resize" {
-    bindsym h           resize shrink width  15 px or 15 ppt
-    bindsym j           resize grow   height 15 px or 15 ppt
-    bindsym k           resize shrink height 15 px or 15 ppt
-    bindsym l           resize grow   width  15 px or 15 ppt
+    bindsym h           resize shrink width  10 px or 10 ppt
+    bindsym j           resize grow   height 10 px or 10 ppt
+    bindsym k           resize shrink height 10 px or 10 ppt
+    bindsym l           resize grow   width  10 px or 10 ppt
 
     bindsym Left        resize shrink width  10 px or 10 ppt
     bindsym Down        resize grow   height 10 px or 10 ppt
@@ -375,10 +376,9 @@ exec        --no-startup-id     nm-applet
 exec        --no-startup-id     xfce4-power-manager
 exec        --no-startup-id     clipit
 exec        --no-startup-id     xautolock -time 10 -locker blurlock
-# exec        --no-startup-id     volumeoicon
 
 exec_always --no-startup-id     "restart-flashfocus"
-exec_always --no-startup-id     "$HOME/.conky/start-conky.sh"
+exec        --no-startup-id     "$HOME/.conky/start-conky.sh"
 
 # Swap caps lock and escape
 exec        --no-startup-id     "setxkbmap -layout us,ir"
@@ -389,7 +389,6 @@ exec_always --no-startup-id     xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 # Initial Workspace
 exec        --no-startup-id     terminal --name "flyterm" -e tmux
 exec        --no-startup-id     polybar -r skill
-exec        --no-startup-id     terminal
 exec        --no-startup-id     telegram-desktop
 exec        --no-startup-id     chromium
 exec        --no-startup-id     terminal --title 'mocp' -e 'mocp'
