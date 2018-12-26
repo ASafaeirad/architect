@@ -298,7 +298,7 @@ time = %H:%M
 ; if `date-alt` or `time-alt` is defined, clicking
 ; the module will toggle between formats
 date-alt = %A, %d %B %Y
-time-alt = %H:%M:%S
+time-alt = %H:%M
 
 ; Available tags:
 ;   <label> (default)
