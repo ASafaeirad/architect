@@ -1,10 +1,10 @@
 #!/bin/bash
-INSTALLDIR=$(dirname "$BASH_SOURCE")
-. "$INSTALLDIR/../utils/echo.sh"
+. "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
+
+title "Installing configs"
 
 configs=$( realpath "$INSTALLDIR/../configs" );
 
-title "Installing configs"
 if [ ! -d "$HOME/.config" ]; then
     progress "Creating ~/.config"
     mkdir -p "$HOME/.config"
@@ -20,13 +20,11 @@ for config in $config_files; do
     to="$HOME/$target"
 
     if [ -f "$to" ]; then
-        if [ ! -d "$HOME/dotfile-backups" ]; then
-          progress "Creating ~/dotfile-backups"
-          mkdir -p "$HOME/dotfile-backups"
-        fi
-
         warn "~${to} already exists... Make a Backup."
-        mv "$to" "$HOME/dotfile-backups/"
+        toBack="${to#$HOME/}"
+        toBackDir="$( dirname "$toBack" )"
+        mkdir -p "$HOME/dotfile-backups/$toBackDir"
+        mv "$to" "$HOME/dotfile-backups/${toBack}"
     fi
 
     [ ! -d "$toDir" ] && mkdir -p "$toDir"
@@ -36,6 +34,3 @@ for config in $config_files; do
 done
 
 progress "Links created!"
-
-# timedatectl set-local-rtc 1 --adjust-system-clock
-

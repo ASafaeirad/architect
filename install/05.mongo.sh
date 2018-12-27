@@ -1,9 +1,11 @@
 #!/bin/bash
-INSTALLDIR=$(dirname "$BASH_SOURCE")
-. "$INSTALLDIR/../utils/echo.sh"
+. "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
+
+title "Installing MongoDB"
+sudo pacman -S mongodb
 
 title "Start MongoDB Service"
 sudo systemctl enable mongodb.service
 sudo systemctl start mongodb.service
-progress "MongoDB Service enabled"
+progress "MongoDB Service is enabled"
 

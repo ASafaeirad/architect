@@ -1,8 +1,7 @@
 #!/bin/bash
-INSTALLDIR=$(dirname "$BASH_SOURCE")
-. "$INSTALLDIR/../utils/echo.sh"
+. "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
 
-title "Installing Fonts"
+title "Installing Fonts..."
 
 fonts=(
   adobe-source-sans-pro-fonts
@@ -12,16 +11,6 @@ fonts=(
   ttf-liberation
   ttf-dejavu
 )
-
-for font in "${fonts[@]}"; do
-    font_name=$( echo "$font" | awk '{print $1}' )
-    if pacman -Q "$font_name" > /dev/null 2>&1; then
-        warn "$font_name already installed..."
-    else
-        proccess "Installing $font_name"
-        sudo pacman -S "$font"
-    fi
-done
 
 nerds=(
   ttf-yosemite-san-francisco-font-git
@@ -37,6 +26,16 @@ nerds=(
   ttf-emojione
   vazir-fonts
 )
+
+for font in "${fonts[@]}"; do
+    font_name=$( echo "$font" | awk '{print $1}' )
+    if pacman -Q "$font_name" > /dev/null 2>&1; then
+        warn "$font_name already installed..."
+    else
+        proccess "Installing $font_name"
+        sudo pacman -S "$font"
+    fi
+done
 
 for nerd in "${nerds[@]}"; do
     nerd_name=$( echo "$nerd" | awk '{print $1}' )

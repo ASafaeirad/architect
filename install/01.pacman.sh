@@ -1,6 +1,5 @@
 #!/bin/bash
-INSTALLDIR=$(dirname "$BASH_SOURCE")
-. "$INSTALLDIR/../utils/echo.sh"
+. "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
 
 read -rn 1 -p "Update Mirrors? [y/N] " umirrors
 echo
@@ -21,24 +20,28 @@ fi
 title "Installing pacman packages..."
 formulas=(
     ack
+    anydesk
     bat
     chromium
     flameshot
     git
     gcc
     grep
-    mongodb
     neovim
     python
+    persepolis-git
     peek
+    ranger
     rofi
     shellcheck
     telegram-desktop
     termite
     tmux
+    thunar
     tree
     unrar
     unzip
+    vlc
     wget
     yarn
     z

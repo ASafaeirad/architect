@@ -1,6 +1,5 @@
 #!/bin/bash
-INSTALLDIR=$(dirname "$BASH_SOURCE")
-. "$INSTALLDIR/../utils/echo.sh"
+. "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
 
 zsh_path="$( which zsh )"
 
@@ -26,10 +25,16 @@ progress "Install autosuggestions"
 rm -rf "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions
 
+progress "Done"
+
 progress "Install completions"
 rm -rf "$HOME/.oh-my-zsh/custom/plugins/zsh-completions"
 git clone https://github.com/zsh-users/zsh-completions "$HOME/.oh-my-zsh/custom/plugins/zsh-completions"
 
+progress "Done"
+
 title "Install Node Theme"
 rm "$HOME/.oh-my-zsh/custom/themes/skill-zsh.theme"
 wget https://raw.githubusercontent.com/frontendmonster/oh-my-zsh-skill-theme/master/skill.zsh-theme -P $HOME/.oh-my-zsh/custom/themes/
+
+progress "Done"

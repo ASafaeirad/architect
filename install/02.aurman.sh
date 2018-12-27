@@ -1,6 +1,5 @@
 #!/bin/bash
-INSTALLDIR=$(dirname "$BASH_SOURCE")
-. "$INSTALLDIR/../utils/echo.sh"
+. "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
 
 if test ! "$( aurman --version )"; then
     title "Installing aurman"
@@ -14,7 +13,7 @@ fi
 aurs=(
     autokey-py3
     cheat-git
-    hyper
+    # hyper
     polybar
     visual-studio-code-bin
     typora

@@ -1,6 +1,5 @@
 #!/bin/bash
-INSTALLDIR=$(dirname "$BASH_SOURCE")
-. "$INSTALLDIR/../utils/echo.sh"
+. "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
@@ -28,8 +27,10 @@ if ! test "$(nvm --version)"; then
     nvm install --lts --latest-npm
 fi
 
+title "Installing NPM/Yarn Global Packages"
+
 packages=(
-    @storybook/cli@next
+    @storybook/cli
     create-react-app
     eslint
     flow-bin
@@ -41,10 +42,12 @@ packages=(
 
 for package in "${packages[@]}"; do
     package_name=$( echo "$package" | awk '{print $1}' )
-    if test "$( which $package_name 2> /dev/null )"; then
+    if test "$( which "$package_name" 2> /dev/null )"; then
         warn "$package_name already installed..."
     else
         progress "Installing $package_name"
         yarn global add "$package"
     fi
 done
+
+progress "Done"
