@@ -46,6 +46,9 @@ formulas=(
     yarn
     z
     zsh
+    
+    tumbler
+    ffmpegthumbnailer
 )
 
 for formula in "${formulas[@]}"; do
