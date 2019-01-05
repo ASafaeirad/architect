@@ -2,6 +2,8 @@
 
 [Arch GNU/Linux](https://www.archlinux.org/)+[i3wm](https://i3wm.org/) bootstrap and rice dotfiles/scripts.
 
+![screenshot](docs/screenshot.png)
+
 ## Basic Usage (Lazy Line)
 
 install.sh script will install and config all scripts inside `./install` directory. [What is inside?](https://github.com/frontendmonster/dotfiles#whats-inside-install)
