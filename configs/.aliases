@@ -62,6 +62,7 @@ alias laless='ll | less'
 alias lsd=listDir
 alias rd=rmdir
 alias md='mkdir'
+alias open='xdg-open'
 
 # network
 alias getip="curl -s -S https://icanhazip.com"
