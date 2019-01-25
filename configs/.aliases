@@ -41,6 +41,7 @@ alias afind='ack -il'
 alias path='echo -e ${PATH//:/\\n}'
 alias history=omz_history
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias update='aurman -Syu'
 
 # config files
 alias hosts='sudoedit /etc/hosts'
