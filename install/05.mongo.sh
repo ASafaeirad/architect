@@ -2,7 +2,7 @@
 . "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
 
 title "Installing MongoDB"
-sudo pacman -S mongodb
+sudo aurman -S mongodb
 
 title "Start MongoDB Service"
 sudo systemctl enable mongodb.service
