@@ -1,5 +1,4 @@
 #!/bin/bash
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -53,7 +52,3 @@ bindkey '^ ' autosuggest-accept
 
 . "$HOME/.profile"
 
-
-# tabtab source for yarn package
-# uninstall by removing these lines or running `tabtab uninstall yarn`
-[[ -f /home/monster/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh ]] && . /home/monster/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh
