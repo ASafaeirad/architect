@@ -5,25 +5,35 @@ title "Installing Fonts..."
 
 fonts=(
   adobe-source-sans-pro-fonts
-  ttf-font-awesome
+  terminus-font
   ttf-bitstream-vera
+  ttf-croscore
+  ttf-dejavu
+  ttf-droid
+  ttf-font-awesome
+  ttf-freefont
   ttf-gentium
   ttf-liberation
-  ttf-dejavu
 )
 
-nerds=(
-  ttf-yosemite-san-francisco-font-git
-  nerd-fonts-dejavu-complete
+aurfonts=(
   fonts-rajdhani
-  otf-exo
-  ttf-ms-fonts
+  persian-fonts
   nerd-fonts-complete-mono-glyphs
+  nerd-fonts-dejavu-complete
+  nerd-fonts-hack
   nerd-fonts-roboto-mono
   nerd-fonts-source-code-pro
   nerd-fonts-ubuntu-mono
-  nerd-fonts-hack
+  otf-exo
   ttf-emojione
+  ttf-google-fonts-typewolf
+  ttf-mac-fonts
+  ttf-mathtype
+  ttf-monaco
+  ttf-ms-fonts
+  ttf-oxygen-gf
+  ttf-yosemite-san-francisco-font-git
   vazir-fonts
 )
 
@@ -37,7 +47,7 @@ for font in "${fonts[@]}"; do
     fi
 done
 
-for nerd in "${nerds[@]}"; do
+for nerd in "${aurfonts[@]}"; do
     nerd_name=$( echo "$nerd" | awk '{print $1}' )
     if pacman -Q "$nerd_name" > /dev/null 2>&1; then
         warn "$nerd_name already installed..."
