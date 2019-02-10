@@ -32,7 +32,6 @@ formulas=(
     persepolis-git
     peek
     ranger
-    rofi
     shellcheck
     telegram-desktop
     termite
@@ -46,7 +45,7 @@ formulas=(
     yarn
     z
     zsh
-    
+
     tumbler
     ffmpegthumbnailer
 )

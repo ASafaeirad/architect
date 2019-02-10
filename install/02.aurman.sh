@@ -13,8 +13,7 @@ fi
 aurs=(
     autokey-py3
     cheat-git
-    # hyper
-    polybar
+    polybar-git
     visual-studio-code-bin
     typora
 )
