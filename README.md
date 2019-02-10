@@ -12,7 +12,7 @@ install.sh script will install and config all scripts inside `./install` directo
 
 ---
 
-## Whats inside ./install?
+## Whats inside ./install
 
 There are scripts inside ./install directory to bootstrap a clean arch OS.
 you can run scripts manually too.
