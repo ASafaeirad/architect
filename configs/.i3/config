@@ -177,8 +177,7 @@ bindsym XF86AudioMute                       exec --no-startup-id "pactl set-sink
 
 ## Essential
 bindsym $mod+Return                         exec termite
-bindsym $mod+space                          exec rofi -show
-bindsym $mod+d                              exec --no-startup-id dmenu_recency
+bindsym $mod+d                              exec --no-startup-id dmenu_recency -l 100 -h 25 -w 300 -nb '#293340' -nf '#eeeeee' -sb '#2DCED0' -sf '#293340'
 bindsym $mod+z                              exec --no-startup-id morc_menu
 bindsym $mod+Pause                          exec --no-startup-id blurlock
 
@@ -214,8 +213,7 @@ for_window  [urgent=latest] focus
 # Applications workspaces
 assign      [class="Chromium"]                      $workspace2
 assign      [class="Code"]                          $workspace3
-# assign      [class="Thunar"]                        $workspace4
-assign      [class="TelegramDesktop"]               $workspace8
+# assign      [class="TelegramDesktop"]               $workspace8
 assign      [title="mocp"]                          $workspace7
 
 # Floating modes
@@ -379,9 +377,10 @@ exec        --no-startup-id     xautolock -time 10 -locker blurlock
 
 exec_always --no-startup-id     "restart-flashfocus"
 exec        --no-startup-id     "$HOME/.conky/start-conky.sh"
+exec        --no-startup-id     redshift -l "36.850282":"54.3680226"
 
 # Swap caps lock and escape
-exec        --no-startup-id     "setxkbmap -layout us,ir"
+exec        --no-startup-id     "setxkbmap -layout us,ir -option grp:shifts_toggle"
 exec_always --no-startup-id     xmodmap -e "clear lock"
 exec_always --no-startup-id     xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
 exec_always --no-startup-id     xmodmap -e "keycode 66 = Escape NoSymbol Escape"
@@ -391,4 +390,4 @@ exec        --no-startup-id     terminal --name "flyterm" -e tmux
 exec        --no-startup-id     polybar -r skill
 exec        --no-startup-id     telegram-desktop
 exec        --no-startup-id     chromium
-exec        --no-startup-id     terminal --title 'mocp' -e 'mocp'
+# exec        --no-startup-id     terminal --title 'mocp' -e 'mocp'

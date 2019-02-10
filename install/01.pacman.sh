@@ -24,19 +24,20 @@ formulas=(
     bat
     chromium
     flameshot
-    git
     gcc
+    git
     grep
     neovim
-    python
-    persepolis-git
     peek
+    persepolis-git
+    python
     ranger
+    redshift
     shellcheck
     telegram-desktop
     termite
-    tmux
     thunar
+    tmux
     tree
     unrar
     unzip
