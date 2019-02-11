@@ -13,8 +13,8 @@ set $workspace4  4:
 set $workspace5  5:
 set $workspace6  6:
 set $workspace7  7:ﱘ
-set $workspace8  8:
-set $workspace9  9:
+set $workspace8  8:
+set $workspace9  9:
 set $workspace10 10:
 
 #####################
@@ -29,7 +29,7 @@ new_float normal
 hide_edge_borders none
 
 smart_gaps on
-gaps inner 3
+gaps inner 8
 gaps outer 0
 smart_borders on
 
@@ -66,6 +66,9 @@ client.background       $bg_color
 
 workspace_auto_back_and_forth no
 focus_follows_mouse no
+focus_on_window_activation none
+no_focus [class=".*"]
+
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -104,6 +107,7 @@ bindsym $mod+6                              workspace $workspace6
 bindsym $mod+7                              workspace $workspace7
 bindsym $mod+8                              workspace $workspace8
 bindsym $mod+9                              workspace $workspace9
+bindsym $mod+0                              workspace $workspace10
 
 bindsym $mod+Ctrl+Right                     workspace next
 bindsym $mod+Ctrl+Left                      workspace prev
@@ -120,6 +124,7 @@ bindsym $mod+Shift+6                        move container to workspace $workspa
 bindsym $mod+Shift+7                        move container to workspace $workspace7; workspace $workspace7
 bindsym $mod+Shift+8                        move container to workspace $workspace8; workspace $workspace8
 bindsym $mod+Shift+9                        move container to workspace $workspace9; workspace $workspace9
+bindsym $mod+Shift+0                        move container to workspace $workspace10; workspace $workspace9
 
 bindsym $mod+Shift+backspace                move container to workspace back_and_forth; workspace back_and_forth
 
@@ -133,6 +138,7 @@ bindsym $mod+Ctrl+6                         move container to workspace $workspa
 bindsym $mod+Ctrl+7                         move container to workspace $workspace7
 bindsym $mod+Ctrl+8                         move container to workspace $workspace8
 bindsym $mod+Ctrl+9                         move container to workspace $workspace9
+bindsym $mod+Ctrl+0                         move container to workspace $workspace10
 
 ## Scratchpad
 bindsym $mod+minus                          scratchpad show
@@ -169,7 +175,7 @@ bindsym $mod+Shift+Up                       move up
 bindsym $mod+Shift+Right                    move right
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume                exec --no-startup-id "pactl -- set-sink-volume 0 +5%"
+bindsym XF86AudioRaiseVolume                exec --no-startup-id "exec_always --no-startup-id numlockx offexec_always --no-startup-id numlockx off -- set-sink-volume 0 +5%"
 bindsym XF86AudioLowerVolume                exec --no-startup-id "pactl -- set-sink-volume 0 -5%"
 bindsym XF86AudioMute                       exec --no-startup-id "pactl set-sink-mute 0 toggle"
 
@@ -374,6 +380,7 @@ exec        --no-startup-id     nm-applet
 exec        --no-startup-id     xfce4-power-manager
 exec        --no-startup-id     clipit
 exec        --no-startup-id     xautolock -time 10 -locker blurlock
+exec        --no-startup-id     polybar -r skill
 
 exec_always --no-startup-id     "restart-flashfocus"
 exec        --no-startup-id     "$HOME/.conky/start-conky.sh"
@@ -387,7 +394,9 @@ exec_always --no-startup-id     xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
 # Initial Workspace
 exec        --no-startup-id     terminal --name "flyterm" -e tmux
-exec        --no-startup-id     polybar -r skill
-exec        --no-startup-id     telegram-desktop
 exec        --no-startup-id     chromium
+exec        --no-startup-id     code
+exec        --no-startup-id     telegram-desktop
 # exec        --no-startup-id     terminal --title 'mocp' -e 'mocp'
+
+assign [class="^TelegramDesktop$"] → $workspace10
