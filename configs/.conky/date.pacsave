@@ -1,13 +1,13 @@
 conky.config = {
 	alignment = 'top_right',
 	background = true,
-	default_color = '0F1E25',
-	color2 = '0F1E25',
+	default_color = '293340',
 	cpu_avg_samples = 2,
 	double_buffer = true,
 	font = 'DejaVu Sans:size=9',
+	font2 = 'DejaVu Sans:size=32',
 	draw_shades = false,
-	gap_x = 12,
+	gap_x = 50,
 	gap_y = 42,
 	minimum_width = 120,
 	no_buffers = true,
@@ -18,7 +18,6 @@ conky.config = {
 	use_xft = true,
 }
 conky.text = [[
-${font DejaVu Sans:size=31}$alignr${time %H:%M}$color2$font:${time %S}
-${voffset 8}$color2${font}${time %A %d}\
-$color${font} ${time %B}
+$font2${time %H:%M}$font:${time %S}
+${voffset 8}${font}${time %A %d}${font} ${time %B}
 ]]
