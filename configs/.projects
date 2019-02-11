@@ -8,5 +8,3 @@ alias dwn='cd /home/monster/downloads'
 alias dnd='cd /home/monster/projects/dnd'
 alias libs='cd /home/monster/projects/northcamp/dev/libs'
 alias smachine='cd /home/monster/projects/dotfiles/smachine'
-
-

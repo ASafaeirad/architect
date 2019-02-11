@@ -15,7 +15,3 @@ export BROWSER=/usr/bin/chromium
 if test "$(yarn --version 2> /dev/null)"; then
     PATH="$PATH:$(yarn global bin)"
 fi
-
-
-
-
