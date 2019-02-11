@@ -198,7 +198,7 @@ bindsym $mod+shift+f            --release   exec restart-flashfocus
 
 ## Screenshot
 bindsym Print                   --release   exec --no-startup-id flameshot full -c
-bindsym $mod+Print              --release   exec --no-startup-id flameshot full -p '/home/frontendmonster/pictures/screenshots/'
+bindsym $mod+Print              --release   exec --no-startup-id flameshot full -p "/home/monster/pictures/screenshots/"
 bindsym $mod+Shift+Print        --release   exec --no-startup-id flameshot gui
 
 bindsym $mod+Ctrl+m                         exec pavucontrol

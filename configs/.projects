@@ -1,11 +1,12 @@
 #!/bin/bash
 
-alias northcamp='cd /home/frontendmonster/projects/northcamp'
-alias dotfiles='cd /home/frontendmonster/projects/dotfiles'
-alias fem='cd /home/frontendmonster/projects/northcamp/dev/app/frontendmonsters'
-alias fsk='cd /home/frontendmonster/projects/northcamp/fullstacks/dev/fullstacks-workshops'
-alias dwn='cd /home/frontendmonster/downloads'
-alias dnd='cd /home/frontendmonster/projects/dnd'
-alias libs='cd /home/frontendmonster/projects/northcamp/dev/libs'
+alias northcamp='cd /home/monster/projects/northcamp'
+alias dotfiles='cd /home/monster/projects/dotfiles'
+alias fem='cd /home/monster/projects/northcamp/dev/app/frontendmonsters'
+alias fsk='cd /home/monster/projects/northcamp/fullstacks/dev/fullstacks-workshops'
+alias dwn='cd /home/monster/downloads'
+alias dnd='cd /home/monster/projects/dnd'
+alias libs='cd /home/monster/projects/northcamp/dev/libs'
+alias smachine='cd /home/monster/projects/dotfiles/smachine'
 
 

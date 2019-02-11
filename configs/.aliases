@@ -53,7 +53,6 @@ alias vimrc='vim ~/.config/nvim/init.vim'
 alias vimplug='vim ~/.config/nvim/plugins.vim'
 alias tmuxrc='vim ~/.tmux.conf'
 alias i3conf='code ~/.i3/config'
-alias smachin='code /home/frontendmonster/projects/dotfiles/smachine'
 
 # file system
 alias l='tree -L 1 -I node_modules -a --dirsfirst'
