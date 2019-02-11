@@ -1,7 +1,7 @@
 #!/bin/bash
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export ZSH=/home/monster/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="skill"
 DISABLE_AUTO_UPDATE="true"
@@ -19,8 +19,9 @@ plugins=(
 autoload -U compinit && compinit
 bindkey '^ ' autosuggest-accept
 
-. $ZSH/oh-my-zsh.sh
+[ -f "$ZSH/oh-my-zsh.sh" ] && . "$ZSH/oh-my-zsh.sh"
 
 [ -f /usr/share/z/z.sh ] && . /usr/share/z/z.sh
+
 [ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
 [ -f "$HOME/.profile" ] && . "$HOME/.profile"

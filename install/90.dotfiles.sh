@@ -3,7 +3,8 @@
 
 title "Installing configs"
 
-configs=$( realpath "$INSTALLDIR/../configs" );
+configs=$( realpath "$(dirname "$BASH_SOURCE")/../configs" );
+
 
 if [ ! -d "$HOME/.config" ]; then
     progress "Creating ~/.config"

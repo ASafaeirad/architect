@@ -3,11 +3,12 @@
 
 if test ! "$( aurman --version )"; then
     title "Installing aurman"
-    gpg --recv-keys 465022E743D71E39
-    curl https://aur.archlinux.org/cgit/aur.git/snapshot/aurman.tar.gz --output /tmp/aurman.tar.gz
-    tar -xvf /tmp/aurman.tar.gz  -C /tmp
+    [ -d /tmp/aurman ] && sudo rm -rf /tmp/aurman
+    git clone https://aur.archlinux.org/aurman.git /tmp/aurman
     cd /tmp/aurman || exit
-    makepkg -sri
+    makepkg -Acs
+    AURMAN="$(ls -1 | grep tar.xz)"
+    sudo pacman -U "$AURMAN"
 fi
 
 aurs=(
