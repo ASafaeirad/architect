@@ -14,9 +14,10 @@ fi
 aurs=(
     autokey-py3
     cheat-git
+    flasfocus-git
     polybar-git
-    visual-studio-code-bin
     typora
+    visual-studio-code-bin
 )
 
 title "Installing aur packages..."
