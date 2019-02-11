@@ -6,5 +6,3 @@ figlet -f DOS\ Rebel -d /usr/share/figlet "$@" | lolcat
 
 #printf "\tjoin us on @full_stacks"
 printf "\n\n\n"
-
-
