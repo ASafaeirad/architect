@@ -17,15 +17,17 @@ alias clera='clear'
 alias cat="bat"
 alias vim="nvim"
 
-# override commands
-alias ls='ls --color'
-alias grep='grep --color'
-alias mkdir='mkdir -pv'
+# enhance commands
 alias _=sudo
-alias chmod='sudo chmod'
-alias pacman='sudo pacman'
-alias dhcp='sudo dhcpcd'
 alias :q='exit'
+alias chmod='sudo chmod'
+alias cp="cp -i"
+alias df='df -h'
+alias dhcp='sudo dhcpcd'
+alias grep='grep --color'
+alias ls='ls --color'
+alias mkdir='mkdir -pv'
+alias pacman='sudo pacman'
 alias reload='source ~/.zshrc'
 alias tree='tree -I node_modules'
 
