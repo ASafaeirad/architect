@@ -25,6 +25,7 @@ aurfonts=(
   nerd-fonts-roboto-mono
   nerd-fonts-source-code-pro
   nerd-fonts-ubuntu-mono
+  ttf-courier-prime
   otf-exo
   ttf-emojione
   ttf-google-fonts-typewolf
