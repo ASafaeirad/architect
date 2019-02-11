@@ -1,17 +1,12 @@
 [colors]
 background      = #293340
-background-alt  = #546E53
-background-unf  = #293340
-background-mod0 = #3C5A46
-background-mod1 = #546E53
-background-mod2 = #668F51
+background-alt  = #2DCED0
 background-alrt = #E60053
 
-foreground      = #F3F3BA
-foreground-alt  = #F3F3BA
-primary         = #F3F3BA
-secondary       = #F3F3BA
+foreground      = #eeeeee
+foreground-alt  = #293340
 
+error=#f00
 
 [bar/skill]
 ; Prefer fixed center position for the `modules-center` block
@@ -27,10 +22,10 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 0
-line-color = #f00
+line-color = ${colors.error}
 
 border-size = 0
-border-color = #f00
+border-color = ${colors.error}
 
 ; Fonts are defined using <font-name>;<vertical-offset>
 font-0 = DejaVu Sans:size=8;1
@@ -60,7 +55,7 @@ tray-position = right
 tray-detached = false
 
 ; Tray icon max size
-tray-maxsize = 16
+tray-maxsize = 14
 
 ; Enable pseudo transparency
 ; Will automatically be enabled if a fully transparent
@@ -78,7 +73,7 @@ tray-offset-x = 0
 tray-offset-y = 0
 
 ; Pad the sides of each tray icon
-tray-padding = 0
+tray-padding = 2
 
 ; Scale factor for tray clients
 tray-scale = 1.0
@@ -163,15 +158,11 @@ label-disconnected-foreground = ${colors.foreground}
 [module/keyboard]
 type = internal/xkeyboard
 
-; List of indicators to ignore
 blacklist-0 = num lock
 blacklist-1 = scroll lock
 
-; Available tags:
-;   <label-layout> (default)
-;   <label-indicator> (default)
-format = "<label-layout> <label-indicator>"
-format-spacing = 0
+format = "<label-layout><label-indicator>"
+format-spacing = 1
 
 ; Available tokens:
 ;   %layout%
@@ -179,13 +170,10 @@ format-spacing = 0
 ;   %number%
 ; Default: %layout%
 label-layout = %layout%
-label-layout-padding = 0
+label-layout-padding = 2
 
-; Available tokens:
-;   %name%
-; Default: %name%
 label-indicator = %name%
-label-indicator-padding = 0
+label-indicator-padding = 2
 label-indicator-background = ${colors.background-alrt}
 
 [module/wlan]
@@ -202,12 +190,20 @@ format-connected-background = ${colors.background-alt}
 format-connected = "  <label-connected>  "
 format-connected-underline = #9f78e1
 label-connected = "   %essid% "
+label-connected-foreground = ${colors.foreground-alt}
 
 format-disconnected = "    "
-format-disconnected-background = ${colors.background-unf}
-;format-disconnected-underline = ${self.format-connected-underline}
+format-disconnected-background = ${colors.background}
 ;label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected-foreground = ${colors.foreground}
+
+format-packetloss = <animation-packetloss> <label-connected>
+animation-packetloss-0 = ⚠
+animation-packetloss-0-foreground = ${colors.foreground-alrt}
+animation-packetloss-1 = 📶
+animation-packetloss-1-foreground = ${colors.foreground-alt}
+animation-packetloss-framerate = 500
+
 
 ramp-signal-0 = "    0%"
 ramp-signal-1 = "    25%"
@@ -227,10 +223,10 @@ strip-wsnumbers = true
 ;label-unfocused-padding = 3
 ;
 ;label-focused-background = ${colors.background-alt}
-label-unfocused-background = ${colors.background-unf}
+label-unfocused-background = ${colors.background}
 ;
 ;label-mode-padding = 0
-;label-mode-background = ${colors.background-unf}
+;label-mode-background = ${colors.background}
 ;
 ;label-visible-underline = #555555
 ;label-visible-padding = 4
@@ -240,8 +236,8 @@ label-unfocused-background = ${colors.background-unf}
 ;   %mode%
 ; Default: %mode%
 label-mode = %mode%
+label-mode-background = ${colors.background-alrt}
 label-mode-padding = 2
-label-mode-background = #e60053
 
 ; Available tokens:
 ;   %name%
@@ -250,10 +246,9 @@ label-mode-background = #e60053
 ;   %output%
 ; Default: %icon%  %name%
 label-focused = %name%
-label-focused-foreground = #ffffff
 label-focused-background = ${colors.background-alt}
-; label-focused-underline = #fba922
-label-focused-padding = 5
+label-focused-foreground = ${colors.background}
+label-focused-padding = 4
 
 ; Available tokens:
 ;   %name%
@@ -261,7 +256,7 @@ label-focused-padding = 5
 ;   %index%
 ; Default: %icon%  %name%
 label-unfocused = %name%
-label-unfocused-padding = 5
+label-unfocused-padding = 4
 
 ; Available tokens:
 ;   %name%
@@ -269,7 +264,6 @@ label-unfocused-padding = 5
 ;   %index%
 ; Default: %icon%  %name%
 label-visible = %name%
-label-visible-underline = #555555
 label-visible-padding = 4
 
 ; Available tokens:
@@ -278,7 +272,7 @@ label-visible-padding = 4
 ;   %index%
 ; Default: %icon%  %name%
 label-urgent = %name%
-label-urgent-foreground = #000000
+label-urgent-foreground = ${colors.background}
 label-urgent-background = ${colors.background-alrt}
 label-urgent-padding = 4
 
@@ -302,7 +296,7 @@ time-alt = %H:%M
 
 ; Available tags:
 ;   <label> (default)
-format = " <label> "
+format = <label>
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
 
@@ -310,7 +304,8 @@ format-foreground = ${colors.foreground}
 ;   %date%
 ;   %time%
 ; Default: %date%
-label = "   %time% "
+label = %time%
+label-padding = 3
 
 
 
@@ -318,22 +313,23 @@ label = "   %time% "
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 97
+full-at = 98
 
-format-full-background = ${colors.background-mod2}
-format-charging-background = ${colors.background-mod1}
-format-charging = "⁣   <animation-charging> <label-charging>"
-format-charging-underline = #ffb52a
+format-charging = <animation-charging> <label-charging>
+animation-charging-foreground = ${self.label-charging-foreground}
+label-charging-foreground=${colors.foreground-alt}
+format-charging-background = ${colors.background-alt}
+format-charging-padding = 3
 
-format-charging-suffix = "   "
-
+format-discharging = ⁣<ramp-capacity> <label-discharging>
+label-discharging-foreground=${colors.foreground}
 format-discharging-background = ${colors.background}
-format-discharging = "⁣    <ramp-capacity> <label-discharging>  "
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-padding = 3
 
-format-full = "    Full   "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full =  Full
+format-full-foreground = ${colors.foreground-alt}
+format-full-background = ${colors.background-alt}
+format-full-padding = 3
 
 ramp-capacity-0 = ""
 ramp-capacity-1 = ""
@@ -341,14 +337,13 @@ ramp-capacity-2 = ""
 ramp-capacity-3 = ""
 ramp-capacity-4 = ""
 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${self.label-discharging-foreground}
 
 animation-charging-0 = ""
 animation-charging-1 = ""
 animation-charging-2 = ""
 animation-charging-3 = ""
 animation-charging-4 = ""
-animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
 [module/pulseaudio]
@@ -385,7 +380,7 @@ format-volume = "  <ramp-volume> <label-volume>  "
 ; Available tokens:
 ;   %percentage% (default)
 label-muted = "   Muted  "
-label-muted-foreground = ${colors.secondary}
+label-muted-foreground = ${colors.foreground}
 
 ; Only applies if <ramp-volume> is used
 ramp-volume-0 = "  "
