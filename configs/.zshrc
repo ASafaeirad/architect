@@ -42,6 +42,11 @@ plugins=(
 autoload -U compinit && compinit
 bindkey '^ ' autosuggest-accept
 
+# bind UP and DOWN arrow keys
+zmodload zsh/terminfo
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
 [[ -f "$ZSH/oh-my-zsh.sh" ]] && . "$ZSH/oh-my-zsh.sh"
 
 [[ -f "$HOME/.aliases" ]] && . "$HOME/.aliases"
