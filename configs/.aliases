@@ -5,6 +5,7 @@ WIFI_ADAPTOR="wlp2s0"
 # clear
 alias c='clear'
 alias cc='clear'
+alias cear='clear'
 alias cler='clear'
 alias clea='clear'
 alias clar='clear'
@@ -12,6 +13,7 @@ alias clewar='clear'
 alias lear='clear'
 alias celra='clear'
 alias clera='clear'
+alias claer='clear'
 
 # better tools
 alias cat="bat"
@@ -21,13 +23,13 @@ alias vim="nvim"
 alias _=sudo
 alias :q='exit'
 alias chmod='sudo chmod'
+alias dhcp='sudo dhcpcd'
+alias pacman='sudo_pacman'
 alias cp="cp -i"
 alias df='df -h'
-alias dhcp='sudo dhcpcd'
 alias grep='grep --color'
 alias ls='ls --color'
 alias mkdir='mkdir -pv'
-alias pacman='sudo pacman'
 alias reload='source ~/.zshrc'
 alias tree='tree -I node_modules'
 
@@ -45,6 +47,7 @@ alias history=omz_history
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias update='aurman -Syu'
 alias fuck='killall -9'
+alias stfu='killall -9'
 
 # config files
 alias hosts='sudoedit /etc/hosts'
@@ -74,16 +77,19 @@ alias mac="getMac $WIFI_ADAPTOR"
 alias netinfo=getNetInfo
 alias nextvpn='vpn next'
 
-alias ping='ping -i 1 -W 1024'
+alias ping='ping -i 1 -O'
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
     alias "$method"="curl -X '$method'"
 done
 
 # Other packages
 alias pac='pacman -S'
-alias aur='aurman -S'
+alias pacr='pacman -R'
 alias pacls='pacman -Qi'
 
+alias aur='aurman -S'
+alias aurr='aurman -R'
+alias aurls='aurman -Qi'
 ## npm
 alias loadnvm=". $NVM_DIR/nvm.sh"
 alias npmls='npm ls --depth 0'
@@ -208,6 +214,15 @@ getNetInfo() {
   echo "Local IP: " "$(localip)"
   echo "Mac Addr: " "$(mac)"
   echo "Global IP:" "$(getip)"
+}
+
+
+lazyPacman() {
+  case $1 in
+      -S | -D | -S[^sih]* | -R* | -U*)
+          /usr/bin/sudo /usr/bin/pacman "$@" ;;
+  *)      /usr/bin/pacman "$@" ;;
+  esac
 }
 
 # ex - archive extractor
