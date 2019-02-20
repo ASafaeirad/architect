@@ -13,6 +13,7 @@ fi
 
 aurs=(
     autokey
+    betterlockscreen-git
     cheat-git
     flasfocus-git
     polybar-git

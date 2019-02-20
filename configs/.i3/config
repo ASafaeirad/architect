@@ -182,7 +182,8 @@ bindsym XF86AudioMute                       exec --no-startup-id "pactl set-sink
 bindsym $mod+Return                         exec termite
 bindsym $mod+d                              exec --no-startup-id dmenu_recency -l 100 -h 25 -w 300 -nb '#293340' -nf '#eeeeee' -sb '#2DCED0' -sf '#293340'
 bindsym $mod+z                              exec --no-startup-id morc_menu
-bindsym $mod+Pause                          exec --no-startup-id blurlock
+bindsym $mod+Pause                          exec --no-startup-id betterlockscreen -l blur
+
 
 ## General
 bindsym $mod+F2                             exec chromium
@@ -196,8 +197,8 @@ bindsym $mod+t                              [instance="flyterm"] scratchpad show
 bindsym $mod+shift+t                        exec --no-startup-id terminal --name "flyterm" -e tmux attach
 bindsym $mod+Ctrl+t                         exec --no-startup-id compton -b
 bindsym $mod+Ctrl+x             --release   exec --no-startup-id xkill
-bindsym $mod+Shift+d            --release   exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+shift+f            --release   exec restart-flashfocus
+bindsym $mod+Shift+d            --release   exec --no-startup-id killall dunst; exec notify-send 'restart dunst'
+bindsym $mod+shift+f            --release   exec --no-startup-id restart-flashfocus; exec notify-send 'restart flash-focus'
 
 ## Screenshot
 bindsym Print                   --release   exec --no-startup-id flameshot full -c
@@ -299,7 +300,7 @@ exec        --no-startup-id     nitrogen --restore; sleep 1; compton -b
 exec        --no-startup-id     nm-applet
 exec        --no-startup-id     xfce4-power-manager
 exec        --no-startup-id     clipit
-exec        --no-startup-id     xautolock -time 10 -locker blurlock
+exec        --no-startup-id     xautolock -time 10 -locker betterlockscreen -l blur
 exec_always --no-startup-id     restart-polybar -r skill
 exec_always --no-startup-id     restart-flashfocus
 exec        --no-startup-id     "$HOME/.conky/start-conky.sh"
