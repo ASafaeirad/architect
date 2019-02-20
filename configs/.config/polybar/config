@@ -57,11 +57,6 @@ tray-detached = false
 ; Tray icon max size
 tray-maxsize = 14
 
-; Enable pseudo transparency
-; Will automatically be enabled if a fully transparent
-; background color is defined using `tray-background`
-tray-transparent = false
-
 ; Background color for the tray container
 ; By default the tray container will use the bar
 ; background color.
@@ -121,11 +116,6 @@ interval = 1
 ; Default: 0
 ;ping-interval = 3
 
-; @deprecated: Define min width using token specifiers (%downspeed:min% and %upspeed:min%)
-; Minimum output width of upload/download rate
-; Default: 3
-udspeed-minwidth = 5
-
 ; Accumulate values from all interfaces
 ; when querying for up/downspeed rate
 ; Default: false
@@ -146,7 +136,7 @@ unknown-as-up = true
 ;   %downspeed% [wireless+wired]
 ;   %linkspeed% [wired]
 ; Default: %ifname% %local_ip%
-label-connected = "%upspeed% %downspeed%    "
+label-connected = "%upspeed:10% %downspeed:10%    "
 label-connected-foreground = ${colors.foreground}
 
 ; Available tokens:
