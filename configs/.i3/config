@@ -289,79 +289,6 @@ mode "resize" {
     bindsym Escape      mode "default"
 }
 
-# Gap mode
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-    bindsym o           mode "$mode_gaps_outer"
-    bindsym i           mode "$mode_gaps_inner"
-    bindsym Return      mode "default"
-    bindsym Escape      mode "default"
-}
-
-mode "$mode_gaps_inner" {
-    bindsym plus        gaps inner current plus 5
-    bindsym minus       gaps inner current minus 5
-    bindsym 0           gaps inner current set 0
-
-    bindsym Shift+plus  gaps inner all plus 5
-    bindsym Shift+minus gaps inner all minus 5
-    bindsym Shift+0     gaps inner all set 0
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-mode "$mode_gaps_outer" {
-    bindsym plus        gaps outer current plus  5
-    bindsym minus       gaps outer current minus 5
-    bindsym 0           gaps outer current set   0
-
-    bindsym Shift+plus  gaps outer all plus  5
-    bindsym Shift+minus gaps outer all minus 5
-    bindsym Shift+0     gaps outer all set   0
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-# #################
-# ##    i3bar    ##
-# #################
-
-# bindsym $mod+m bar mode toggle
-
-# bar {
-#     i3bar_command i3bar
-#     # status_command i3status
-#     position bottom
-
-#     ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#     #	tray_output primary
-#     #	tray_output eDP1
-
-#     bindsym button4 nop
-#     bindsym button5 nop
-#     font pango: Font Awesome Solid 9m
-#     strip_workspace_numbers yes
-
-#     colors {
-#         background $bg_color
-#         statusline $color_unknown
-#         separator  $color_unknown
-
-#         #class              border              background          text
-#         focused_workspace   $bg_color_active    $bg_color_active    $text_color_active
-#         inactive_workspace  $bg_color_inactive  $bg_color_inactive  $text_foreground
-#         urgent_workspace    $bg_color_urgent    $bg_color_urgent    $text_color_urgent
-#         active_workspace    $color_unknown      $color_unknown      $color_unknown
-#         binding_mode        $bg_color_active    $bg_color_active    $bg_color
-#     }
-# }
-
 #####################
 ##    Autostart    ##
 #####################
@@ -373,19 +300,14 @@ exec        --no-startup-id     nm-applet
 exec        --no-startup-id     xfce4-power-manager
 exec        --no-startup-id     clipit
 exec        --no-startup-id     xautolock -time 10 -locker blurlock
-exec        --no-startup-id     polybar -r skill
-
-exec_always --no-startup-id     "restart-flashfocus"
+exec_always --no-startup-id     restart-polybar -r skill
+exec_always --no-startup-id     restart-flashfocus
 exec        --no-startup-id     "$HOME/.conky/start-conky.sh"
 exec        --no-startup-id     redshift -l "36.850282":"54.3680226"
-
-# Swap caps lock and escape
 exec        --no-startup-id     "setxkbmap -layout us,ir -option grp:shifts_toggle"
-exec_always --no-startup-id     xmodmap -e "clear lock"
-exec_always --no-startup-id     xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
-exec_always --no-startup-id     xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+exec_always --no-startup-id     swapcaps
 
-# Initial Workspace
+# Initiate Workspace
 exec        --no-startup-id     terminal --name "flyterm" -e tmux
-# exec        --no-startup-id     terminal --title 'mocp' -e 'mocp'
+exec        --no-startup-id     numlockx on
 
