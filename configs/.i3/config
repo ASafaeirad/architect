@@ -98,7 +98,7 @@ bindsym $mod+shift+c                        move absolute position center
 bindsym $mod+1                              workspace $workspace1
 bindsym $mod+2                              workspace $workspace2; exec [[ "$(pgrep chromium)" ]] || /usr/bin/chromium
 bindsym $mod+3                              workspace $workspace3; exec [[ "$(pgrep code)" ]] || /usr/bin/code
-bindsym $mod+4                              workspace $workspace4
+bindsym $mod+4                              workspace $workspace4; exec [[ "$(pgrep thunar)" ]] || /usr/bin/thunar
 bindsym $mod+5                              workspace $workspace5
 bindsym $mod+6                              workspace $workspace6
 bindsym $mod+7                              workspace $workspace7
@@ -305,10 +305,9 @@ exec_always --no-startup-id     restart-polybar -r skill
 exec_always --no-startup-id     restart-flashfocus
 exec        --no-startup-id     "$HOME/.conky/start-conky.sh"
 exec        --no-startup-id     redshift -l "36.850282":"54.3680226"
-exec        --no-startup-id     "setxkbmap -layout us,ir -option grp:shifts_toggle"
+exec        --no-startup-id     setxkbmap -layout us,ir -option grp:shifts_toggle
 exec_always --no-startup-id     swapcaps
 
 # Initiate Workspace
 exec        --no-startup-id     terminal --name "flyterm" -e tmux
 exec        --no-startup-id     numlockx on
-
