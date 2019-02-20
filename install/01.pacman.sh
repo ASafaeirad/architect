@@ -22,12 +22,15 @@ formulas=(
     ack
     anydesk
     bat
+    blueman
     chromium
+    code
     flameshot
     gcc
     git
     grep
     neovim
+    numlockx
     peek
     persepolis-git
     python
@@ -45,6 +48,7 @@ formulas=(
     wget
     yarn
     z
+    zip
     zsh
 
     tumbler

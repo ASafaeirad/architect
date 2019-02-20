@@ -12,12 +12,11 @@ if test ! "$( aurman --version )"; then
 fi
 
 aurs=(
-    autokey-py3
+    autokey
     cheat-git
     flasfocus-git
     polybar-git
     typora
-    visual-studio-code-bin
 )
 
 title "Installing aur packages..."
