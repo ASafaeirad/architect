@@ -1,3 +1,4 @@
 .deadcodes
-/configs/.config/gtk-3.0/bookmarks
 backups
+/configs/.config/gtk-3.0/bookmarks
+/configs/.projects
