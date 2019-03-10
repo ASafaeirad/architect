@@ -22,7 +22,6 @@ Xft.lcdfilter: lcddefault
 *color0:                          #556570
 *color8:                          #556570
 
-
 !! red dark/light
 *color1:                          #E17E85
 *color9:                          #E17E85
@@ -38,7 +37,6 @@ Xft.lcdfilter: lcddefault
 !! blue dark/light
 *color4:                         #4CB2FF
 *color12:                        #4CB2FF
-
 
 !! magenta dark/light
 *color5:                         #BE86E3
