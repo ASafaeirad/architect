@@ -27,6 +27,7 @@ here is a list of scripts:
 | `node.sh`:        | install [nvm](https://github.com/creationix/nvm/) and node with latest npm and some useful global npm package.                                           |
 | `mongo.sh`:       | start [mongodb](http://mongodb.org) service.                                                                                                             |
 | `noevim.sh`:      | install [neovim](https://neovim.io/) python packages.                                                                                                    |
+| `gaming.sh`:      | install [steam](https://steampowered.org/) and nvidia xrun.                                                                                              |
 | `fonts.sh`:       | install some useful and popular fonts.                                                                                                                   |
 | `fix-watcher.sh`: | increase max number of system watchers for development purpose [issue](https://github.com/facebook/jest/issues/3254/)                                    |
 | `dotfiles.sh`:    | copy all configs and rcfiles into your `$HOME` directory (backup your dotfiles).                                                                         |
