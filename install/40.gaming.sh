@@ -3,6 +3,7 @@
 
 title "Installing nvidia-xrun-git"
 aurman -S nvidia-xrun-git
+
 title "Installing Steam"
 sudo pacman -S steam
 
