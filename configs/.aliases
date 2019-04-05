@@ -43,7 +43,7 @@ alias dt='cd ~/desktop'
 # sysadmin
 alias findstr='grep -rnw'
 alias afind='ack -il'
-alias path='echo -e ${PATH//:/\\n}'
+alias path='echo -e ${PATH//:/\\n} | sort'
 alias history=omz_history
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias update='aurman -Syu'
@@ -76,7 +76,9 @@ alias getip="curl -s -S https://icanhazip.com"
 alias localip=getLocalIP
 alias mac="getMac $WIFI_ADAPTOR"
 alias netinfo=getNetInfo
-alias nextvpn='vpn next'
+port() {
+  sudo netstat -tulpn | grep :"$1"
+}
 
 alias ping='ping -i 1 -O'
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
