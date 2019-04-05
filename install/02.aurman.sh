@@ -11,13 +11,19 @@ if test ! "$( aurman --version )"; then
     sudo pacman -U "$AURMAN"
 fi
 
+desktops=(
+    polybar-git
+)
+
 aurs=(
     autokey
     betterlockscreen-git
     cheat-git
     flasfocus-git
+    insomnia
     polybar-git
     typora
+    tor-browser
 )
 
 title "Installing aur packages..."
@@ -29,5 +35,15 @@ for aur in "${aurs[@]}"; do
     else
         progress "Installing $aur_name"
         aurman -S "$aur" --noconfirm
+    fi
+done
+
+for desktop in "${desktops[@]}"; do
+    desktop_name=$( echo "$desktop" | awk '{print $1}' )
+    if pacman -Q "$desktop_name" > /dev/null 2>&1; then
+        warn "$desktop_name already installed..."
+    else
+        progress "Installing $desktop_name"
+        desktopman -S "$desktop" --noconfirm
     fi
 done

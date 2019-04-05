@@ -18,6 +18,16 @@ if [[ $sync =~ ^([Yy])$ ]]; then
 fi
 
 title "Installing pacman packages..."
+desktop=(
+    i3-gaps
+    i3exit
+    capitaine-cursors
+    compton
+    conky
+    dunst
+    net-tools
+)
+
 formulas=(
     ack
     anydesk
@@ -27,6 +37,7 @@ formulas=(
     code
     flameshot
     gcc
+    gimp
     git
     grep
     neovim
@@ -39,7 +50,7 @@ formulas=(
     shellcheck
     telegram-desktop
     termite
-    thunar
+    nemo
     tmux
     tree
     unrar
@@ -62,6 +73,16 @@ for formula in "${formulas[@]}"; do
     else
         progress "Installing $formula_name"
         sudo pacman -S "$formula" --noconfirm
+    fi
+done
+
+for desktop in "${desktops[@]}"; do
+    desktop_name=$( echo "$desktop" | awk '{print $1}' )
+    if pacman -Q "$desktop_name" > /dev/null 2>&1; then
+        warn "$desktop_name already installed..."
+    else
+        progress "Installing $desktop_name"
+        sudo pacman -S "$desktop" --noconfirm
     fi
 done
 
