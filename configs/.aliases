@@ -31,8 +31,7 @@ alias df='df -h'
 alias grep='grep --color'
 alias ls='ls --color'
 alias mkdir='mkdir -pv'
-alias reload='source ~/.zshrc'
-alias tree='tree -I node_modules'
+alias reload='source ~/.aliases'
 
 # path shorcuts
 alias ~='cd ~'
@@ -58,10 +57,10 @@ alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.config/nvim/init.vim'
 alias vimplug='vim ~/.config/nvim/plugins.vim'
 alias tmuxrc='vim ~/.tmux.conf'
-alias i3conf='code ~/.i3/config'
+alias i3rc='vim ~/.i3/config'
 
 # file system
-alias l='tree -L 1 -I node_modules -a --dirsfirst'
+alias l='tree -L 1 -a --dirsfirst'
 alias ll='ls -lAhF --group-directories-first'
 alias lsa='ls -AF --group-directories-first'
 alias lless='l | less'
@@ -93,8 +92,9 @@ alias pacls='pacman -Qi'
 alias aur='aurman -S'
 alias aurr='aurman -R'
 alias aurls='aurman -Qi'
-## npm
-alias loadnvm=". $NVM_DIR/nvm.sh"
+
+# npm
+alias loadnvm=". /usr/share/nvm/init-nvm.sh"
 alias npmls='npm ls --depth 0'
 alias npmr='npm remove'
 alias npni='npm install'
@@ -106,7 +106,7 @@ alias npmp='npm publish'
 alias npmv='npm -v'
 alias cleannm='find . -name "node_modules" -type d -exec rm -rf {} \;'
 
-## yarn
+# yarn
 alias y='yarn'
 alias yrs='yarn start'
 alias yrd='yarn run dev'

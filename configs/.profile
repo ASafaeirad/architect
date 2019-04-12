@@ -10,10 +10,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 [[ -d "$HOME/.local/bin" ]] && PATH="$HOME/.local/bin:$PATH"
 [[ -f "$HOME/.aliases" ]] && . "$HOME/.aliases"
 
-if test "$(yarn --version 2> /dev/null)" && ! echo $PATH | grep -q  "yarn"; then
+if test "$(yarn --version 2> /dev/null)" && ! echo "$PATH" | grep -q  "yarn"; then
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 fi
-
-# Export nvm and load NVM
-export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
 
