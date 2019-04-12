@@ -98,13 +98,13 @@ bindsym $mod+shift+c                        move absolute position center
 bindsym $mod+1                              workspace $workspace1
 bindsym $mod+2                              workspace $workspace2; exec --no-startup-id [[ "$(pgrep chromium)" ]] || /usr/bin/chromium
 bindsym $mod+3                              workspace $workspace3; exec --no-startup-id [[ "$(pgrep code)" ]] || /usr/bin/code
-bindsym $mod+4                              workspace $workspace4; exec --no-startup-id [[ "$(pgrep nemo)" ]] || /usr/bin/nemo
-bindsym $mod+5                              workspace $workspace5; exec --no-startup-id [[ "$(pgrep pomotroid)" ]] || pomotroid.AppImage
+bindsym $mod+4                              workspace $workspace4
+bindsym $mod+5                              workspace $workspace5
 bindsym $mod+6                              workspace $workspace6
-bindsym $mod+7                              workspace $workspace7
-bindsym $mod+8                              workspace $workspace8
+bindsym $mod+7                              workspace $workspace7; exec --no-startup-id [[ "$(pgrep firefox.real)" ]] || /usr/bin/tor-browser
+bindsym $mod+8                              workspace $workspace8; exec --no-startup-id [[ "$(pgrep nemo)" ]] || /usr/bin/nemo
 bindsym $mod+9                              workspace $workspace9; exec --no-startup-id [ "$(pgrep -c mocp)" -gt 1 ] || termite --title 'mocp' -e 'mocp'
-bindsym $mod+0                              workspace $workspace10; 
+bindsym $mod+0                              workspace $workspace10;
 # exec --no-startup-id [[ "$(pgrep telegram-desktop)" ]] || /usr/bin/telegram-desktop
 
 bindsym $mod+Ctrl+Right                     workspace next
@@ -204,8 +204,8 @@ bindsym $mod+shift+t                        exec --no-startup-id termite --name 
 bindsym $mod+i                              [title="Todoist"] scratchpad show
 bindsym $mod+shift+i                        exec --no-startup-id todoist
 
-bindsym $mod+p				    [class="pomotroid"] scratchpad show
-bindsym $mod+shift+p		            exec --no-startup-id pomotroid.AppImage 
+bindsym $mod+p                              [class="pomotroid"] scratchpad show
+bindsym $mod+shift+p                        exec --no-startup-id pomotroid.AppImage
 
 bindsym $mod+Ctrl+t                         exec --no-startup-id compton -b
 bindsym $mod+Ctrl+x             --release   exec --no-startup-id xkill
@@ -267,7 +267,7 @@ for_window [title="(?i)friends list"] floating enable resize set 256 256
 for_window [title="(?i)steam - news"] floating enable resize set 256 256
 for_window [class="(?i)dota2"] fullscreen enable
 for_window [class="pomotroid"] move scratchpad
-for_window [class="pomotroid"] move absolute position center 
+for_window [class="pomotroid"] move absolute position center
 for_window [title="Todoist"] move scratchpad
 for_window [title="Todoist"] resize set 768 768
 for_window [title="Todoist"] move absolute position center
@@ -334,5 +334,3 @@ exec_always --no-startup-id     swapcaps
 exec        --no-startup-id     termite --name "flyterm" -e tmux
 exec        --no-startup-id     numlockx on
 exec        --no-startup-id     5min
-exec        --no-startup-id     pomotroid.AppImage
-exec        --no-startup-id     todoist
