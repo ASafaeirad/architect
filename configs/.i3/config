@@ -101,9 +101,9 @@ bindsym $mod+3                              workspace $workspace3; exec --no-sta
 bindsym $mod+4                              workspace $workspace4
 bindsym $mod+5                              workspace $workspace5
 bindsym $mod+6                              workspace $workspace6
-bindsym $mod+7                              workspace $workspace7; exec --no-startup-id [[ "$(pgrep firefox.real)" ]] || /usr/bin/tor-browser
+bindsym $mod+7                              workspace $workspace7; exec --no-startup-id [ "$(pgrep -c mocp)" -gt 1 ] || termite --title 'mocp' -e 'mocp'
 bindsym $mod+8                              workspace $workspace8; exec --no-startup-id [[ "$(pgrep nemo)" ]] || /usr/bin/nemo
-bindsym $mod+9                              workspace $workspace9; exec --no-startup-id [ "$(pgrep -c mocp)" -gt 1 ] || termite --title 'mocp' -e 'mocp'
+bindsym $mod+9                              workspace $workspace9; exec --no-startup-id [[ "$(pgrep firefox.real)" ]] || /usr/bin/tor-browser
 bindsym $mod+0                              workspace $workspace10;
 # exec --no-startup-id [[ "$(pgrep telegram-desktop)" ]] || /usr/bin/telegram-desktop
 
@@ -226,7 +226,7 @@ bindsym $mod+Ctrl+m                         exec pavucontrol
 # Applications workspaces
 assign      [class="(?i)Chromium"]                  $workspace2
 assign      [class="(?i)code"]                      $workspace3
-assign      [title="(?i)mocp"]                      $workspace9
+assign      [title="(?i)mocp"]                      $workspace7
 
 # Floating modes
 for_window [class="(?i)System-config-printer.py"]   floating enable border normal
