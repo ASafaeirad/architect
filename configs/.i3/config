@@ -28,7 +28,7 @@ new_float normal
 hide_edge_borders none
 
 smart_gaps on
-gaps inner 0
+gaps inner 5
 gaps outer 0
 smart_borders on
 
@@ -219,6 +219,9 @@ bindsym $mod+Shift+Print        --release   exec --no-startup-id flameshot gui
 
 bindsym $mod+Ctrl+m                         exec pavucontrol
 
+# Layouts
+bindsym $mod+Shift+w            --release   exec --no-startup-id "i3-msg 'workspace $workspace1; append_layout ~/.i3/fem.json'; fem-layout"
+
 ############################
 ##    Windows Behavior    ##
 ############################
@@ -303,10 +306,10 @@ mode "resize" {
     bindsym k           resize shrink height 10 px or 10 ppt
     bindsym l           resize grow   width  10 px or 10 ppt
 
-    bindsym Left        resize shrink width  10 px or 10 ppt
-    bindsym Down        resize grow   height 10 px or 10 ppt
-    bindsym Up          resize shrink height 10 px or 10 ppt
-    bindsym Right       resize grow   width  10 px or 10 ppt
+    bindsym Left        resize shrink width  1 px or 1 ppt
+    bindsym Down        resize grow   height 1 px or 1 ppt
+    bindsym Up          resize shrink height 1 px or 1 ppt
+    bindsym Right       resize grow   width  1 px or 1 ppt
 
     bindsym Return      mode "default"
     bindsym Escape      mode "default"
