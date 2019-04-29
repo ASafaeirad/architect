@@ -195,6 +195,7 @@ alias grhh='git reset HEAD --hard'
 
 alias gt='git tag'
 alias gtv='git tag | sort -V'
+alias count-line='git total --numstat -- . ":(exclude)yarn.lock"'
 
 # Kills any process that matches a regexp passed to it
 killit() {
