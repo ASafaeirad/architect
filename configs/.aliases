@@ -65,10 +65,10 @@ alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.config/nvim/init.vim'
 alias vimplug='vim ~/.config/nvim/plugins.vim'
 alias tmuxrc='vim ~/.tmux.conf'
-alias i3rc='vim ~/.i3/config'
+alias i3rc='vim ~/.config/i3/config'
 
 # file system
-alias l='tree -L 1 --dirsfirst'
+alias l='tree -a -L 1 --dirsfirst'
 alias lsa='ls -AF --group-directories-first'
 alias lless='l | less'
 alias laless='ll | less'

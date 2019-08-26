@@ -103,7 +103,7 @@ bindsym $mod+5                              workspace $workspace5
 bindsym $mod+6                              workspace $workspace6
 bindsym $mod+7                              workspace $workspace7; exec --no-startup-id [ "$(pgrep -c mocp)" -gt 1 ] || termite --title 'mocp' -e 'mocp'
 bindsym $mod+8                              workspace $workspace8;
-bindsym $mod+9                              workspace $workspace9; 
+bindsym $mod+9                              workspace $workspace9;
 bindsym $mod+0                              workspace $workspace10;
 # exec --no-startup-id [[ "$(pgrep telegram-desktop)" ]] || /usr/bin/telegram-desktop
 
@@ -185,7 +185,8 @@ bindsym XF86MonBrightnessDown exec light -U 5; exec notify-send 'brightness down
 
 ## Essential
 bindsym $mod+Return                         exec termite
-bindsym $mod+d                              exec --no-startup-id dmenu_recency -l 100 -h 25 -w 300 -nb '#293340' -nf '#eeeeee' -sb '#2DCED0' -sf '#293340'
+# bindsym $mod+d                              exec --no-startup-id dmenu_recency -l 100 -h 25 -w 300 -nb '#293340' -nf '#eeeeee' -sb '#2DCED0' -sf '#293340'
+bindsym $mod+d exec --no-startup-id rofi -show
 bindsym $mod+z                              exec --no-startup-id morc_menu
 bindsym $mod+Pause                          exec --no-startup-id betterlockscreen -l blur
 
@@ -220,14 +221,14 @@ bindsym $mod+Shift+Print        --release   exec --no-startup-id flameshot gui
 bindsym $mod+Ctrl+m                         exec pavucontrol
 
 # Layouts
-bindsym $mod+Shift+w            --release   exec --no-startup-id "i3-msg 'workspace $workspace1; append_layout ~/.i3/fem.json'; fem-layout"
+bindsym $mod+Shift+w            --release   exec --no-startup-id "i3-msg 'workspace $workspace1; append_layout ~/.config/i3/layouts/fullstacks.json'; fsk-layout"
 
 ############################
 ##    Windows Behavior    ##
 ############################
 
 # Applications workspaces
-assign      [class="(?i)Chromium"]                  $workspace2
+assign      [class="(?i)brave"]                     $workspace2
 assign      [class="(?i)code"]                      $workspace3
 assign      [title="(?i)mocp"]                      $workspace7
 
@@ -330,7 +331,7 @@ exec        --no-startup-id     clipit
 exec        --no-startup-id     xautolock -time 10 -locker betterlockscreen -l blur
 exec_always --no-startup-id     restart-polybar -r skill
 exec_always --no-startup-id     restart-flashfocus
-exec        --no-startup-id     "$HOME/.conky/start-conky.sh"
+exec        --no-startup-id     "$HOME/.conky/start-conky.sh --dark"
 exec        --no-startup-id     redshift -l "36.850282":"54.3680226"
 exec        --no-startup-id     setxkbmap -layout us,ir -option grp:shifts_toggle
 exec_always --no-startup-id     swapcaps
@@ -338,4 +339,4 @@ exec_always --no-startup-id     swapcaps
 # Initiate Workspace
 exec        --no-startup-id     termite --name "flyterm" -e tmux
 exec        --no-startup-id     numlockx on
-exec        --no-startup-id     5min
+# exec        --no-startup-id     5min
