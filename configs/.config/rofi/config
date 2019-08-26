@@ -1,5 +1,0 @@
-rofi.combi-modi:    run,drun,ssh
-rofi.font:          DejaVu Sans 10
-rofi.modi:          combi
-rofi.lines:         5
-rofi.eh:            1
