@@ -24,7 +24,10 @@ alias vim="nvim"
 alias _=sudo
 alias :q='exit'
 alias chmod='sudo chmod'
-alias dhcp='sudo dhcpcd'
+alias dhcpcd='sudo dhcpcd'
+alias pacman-mirror='sudo pacman-mirror'
+alias systemctl='sudo systemctl'
+alias retor='sudo systemctl restart tor'
 alias pacman='lazyPacman'
 alias cp="cp -i"
 alias df='df -h'
@@ -48,6 +51,11 @@ alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias update='aurman -Syu'
 alias fuck='killall -9'
 alias stfu='killall -9'
+alias dnsrc='sudo vim /etc/resolv.conf'
+
+# wireguard
+alias up='wg-quick up ~/wg0.conf'
+alias down='wg-quick down ~/wg0.conf'
 
 # config files
 alias hosts='sudoedit /etc/hosts'
@@ -60,8 +68,7 @@ alias tmuxrc='vim ~/.tmux.conf'
 alias i3rc='vim ~/.i3/config'
 
 # file system
-alias l='tree -L 1 -a --dirsfirst'
-alias ll='ls -lAhF --group-directories-first'
+alias l='tree -L 1 --dirsfirst'
 alias lsa='ls -AF --group-directories-first'
 alias lless='l | less'
 alias laless='ll | less'
@@ -230,8 +237,7 @@ lazyPacman() {
 }
 
 # ex - archive extractor
-ex ()
-{
+ex() {
   if [ -f "$1" ] ; then
     case "$1" in
       *.tar.bz2)   tar xjf "$1"   ;;
@@ -251,4 +257,13 @@ ex ()
   else
     echo "'$1' is not a valid file"
   fi
+}
+
+mk() {
+  mkdir $1 && cd $1
+}
+
+shecan() {
+  echo "nameserver 178.22.122.100" | sudo tee /etc/resolv.conf 
+  echo "nameserver 185.51.200.2" | sudo tee -a /etc/resolv.conf
 }
