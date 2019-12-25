@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" opacity=".3" viewBox="0 0 150 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+  <g id="logo">
+    <path d="M74.9993 35.5L28.0667 118.446L74.9993 163.5L121.933 118.446L74.9993 35.5ZM74.9993 138.299L51.2889 114.737L74.9993 72.7915L98.7097 114.737L74.9993 138.299Z" fill="#D5DBE6"/>
+    <g style="mix-blend-mode:screen">
+      <path d="M74.9993 72.8027L51.2889 114.75L28.0667 118.459L74.9993 35.5138V72.8027Z" fill="#F8F8FC"/>
+    </g>
+    <g style="mix-blend-mode:color-burn">
+      <path d="M121.933 118.446L74.9993 163.5V138.299L98.7097 114.737L121.933 118.446Z" fill="black" fill-opacity="0.2"/>
+    </g>
+  </g>
+  <animateTransform
+    xlink:href="#logo"
+    attributeName="transform"
+    type="translate"
+    values="0 0;0 5;0 0"
+    dur="5s"
+    calcMode="spline"
+    keySplines="0.5 0 0.5 1 ; 0.5 0 0.5 1"
+    repeatCount="indefinite" />
+</svg>

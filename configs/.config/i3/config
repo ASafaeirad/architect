@@ -9,11 +9,11 @@ set $workspace1  1:
 set $workspace2  2:
 set $workspace3  3:
 set $workspace4  4:
-set $workspace5  5:
+set $workspace5  5:ﱘ
 set $workspace6  6:
 set $workspace7  7:☕
 set $workspace8  8:
-set $workspace9  9:ﱘ
+set $workspace9  9:
 set $workspace10 10:
 
 #####################
@@ -97,14 +97,14 @@ bindsym $mod+shift+c                        move absolute position center
 ## Workspace Navigation
 bindsym $mod+1                              workspace $workspace1
 bindsym $mod+2                              workspace $workspace2; exec --no-startup-id [[ "$(pgrep brave)" ]] || /usr/bin/brave
-bindsym $mod+3                              workspace $workspace3; exec --no-startup-id [[ "$(pgrep code)" ]] || /usr/bin/code
+bindsym $mod+3                              workspace $workspace3; exec --no-startup-id [[ "$(pgrep codium)" ]] || /usr/bin/code
 bindsym $mod+4                              workspace $workspace4
-bindsym $mod+5                              workspace $workspace5
+bindsym $mod+5                              workspace $workspace5; exec --no-startup-id [[ "$(pgrep -c mocp)" ]] || termite --title 'mocp' -e 'mocp'
 bindsym $mod+6                              workspace $workspace6
-bindsym $mod+7                              workspace $workspace7; exec --no-startup-id [ "$(pgrep -c mocp)" -gt 1 ] || termite --title 'mocp' -e 'mocp'
-bindsym $mod+8                              workspace $workspace8;
-bindsym $mod+9                              workspace $workspace9;
-bindsym $mod+0                              workspace $workspace10;
+bindsym $mod+7                              workspace $workspace7
+bindsym $mod+8                              workspace $workspace8
+bindsym $mod+9                              workspace $workspace9
+bindsym $mod+0                              workspace $workspace10
 # exec --no-startup-id [[ "$(pgrep telegram-desktop)" ]] || /usr/bin/telegram-desktop
 
 bindsym $mod+Ctrl+Right                     workspace next
@@ -192,7 +192,7 @@ bindsym $mod+Pause                          exec --no-startup-id betterlockscree
 
 
 ## General
-bindsym $mod+F2                             exec chromium
+bindsym $mod+F2                             exec brave
 bindsym $mod+F3                             exec code
 bindsym $mod+F4                             exec nemo
 bindsym $mod+F5                             exec --no-startup-id termite --title 'mocp' -e 'mocp'
@@ -229,8 +229,9 @@ bindsym $mod+Shift+w            --release   exec --no-startup-id "i3-msg 'worksp
 
 # Applications workspaces
 assign      [class="(?i)brave"]                     $workspace2
-assign      [class="(?i)code"]                      $workspace3
-assign      [title="(?i)mocp"]                      $workspace7
+assign      [class="(?i)code"] $workspace3
+assign      [class="(?i)code" window_type="(?i)DIALOG"] $workspace1
+assign      [title="(?i)mocp"]                      $workspace5
 
 # Floating modes
 for_window [class="(?i)System-config-printer.py"]   floating enable border normal

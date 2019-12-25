@@ -33,6 +33,7 @@ SAVEHIST=1000
 plugins=(
     sudo
     nvm
+    emoji
     colored-man-pages
     zsh-autosuggestions
     zsh-completions

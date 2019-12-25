@@ -18,7 +18,7 @@ if [[ $sync =~ ^([Yy])$ ]]; then
 fi
 
 title "Installing pacman packages..."
-desktop=(
+desktops=(
     i3-gaps
     i3exit
     capitaine-cursors
@@ -26,6 +26,8 @@ desktop=(
     conky
     dunst
     net-tools
+    bind-tools
+    numlockx
 )
 
 formulas=(
@@ -34,14 +36,14 @@ formulas=(
     bat
     blueman
     chromium
-    code
+    docker
+    vscodium-bin
     flameshot
     gcc
     gimp
     git
     grep
     neovim
-    numlockx
     peek
     persepolis-git
     python
