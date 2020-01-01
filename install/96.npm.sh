@@ -3,8 +3,8 @@
 
 title "Setting up NPM and Yarn"
 
-defaultName=$( npm get init-author-name )
-defaultEmail=$( npm get init-author-email )
+defaultName=$(npm get init-author-name)
+defaultEmail=$(npm get init-author-email)
 defaultLicense="MIT"
 
 read -rp "Name [$defaultName] " name

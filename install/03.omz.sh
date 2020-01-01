@@ -1,7 +1,7 @@
 #!/bin/bash
 . "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
 
-zsh_path="$( which zsh )"
+zsh_path="$(which zsh)"
 
 if ! grep -q "$zsh_path" /etc/shells; then
     title "Adding $zsh_path to /etc/shells"

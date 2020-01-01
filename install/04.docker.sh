@@ -6,4 +6,3 @@ sudo usermod -aG docker
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
 progress "Docker Service is enabled"
-

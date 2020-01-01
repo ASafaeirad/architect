@@ -3,9 +3,9 @@
 
 title "Setting up Git"
 
-defaultName=$( git config --global user.name )
-defaultEmail=$( git config --global user.email )
-defaultGithub=$( git config --global github.user )
+defaultName=$(git config --global user.name)
+defaultEmail=$(git config --global user.email)
+defaultGithub=$(git config --global github.user)
 
 read -rp "Name [$defaultName] " name
 read -rp "Email [$defaultEmail] " email
@@ -16,7 +16,7 @@ git config --global user.email "${email:-$defaultEmail}"
 git config --global github.user "${github:-$defaultGithub}"
 git config --global core.excludesfile ~/.gitignore_global
 
-if [[ "$( uname )" == "Darwin" ]]; then
+if [[ "$(uname)" == "Darwin" ]]; then
     git config --global credential.helper "osxkeychain"
 else
     read -rn 1 -p "Save user and password to an unencrypted file to avoid writing? [y/N] " save
@@ -28,4 +28,3 @@ else
 fi
 
 progress "Git setup compeleted"
-

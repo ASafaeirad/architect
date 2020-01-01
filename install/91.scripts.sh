@@ -3,8 +3,8 @@
 
 title "Copy Scripts"
 
-scriptsDir=$( realpath "$(dirname "$BASH_SOURCE")/../scripts" );
-scriptFiles=$( find "$scriptsDir" -type f 2>/dev/null )
+scriptsDir=$(realpath "$(dirname "$BASH_SOURCE")/../scripts")
+scriptFiles=$(find "$scriptsDir" -type f 2>/dev/null)
 
 if [ ! -d "$HOME/.local/bin" ]; then
     progress "Creating ~/.local/bin"
@@ -12,7 +12,7 @@ if [ ! -d "$HOME/.local/bin" ]; then
 fi
 
 for scriptFile in $scriptFiles; do
-    scriptName="$( basename "$scriptFile" )"
+    scriptName="$(basename "$scriptFile")"
     binDir="$HOME/.local/bin"
 
     from="$scriptFile"
