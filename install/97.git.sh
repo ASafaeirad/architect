@@ -17,14 +17,14 @@ git config --global github.user "${github:-$defaultGithub}"
 git config --global core.excludesfile ~/.gitignore_global
 
 if [[ "$(uname)" == "Darwin" ]]; then
-    git config --global credential.helper "osxkeychain"
+  git config --global credential.helper "osxkeychain"
 else
-    read -rn 1 -p "Save user and password to an unencrypted file to avoid writing? [y/N] " save
-    if [[ $save =~ ^([Yy])$ ]]; then
-        git config --global credential.helper "store"
-    else
-        git config --global credential.helper "cache --timeout 3600"
-    fi
+  read -rn 1 -p "Save user and password to an unencrypted file to avoid writing? [y/N] " save
+  if [[ $save =~ ^([Yy])$ ]]; then
+    git config --global credential.helper "store"
+  else
+    git config --global credential.helper "cache --timeout 3600"
+  fi
 fi
 
 progress "Git setup compeleted"
