@@ -18,11 +18,11 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 append_path "$HOME/.local/bin"
 
-if test "$(yarn --version 2> /dev/null)"; then
+if test "$(yarn --version 2>/dev/null)"; then
   append_path "$HOME/.yarn/bin"
   append_path "$HOME/.config/yarn/global/node_modules/.bin"
 fi
 
-if test "$(go version 2> /dev/null)"; then
+if test "$(go version 2>/dev/null)"; then
   export GOPATH=$HOME/go
 fi

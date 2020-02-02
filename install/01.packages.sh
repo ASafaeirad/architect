@@ -27,13 +27,14 @@ fi
 remove=(
     compton
     epdfview
-    palemoon
+		palemoon-bin
 )
 
 apps=(
     anydesk
     betterlockscreen-git
     brave
+		cheese
     cheat-git
     firefox
     gimp
@@ -73,6 +74,7 @@ dev=(
     xsel
     zip
     zsh
+		emojify
 )
 
 desktop=(
@@ -87,8 +89,10 @@ desktop=(
     i3-gaps
     i3exit
     manjaro-pulse
+		mpv
     nitrogen
     neofetch
+		nmap
     pavucontrol
     picom
     polybar-git

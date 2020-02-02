@@ -33,8 +33,13 @@ git clone https://github.com/zsh-users/zsh-completions "$HOME/.oh-my-zsh/custom/
 
 progress "Done"
 
-title "Install Node Theme"
+title "Install Skill Theme"
 rm "$HOME/.oh-my-zsh/custom/themes/skill-zsh.theme"
 wget https://raw.githubusercontent.com/frontendmonster/oh-my-zsh-skill-theme/master/skill.zsh-theme -P $HOME/.oh-my-zsh/custom/themes/
 
 progress "Done"
+
+title "Install forgit"
+rm "$HOME/.oh-my-zsh/custom/plugins/zsh-forgit"
+wget https://raw.githubusercontent.com/wfxr/forgit/master/forgit.plugin.zsh -P $HOME/.oh-my-zsh/custom/plugins/forgit
+

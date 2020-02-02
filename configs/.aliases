@@ -18,8 +18,8 @@ alias celar='clear'
 alias clare='clear'
 
 # enhance tools
-alias cat="bat"
-alias vim="nvim"
+[ -x "$(command -v bat)" ] && alias cat="bat"
+[ -x "$(command -v nvim)" ] && alias vim="nvim"
 
 # enhance commands
 alias :q='exit'
@@ -92,7 +92,7 @@ port() {
 
 alias ping='ping -i 1 -O'
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-    alias "$method"="curl -X '$method' -H 'content-type: application/json'"
+  alias "$method"="curl -X '$method' -H 'content-type: application/json'"
 done
 
 # Other packages
@@ -105,7 +105,6 @@ alias aurr='aurman -R'
 alias aurls='aurman -Qi'
 
 # npm
-alias loadnvm=". /usr/share/nvm/init-nvm.sh"
 alias npmls='npm ls --depth 0'
 alias npmr='npm remove'
 alias npni='npm install'
@@ -129,16 +128,12 @@ alias yrtw='yarn run test:watch'
 alias yrb='yarn run build'
 alias yr='yarn remove'
 alias ycc='yarn cache clean'
-alias ycc='yarn cache clean'
 alias yui='yarn upgrade-interactive --latest'
 alias yws='yarn workspace'
 alias ysu='curl --compressed -o- -L https://yarnpkg.com/install.sh | bash'
 
 ## docker-compose
 alias dc='docker-compose'
-alias dcu='docker-compose up'
-alias dcud='docker-compose up -d'
-alias dcd='docker-compose down'
 
 ## git
 alias clone='git clone'
@@ -152,6 +147,7 @@ alias gb='git branch'
 alias gbr='git branch --remote'
 alias gba='git branch -a'
 alias gbd='git branch -d'
+alias gbD='git branch -D'
 
 alias gc='git commit -v'
 alias 'gca'='git commit -v --amend'
@@ -216,11 +212,11 @@ alias count-line='git total --numstat -- . ":(exclude)yarn.lock"'
 
 # Kills any process that matches a regexp passed to it
 killit() {
-    ps aux | grep -v "grep" | grep "$@" | awk '{print $2}' | xargs sudo kill
+  ps aux | grep -v "grep" | grep "$@" | awk '{print $2}' | xargs sudo kill
 }
 
 listDir() {
-    ls -l | grep "^d" | awk '{ print $9 }'
+  ls -l | grep "^d" | awk '{ print $9 }'
 }
 
 getMac() {
@@ -237,32 +233,32 @@ getNetInfo() {
   echo "Global IP:" "$(getip)"
 }
 
-
 lazyPacman() {
   case $1 in
-      -S | -D | -S[^sih]* | -R* | -U*)
-          /usr/bin/sudo /usr/bin/pacman "$@" ;;
-  *)      /usr/bin/pacman "$@" ;;
+  -S | -D | -S[^sih]* | -R* | -U*)
+    /usr/bin/sudo /usr/bin/pacman "$@"
+    ;;
+  *) /usr/bin/pacman "$@" ;;
   esac
 }
 
 # ex - archive extractor
 ex() {
-  if [ -f "$1" ] ; then
+  if [ -f "$1" ]; then
     case "$1" in
-      *.tar.bz2)   tar xjf "$1"   ;;
-      *.tar.xz)    tar xf  "$1"   ;;
-      *.tar.gz)    tar xzf "$1"   ;;
-      *.bz2)       bunzip2 "$1"   ;;
-      *.rar)       unrar x "$1"   ;;
-      *.gz)        gunzip  "$1"   ;;
-      *.tar)       tar xf  "$1"   ;;
-      *.tbz2)      tar xjf "$1"   ;;
-      *.tgz)       tar xzf "$1"   ;;
-      *.zip)       unzip   "$1"   ;;
-      *.Z)         uncompress "$1";;
-      *.7z)        7z x "$1"      ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
+    *.tar.bz2) tar xjf "$1" ;;
+    *.tar.xz) tar xf "$1" ;;
+    *.tar.gz) tar xzf "$1" ;;
+    *.bz2) bunzip2 "$1" ;;
+    *.rar) unrar x "$1" ;;
+    *.gz) gunzip "$1" ;;
+    *.tar) tar xf "$1" ;;
+    *.tbz2) tar xjf "$1" ;;
+    *.tgz) tar xzf "$1" ;;
+    *.zip) unzip "$1" ;;
+    *.Z) uncompress "$1" ;;
+    *.7z) 7z x "$1" ;;
+    *) echo "'$1' cannot be extracted via ex()" ;;
     esac
   else
     echo "'$1' is not a valid file"
@@ -274,6 +270,6 @@ mk() {
 }
 
 shecan() {
-  echo "nameserver 178.22.122.100" | sudo tee /etc/resolv.conf 
+  echo "nameserver 178.22.122.100" | sudo tee /etc/resolv.conf
   echo "nameserver 185.51.200.2" | sudo tee -a /etc/resolv.conf
 }

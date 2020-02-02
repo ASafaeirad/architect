@@ -338,6 +338,6 @@ exec        --no-startup-id     setxkbmap -layout us,ir -option grp:shifts_toggl
 exec_always --no-startup-id     swapcaps
 
 # Initiate Workspace
-exec        --no-startup-id     termite --name "flyterm" -e tmux
+exec        --no-startup-id     termite --name "flyterm" -e tmux attach
 exec        --no-startup-id     numlockx on
 # exec        --no-startup-id     5min
