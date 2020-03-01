@@ -1,5 +1,5 @@
 #!/bin/bash
-. "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
+. "$(dirname "$BASH_SOURCE")/../utils.sh"
 
 read -rn 1 -p "Update Mirrors? [y/N] " umirrors
 echo
@@ -9,19 +9,11 @@ if [[ $umirrors =~ ^([Yy])$ ]]; then
   sudo pacman-mirrors --fasttrack
 fi
 
-if test ! "$(yay --version)"; then
-  title "Installing yay"
-  mkdir -p /tmp/yay
-  git clone https://aur.archlinux.org/yay.git /tmp/yay
-  cd /tmp/yay || exit
-  makepkg -si
-fi
-
 read -rn 1 -p "Sync Mirrors? [y/N] " sync
 echo
 if [[ $sync =~ ^([Yy])$ ]]; then
   title "Sync Mirrors"
-  sudo yay -Syu --noconfirm
+  yay -Syu --noconfirm
 fi
 
 remove=(
@@ -36,6 +28,7 @@ apps=(
   brave
   cheese
   cheat-git
+  chromium
   firefox
   gimp
   gparted
@@ -57,6 +50,8 @@ dev=(
   bind-tools
   docker
   docker-compose
+  diff-so-fancy
+  emojify
   gcc
   git
   go
@@ -66,6 +61,8 @@ dev=(
   numlockx
   python
   python2
+  python-pip
+  python2-pip
   shellcheck
   tmux
   tree
@@ -76,7 +73,6 @@ dev=(
   xsel
   zip
   zsh
-  emojify
 )
 
 desktop=(
@@ -90,16 +86,19 @@ desktop=(
   flasfocus-git
   i3-gaps
   i3exit
+  hardcore-tray
   manjaro-pulse
   mpv
-  nitrogen
   neofetch
+  nitrogen
   nmap
   pavucontrol
+  perl-rename
   picom
   polybar-git
   ranger
   redshift
+  slope
   termite
   tumbler
   viewnior
@@ -108,15 +107,30 @@ desktop=(
   # nemo
 )
 
-allpackages=("${dev[@]}" "${desktop[@]}" "${apps[@]}")
+title "Installing dev packages..."
+
+for pkg in "${dev[@]}"; do
+  pkg_name=$(echo "$pkg" | awk '{print $1}')
+  progress "Installing $pkg_name"
+  sudo pacman -S "$pkg" --noconfirm
+done
+
+if test ! "$(yay --version)"; then
+  title "Installing yay"
+  mkdir -p /tmp/yay
+  git clone https://aur.archlinux.org/yay.git /tmp/yay
+  cd /tmp/yay || exit
+  makepkg -si
+fi
+
+allpackages=("${desktop[@]}" "${apps[@]}")
 
 title "Installing packages..."
 
 for pkg in "${allpackages[@]}"; do
-  echo pkg
   pkg_name=$(echo "$pkg" | awk '{print $1}')
   progress "Installing $pkg_name"
-  yay -Sy "$pkg" --noconfirm
+  yay -S "$pkg" --noconfirm
 done
 
 # for aur in "${remove[@]}"; do

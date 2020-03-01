@@ -1,5 +1,5 @@
 #!/bin/bash
-. "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
+. "$(dirname "$BASH_SOURCE")/../utils.sh"
 
 zsh_path="$(which zsh)"
 
@@ -11,7 +11,7 @@ fi
 if [[ "$SHELL" != "$zsh_path" ]]; then
   title "Change the default shell to zsh"
   chsh -s "$zsh_path"
-  echo "default shell changed to $zsh_path"
+  progress "Default shell has been changed to $zsh_path"
 fi
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -22,23 +22,28 @@ fi
 title "Install Oh-My-ZSH Plugins"
 
 progress "Install autosuggestions"
-rm -rf "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions
+
+OMZ_CUSTOM="$HOME/.oh-my-zsh/custom"
+
+rmexist "$OMZ_CUSTOM/plugins/zsh-autosuggestions"
+git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$OMZ_CUSTOM}"/plugins/zsh-autosuggestions
 
 progress "Done"
 
 progress "Install completions"
-rm -rf "$HOME/.oh-my-zsh/custom/plugins/zsh-completions"
-git clone https://github.com/zsh-users/zsh-completions "$HOME/.oh-my-zsh/custom/plugins/zsh-completions"
+rmexist "$OMZ_CUSTOM/plugins/zsh-completions"
+git clone https://github.com/zsh-users/zsh-completions "$OMZ_CUSTOM/plugins/zsh-completions"
 
 progress "Done"
 
 title "Install Skill Theme"
-rm "$HOME/.oh-my-zsh/custom/themes/skill-zsh.theme"
-wget https://raw.githubusercontent.com/frontendmonster/oh-my-zsh-skill-theme/master/skill.zsh-theme -P $HOME/.oh-my-zsh/custom/themes/
+rmexist "$OMZ_CUSTOM/themes/skill-zsh.theme"
+wget https://raw.githubusercontent.com/frontendmonster/oh-my-zsh-skill-theme/master/skill.zsh-theme -P "$OMZ_CUSTOM/themes/"
 
 progress "Done"
 
 title "Install forgit"
-rm "$HOME/.oh-my-zsh/custom/plugins/zsh-forgit"
-wget https://raw.githubusercontent.com/wfxr/forgit/master/forgit.plugin.zsh -P $HOME/.oh-my-zsh/custom/plugins/forgit
+rmexist "$OMZ_CUSTOM/plugins/zsh-forgit"
+wget https://raw.githubusercontent.com/wfxr/forgit/master/forgit.plugin.zsh -P "$OMZ_CUSTOM/plugins/forgit"
+
+progress "Done"

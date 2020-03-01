@@ -1,7 +1,8 @@
 #!/bin/bash
 
-UTILDIR=$(dirname "$BASH_SOURCE")
-. $UTILDIR/color.sh
+WARN='\033[0;33m'
+CYAN='\033[1;36m'
+NC='\033[0m'
 
 title() {
   echo -e "\\n${CYAN}⬢ ${1}${NC}"
@@ -18,4 +19,8 @@ warn() {
 
 sep() {
   echo "WABN"
+}
+
+rmexist() {
+  [[ -d "$1" ]] && rm -rf "$1"
 }

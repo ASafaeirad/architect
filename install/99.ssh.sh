@@ -1,5 +1,5 @@
 #!/bin/bash
-. "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
+. "$(dirname "$BASH_SOURCE")/../utils.sh"
 
 title "Generating SSH Key..."
 ssh-keygen -t rsa -b 4096 -C "$HOST"

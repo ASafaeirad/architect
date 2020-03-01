@@ -1,5 +1,5 @@
 #!/bin/bash
-. "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
+. "$(dirname "$BASH_SOURCE")/../utils.sh"
 
 title "Installing Fonts..."
 
@@ -42,5 +42,5 @@ fonts=(
 for font in "${fonts[@]}"; do
   font_name=$(echo "$font" | awk '{print $1}')
   progress "Installing $font_name"
-  yay -Sy "$font" --noconfirm
+  yay -S "$font" --noconfirm
 done

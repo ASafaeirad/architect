@@ -1,5 +1,5 @@
 #!/bin/bash
-. "$(dirname "$BASH_SOURCE")/../utils/echo.sh"
+. "$(dirname "$BASH_SOURCE")/../utils.sh"
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
@@ -31,7 +31,6 @@ title "Installing NPM/Yarn Global Packages"
 
 packages=(
   eslint
-  flow-bin
   fx
   terminalizer
 )
