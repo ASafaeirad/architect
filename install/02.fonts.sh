@@ -4,8 +4,8 @@
 title "Installing Fonts..."
 
 fonts=(
-  adobe-source-sans-pro-fonts
   adobe-source-code-pro-fonts
+  adobe-source-sans-pro-fonts
   fonts-rajdhani
   nerd-fonts-dejavu-complete
   nerd-fonts-hack
@@ -17,9 +17,6 @@ fonts=(
   otf-exo
   persian-fonts
   terminus-font
-  ttf-hack
-  ttf-dejavu
-  ttf-roboto
   ttf-bitstream-vera
   ttf-courier-prime
   ttf-croscore
@@ -29,12 +26,15 @@ fonts=(
   ttf-freefont
   ttf-gentium
   ttf-google-fonts-typewolf
+  ttf-hack
+  ttf-joypixels
   ttf-liberation
   ttf-mac-fonts
   ttf-mathtype
   ttf-monaco
   ttf-ms-fonts
   ttf-oxygen-gf
+  ttf-roboto
   ttf-yosemite-san-francisco-font-git
   vazir-fonts
 )

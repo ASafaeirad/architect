@@ -11,6 +11,7 @@ fi
 
 read -rn 1 -p "Sync Mirrors? [y/N] " sync
 echo
+
 if [[ $sync =~ ^([Yy])$ ]]; then
   title "Sync Mirrors"
   yay -Syu --noconfirm
@@ -86,6 +87,7 @@ desktop=(
   flasfocus-git
   i3-gaps
   i3exit
+  lm_sensors
   hardcore-tray
   manjaro-pulse
   mpv
@@ -98,11 +100,13 @@ desktop=(
   polybar-git
   ranger
   redshift
-  slope
+  slop
   termite
   tumbler
   viewnior
   volumeicon
+  xwininfo
+  xsensors
   # pcmanfm
   # nemo
 )
