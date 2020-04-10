@@ -14,12 +14,12 @@ read -rp "Default License [$defaultLicense] " license
 npm set init-author-name "${name:-$defaultName}"
 npm set init-author-email "${email:-$defaultEmail}"
 npm set init-license "${license:-$defaultLicense}"
+npm set sign-git-tag=true
 npm set color 'always'
 npm set depth 0
 npm set editor 'nvim'
 npm set init-version '0.0.0'
 npm set save true
-npm set ignore-engines true
 
 yarn config set init-author-email "${name:-$defaultEmail}"
 yarn config set init-author-name "${email:-$defaultName}"
