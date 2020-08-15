@@ -18,6 +18,7 @@ if [[ $sync =~ ^([Yy])$ ]]; then
 fi
 
 remove=(
+	i3-lock
   compton
   epdfview
   palemoon-bin
@@ -25,7 +26,6 @@ remove=(
 
 apps=(
   anydesk
-  betterlockscreen-git
   brave
   cheese
   cheat-git
@@ -65,7 +65,6 @@ dev=(
   python-pip
   python2-pip
   shellcheck
-  tmux
   tree
   unrar
   unzip
@@ -78,6 +77,7 @@ dev=(
 
 desktop=(
   blueman
+  betterlockscreen-git
   capitaine-cursors
   clipit
   conky
