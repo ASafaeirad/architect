@@ -24,3 +24,7 @@ sep() {
 rmexist() {
   [[ -d "$1" ]] && rm -rf "$1"
 }
+
+exists() {
+  command -v "$1" >/dev/null 2>&1
+}

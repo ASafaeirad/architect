@@ -1,5 +1,0 @@
-#!/bin/bash
-
-killall st
-xrdb "$HOME/.Xresources"
-st

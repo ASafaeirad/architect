@@ -3,7 +3,7 @@
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-if ! test "$(nvm --version)"; then
+if ! exists nvm; then
   title "Installing NVM"
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 

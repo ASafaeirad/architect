@@ -5,4 +5,3 @@ title "Generating GPG Key..."
 gpg --full-gen-key
 
 progress "GPG key successfully created"
-

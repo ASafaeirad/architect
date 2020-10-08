@@ -18,7 +18,7 @@ if [[ $sync =~ ^([Yy])$ ]]; then
 fi
 
 remove=(
-	i3-lock
+  i3-lock
   compton
   epdfview
   palemoon-bin
@@ -49,9 +49,10 @@ dev=(
   ack
   bat
   bind-tools
+  deno_bin # deno takes times.
+  diff-so-fancy
   docker
   docker-compose
-  diff-so-fancy
   emojify
   gcc
   git
@@ -61,16 +62,16 @@ dev=(
   net-tools
   numlockx
   python
-  python2
   python-pip
+  python2
   python2-pip
   shellcheck
   tree
   unrar
   unzip
   wget
-  yarn
   xsel
+  yarn
   zip
   zsh
 )
@@ -116,20 +117,12 @@ title "Installing dev packages..."
 for pkg in "${dev[@]}"; do
   pkg_name=$(echo "$pkg" | awk '{print $1}')
   progress "Installing $pkg_name"
-  sudo pacman -S "$pkg" --noconfirm
+  yay -S "$pkg" --noconfirm
 done
 
-if test ! "$(yay --version)"; then
-  title "Installing yay"
-  mkdir -p /tmp/yay
-  git clone https://aur.archlinux.org/yay.git /tmp/yay
-  cd /tmp/yay || exit
-  makepkg -si
-fi
+title "Installing desktop apps..."
 
 allpackages=("${desktop[@]}" "${apps[@]}")
-
-title "Installing packages..."
 
 for pkg in "${allpackages[@]}"; do
   pkg_name=$(echo "$pkg" | awk '{print $1}')
@@ -137,10 +130,11 @@ for pkg in "${allpackages[@]}"; do
   yay -S "$pkg" --noconfirm
 done
 
-# for aur in "${remove[@]}"; do
-#     progress "Installing $aur_name"
-#     yay -S "$aur" --noconfirm
-# done
+for pkg in "${remove[@]}"; do
+  pkg_name=$(echo "$pkg" | awk '{print $1}')
+  progress "Removing $pkg_name"
+  yay -Rns "$pkg" --noconfirm
+done
 
 title "Clean the nonneeded packages..."
 yay -Yc
