@@ -74,6 +74,7 @@ dev=(
   yarn
   zip
   zsh
+	xcwd
 )
 
 desktop=(
@@ -96,9 +97,12 @@ desktop=(
   nitrogen
   nmap
   pavucontrol
+	pass
+	pass-git-helper
   perl-rename
   picom
   polybar-git
+	# privoxy
   ranger
   redshift
   slop
