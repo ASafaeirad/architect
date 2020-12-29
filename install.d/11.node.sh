@@ -3,9 +3,11 @@
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
+VERSION="v0.37.2"
+
 if ! exists nvm; then
   title "Installing NVM"
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$VERSION/install.sh | bash
 
   grep -q -F '# Export nvm and load NVM' "$HOME/.profile"
 
@@ -32,7 +34,6 @@ title "Installing NPM/Yarn Global Packages"
 packages=(
   eslint
   fx
-  terminalizer
 )
 
 for package in "${packages[@]}"; do

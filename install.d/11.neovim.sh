@@ -6,11 +6,6 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 title "Running Neovim Python install"
 
-if ! exists pip2; then
-  warn "Command pip2 Not Found!"
-else
-  pip2 install --user neovim
-fi
 
 if exists pip3; then
   warn "Command pip3 Not Found!"

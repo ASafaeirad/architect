@@ -1,6 +1,6 @@
 #! /bin/bash
 ROOTDIR=$(dirname "$(realpath -s "$BASH_SOURCE")")
-. "$ROOTDIR/utils/echo.sh"
+. "$ROOTDIR/utils.sh"
 
 for f in "$ROOTDIR"/install.d/*.sh; do
   echo -en "Do you want to run ${CYAN}$(basename "$f")?${NC} [y/N] "

@@ -4,6 +4,7 @@
 title "Installing Fonts..."
 
 fonts=(
+	ttf-input
   adobe-source-code-pro-fonts
   adobe-source-sans-pro-fonts
   fonts-rajdhani
