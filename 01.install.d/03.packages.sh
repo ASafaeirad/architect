@@ -4,6 +4,9 @@
 desktop=(
   betterlockscreen-git
   blueman
+  bluez
+  bluez-libs
+  bluez-utils
   browserpass
   browserpass-chromium
   capitaine-cursors
