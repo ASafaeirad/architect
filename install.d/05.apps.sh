@@ -34,7 +34,7 @@ for pkg in "${apps[@]}"; do
     read -rn1 -p "" confirm
     case $confirm in
       [yY][eE][sS]|[yY])
-        yay -Sq "$pkg" --noconfirm
+        paru -Sq "$pkg" --noconfirm
         progress "$pkg_name Installed"
 	break
 	;;

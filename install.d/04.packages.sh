@@ -19,6 +19,7 @@ desktop=(
   conky
   dunst
   emacs
+	emojify
   ffmpegthumbnailer
   flameshot
   flashfocus-git
@@ -34,6 +35,8 @@ desktop=(
   pavucontrol
   pass
   pass-git-helper
+	browserpass
+	browserpass-chromium
   perl-rename
   picom
   polybar-git
@@ -57,14 +60,12 @@ title "Installing desktop apps..."
 for pkg in "${desktop[@]}"; do
   pkg_name=$(echo "$pkg" | awk '{print $1}')
   progress "Installing $pkg_name"
-  yay -Sq "$pkg" --noconfirm
+  paru -Sq "$pkg" --noconfirm
 done
 
 for pkg in "${remove[@]}"; do
   pkg_name=$(echo "$pkg" | awk '{print $1}')
   progress "Removing $pkg_name"
-  yay -Rns "$pkg" --noconfirm
+  paru -Rns "$pkg" --noconfirm
 done
 
-title "Clean the bloat packages..."
-yay -Yc
