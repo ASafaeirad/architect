@@ -1,4 +1,6 @@
 #!/bin/bash
+. "$(dirname "$BASH_SOURCE")/../utils.sh"
+
 read -rn 1 -p "Update Mirrors? [y/N] " umirrors
 echo
 
@@ -15,3 +17,4 @@ if [[ $sync =~ ^([Yy])$ ]]; then
   sudo pacman -Syu --noconfirm
 fi
 
+progress "Done!"

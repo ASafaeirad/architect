@@ -6,14 +6,12 @@ dev=(
   bat
   bind-tools
   diff-so-fancy
-  docker
-  docker-compose
+  curl
   emojify
   gcc
   git
   go
   grep
-  neovim
   net-tools
   numlockx
   python
@@ -26,16 +24,16 @@ dev=(
   unzip
   wget
   xsel
-  yarn
   zip
   zsh
 )
 
 title "Installing dev packages..."
 
+sudo pacman -S --needed base-devel
+
 for pkg in "${dev[@]}"; do
   pkg_name=$(echo "$pkg" | awk '{print $1}')
   progress "Installing $pkg_name"
   sudo pacman -Sq "$pkg" --noconfirm
 done
- 

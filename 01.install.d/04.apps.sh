@@ -14,7 +14,7 @@ apps=(
   insomnia
   peek
   persepolis-git
-  telegram-desktop-bin
+  telegram-desktop
   typora
   vlc
   visual-studio-code-bin
