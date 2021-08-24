@@ -1,7 +1,8 @@
 #! /bin/bash
-. "$(dirname "$BASH_SOURCE")/utils.sh"
+ROOT_DIR=$(dirname "$BASH_SOURCE")
+. "$ROOT_DIR/utils.sh"
 
-for f in "$ROOTDIR"/02.config.d/*.sh; do
+for f in "$ROOT_DIR"/02.config.d/*.sh; do
   echo -en "Do you want to run ${CYAN}$(basename "$f")?${NC} [y/N] "
   read -rn1 -p "" confirm
   echo
