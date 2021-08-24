@@ -5,9 +5,8 @@ dev=(
   ack
   bat
   bind-tools
-  diff-so-fancy
   curl
-  emojify
+  diff-so-fancy
   gcc
   git
   go
@@ -18,6 +17,7 @@ dev=(
   python-pip
   python2
   python2-pip
+  rust
   shellcheck
   tree
   unrar
