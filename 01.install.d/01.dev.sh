@@ -7,6 +7,7 @@ dev=(
   bind-tools
   curl
   diff-so-fancy
+  fzf
   gcc
   git
   go
