@@ -1,15 +1,16 @@
 #!/bin/bash
 . "$(dirname "$BASH_SOURCE")/../utils.sh"
 
-OMZ_HOME="$XDG_CONFIG_HOME/oh-my-zsh"
+export ZSH="${XDG_CONFIG_HOME:-$HOME/.config}/oh-my-zsh"
 
-if [ ! -d "$OMZ_HOME" ]; then
+echo $ZSH
+if [ ! -d "$ZSH" ]; then
   title "Install Oh-My-ZSH"
-  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 fi
 
 title "Install Oh-My-ZSH Plugins"
-OMZ_CUSTOM="$OMZ_HOME/custom"
+OMZ_CUSTOM="$ZSH/custom"
 
 progress "Install autosuggestions"
 rmexist "$OMZ_CUSTOM/plugins/zsh-autosuggestions"
