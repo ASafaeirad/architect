@@ -4,10 +4,9 @@
 title "Installing Fonts..."
 
 fonts=(
-	ttf-input
+  ttf-input
   adobe-source-code-pro-fonts
   adobe-source-sans-pro-fonts
-  fonts-rajdhani
   nerd-fonts-dejavu-complete
   nerd-fonts-hack
   nerd-fonts-meslo
@@ -21,7 +20,6 @@ fonts=(
   ttf-bitstream-vera
   ttf-courier-prime
   ttf-croscore
-  ttf-dejavu
   ttf-droid
   ttf-font-awesome
   ttf-freefont
@@ -43,5 +41,5 @@ fonts=(
 for font in "${fonts[@]}"; do
   font_name=$(echo "$font" | awk '{print $1}')
   progress "Installing $font_name"
-  yay -S "$font" --noconfirm
+  paru -Sq "$font" --noconfirm
 done
