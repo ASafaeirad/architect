@@ -16,7 +16,7 @@ apps=(
   pcmanfm
   peek
   persepolis-git
-  slack
+  slack-desktop
   telegram-desktop
   tor-browser
   typora

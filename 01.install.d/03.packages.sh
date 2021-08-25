@@ -18,7 +18,7 @@ desktop=(
   flat-remix
   flat-remix-gtk
   fx
-  hardcore-tray
+  hardcode-tray
   i3-gaps
   i3-scripts
   i3exit
