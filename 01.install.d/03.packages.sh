@@ -17,6 +17,7 @@ desktop=(
   flashfocus-git
   flat-remix
   flat-remix-gtk
+  feh
   fx
   hardcode-tray
   i3-gaps
