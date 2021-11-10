@@ -2,6 +2,7 @@
 . "$(dirname "$BASH_SOURCE")/../utils.sh"
 
 desktop=(
+  alacritty
   betterlockscreen-git
   blueman
   bluez
@@ -43,7 +44,6 @@ desktop=(
   redshift
   ruby-colorls
   slop
-  termite
   tumbler
   viewnior
   volumeicon
