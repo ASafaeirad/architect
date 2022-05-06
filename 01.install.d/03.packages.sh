@@ -11,7 +11,7 @@ desktop=(
   browserpass
   browserpass-chromium
   capitaine-cursors
-  clipit
+  copyq
   dunst
   dunstify
   emacs

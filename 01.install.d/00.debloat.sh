@@ -4,7 +4,7 @@
 title "Remove extra software"
 remove=(
   i3-lock
-	i3lock-color
+  i3lock-color
   epdfview
   palemoon-bin
   lightdm
