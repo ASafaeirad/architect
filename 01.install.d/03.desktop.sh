@@ -2,21 +2,23 @@
 . "$(dirname "$BASH_SOURCE")/../utils.sh"
 
 desktop=(
-  alacritty
-  browserpass
-  browserpass-chromium
-  copyq
-  emacs
-  emojify
-  feh
-  ffmpegthumbnailer
-  flameshot
-  # flashfocus-git
-  mpv
-  pass
-  pass-git-helper
-  redshift
-  viewnior
+  awesome
+  betterlockscreen-git
+  capitaine-cursors
+  flat-remix
+  nitrogen
+  papirus-icon-theme
+  pavucontrol
+  picom
+  ranger
+  rofi
+  slop
+  tumbler
+  xf86-input-synaptics
+  xorg
+  xorg-xrandr
+  xorg-xwininfo
+  xsel
 )
 
 title "Installing desktop apps..."
