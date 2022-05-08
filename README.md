@@ -1,4 +1,4 @@
-# S-Kill Initiator
+# Architect script
 
 [Arch GNU/Linux](https://www.archlinux.org/)+[i3wm](https://i3wm.org/) bootstrap scripts.
 
@@ -18,4 +18,3 @@ Suggestions and improvements are [welcomed](https://github.com/ASafaeirad/dotfil
 ## Related
 
 * [oh-my-zsh-skill-theme](https://github.com/ASafaeirad/oh-my-zsh-skill-theme/)
-* [vscode-skill-theme](https://github.com/ASafaeirad/vscode-skill-theme/)
