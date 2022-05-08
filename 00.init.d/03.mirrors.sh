@@ -6,7 +6,8 @@ echo
 
 if [[ $umirrors =~ ^([Yy])$ ]]; then
   title "Update Mirrors"
-  sudo pacman-mirrors --fasttrack
+  sudo pacman -Sy reflector --noconfirm
+  sudo reflector --sort rate --latest 10 --save /etc/pacman.d/mirrorlist
 fi
 
 read -rn 1 -p "Sync Mirrors? [y/N] " sync
