@@ -7,6 +7,15 @@
 
 [Arch Linux](https://www.archlinux.org/) bootstrap scripts.
 
+## Usage
+
+```bash
+  $ git clone https://github.com/ASafaeirad/architect.git && cd architect
+  $ ./init.sh
+  $ ./install.sh
+  $ ./config.sh
+```
+
 ## What's included
 
 ### init.d
@@ -40,15 +49,6 @@
 * gpg: generates [gpg](https://wiki.archlinux.org/title/GnuPG) key
 * npm: generates [npmrc](https://docs.npmjs.com/cli/v8/configuring-npm/npmrc/)
 * git: generates [git configuration](https://www.git-scm.com/docs/git-config)
-
-## Usage
-
-```bash
-  $ git clone https://github.com/ASafaeirad/architect.git && cd architect
-  $ ./init.sh
-  $ ./install.sh
-  $ ./config.sh
-```
 
 ## Feedback
 
