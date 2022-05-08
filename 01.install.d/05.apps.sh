@@ -4,21 +4,14 @@
 apps=(
   anydesk
   brave-bin
-  cheat-git
-  cheese
-  chromium
   discord
   firefox
-  gimp
-  gparted
   insomnia
-  nemo
   pcmanfm
   peek
   persepolis-git
   slack-desktop
   telegram-desktop
-  tor-browser
   typora
   visual-studio-code-bin
   vlc
@@ -34,7 +27,8 @@ for pkg in "${apps[@]}"; do
     read -rn1 -p "" confirm
     case $confirm in
     [yY][eE][sS] | [yY])
-      paru -Sq "$pkg" --noconfirm
+      title "Installing $pkg_name"
+      paru -Sq "$pkg" --noconfirm > /dev/null
       progress "$pkg_name Installed"
       break
       ;;

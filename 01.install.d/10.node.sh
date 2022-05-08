@@ -3,7 +3,7 @@
 
 title "Installing Volta"
 sudo pacman -Rns nodejs npm
-export VOLTA_HOME="$XDG_CONFIG_HOME/volta"
+export VOLTA_HOME="${XDG_CONFIG_HOME:-"$HOME/.config"}/volta"
 curl https://get.volta.sh | bash
 $VOLTA_HOME/bin/volta install node
 

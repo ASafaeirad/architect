@@ -3,7 +3,7 @@
 
 title "Installing DOOM Emacs"
 
-EMACS_PATH="$XDG_CONFIG_HOME/emacs"
+EMACS_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/emacs"
 git clone --depth 1 https://github.com/hlissner/doom-emacs $EMACS_PATH
 "$EMACS_PATH/bin/doom" install
 
