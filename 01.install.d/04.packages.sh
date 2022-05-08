@@ -6,7 +6,6 @@ desktop=(
   browserpass
   browserpass-chromium
   copyq
-  emacs
   emojify
   feh
   ffmpegthumbnailer
