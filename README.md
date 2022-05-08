@@ -1,5 +1,10 @@
 # Architect script
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/ASafaeirad/initiator/main/resources/logo-dark.svg#gh-dark-mode-only" width="400" alt="logo">
+  <img src="https://raw.githubusercontent.com/ASafaeirad/initiator/main/resources/logo-light.svg#gh-light-mode-only" width="400" alt="logo">
+</div>
+
 [Arch GNU/Linux](https://www.archlinux.org/)+[i3wm](https://i3wm.org/) bootstrap scripts.
 
 ## Usage
