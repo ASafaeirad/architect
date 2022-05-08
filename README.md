@@ -46,7 +46,7 @@
 | `node`       | installs [Volta](https://volta.sh/) and [NodeJS](https://nodejs.org/en/).                                                                                                                                                                                       |
 | `omz`        | installs [oh-my-zsh](https://ohmyz.sh/), [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-completions](https://github.com/zsh-users/zsh-completions), and [skill-zsh.theme](https://github.com/ASafaeirad/oh-my-zsh-skill-theme/). |
 | `neovim`     | installs [neovim](https://neovim.io/) and [vim-plug](https://github.com/junegunn/vim-plug).                                                                                                                                                                     |
-| `virtualbox` | installs [neovim](https://neovim.io/) and [vim-plug](https://github.com/junegunn/vim-plug).                                                                                                                                                                     |
+| `virtualbox` | installs [virtualbox](https://www.virtualbox.org//)                                                                                                                                                                                                             |
 
 ### config.d
 
