@@ -11,7 +11,7 @@ curl -fLo "$VIM_PLUG_DIR" --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 progress "Done!"
 WAKATIME="${XDG_CONFIG_HOME:-"$HOME/.config"}/wakatime"
-mkdir -p $WAKATIME
+mkdir -p "$WAKATIME"
 
 title "Running Neovim Python install"
 if [ ! -x "$(command -v pip)" ]; then
