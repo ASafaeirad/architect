@@ -22,16 +22,17 @@
 
 ### init.d
 
-| script        | description                                                                                               |
-| ------------- | --------------------------------------------------------------------------------------------------------- |
-| `timezone`    | enables [NTP](https://wiki.archlinux.org/title/Network_Time_Protocol_daemon) and adjust the clock.        |
-| `sudoer`      | add your user to `/etc/sudoers` with `NOPASSWD` param.                                                    |
-| `fix-watcher` | increase max user watches on the file system to `524288`.                                                 |
-| `mirrors`     | installs [reflector][reflector] and updates `/etc/pacman.d/mirrorlist`                                    |
-| `dev`         | installs must have development packages.                                                                  |
-| `touchpad`    | installs [xf86-input-libinput](https://wiki.archlinux.org/title/Libinput) and configure tap interactions. |
-| `bluetooth`   | installs [bluez](http://www.bluez.org/)                                                                   |
-| `pulseaudio`  | installs [PulseAudio](https://wiki.archlinux.org/title/PulseAudio)                                        |
+| script        | description                                                                                                  |
+| ------------- | ------------------------------------------------------------------------------------------------------------ |
+| `timezone`    | enables [NTP](https://wiki.archlinux.org/title/Network_Time_Protocol_daemon) and adjust the clock.           |
+| `sudoer`      | add your user to `/etc/sudoers` with `NOPASSWD` param.                                                       |
+| `fix-watcher` | increase max user watches on the file system to `524288`.                                                    |
+| `mirrors`     | installs [reflector][reflector] and updates `/etc/pacman.d/mirrorlist`                                       |
+| `dev`         | installs must have development packages.                                                                     |
+| `touchpad`    | installs [xf86-input-libinput](https://wiki.archlinux.org/title/Libinput) and configure tap interactions.    |
+| `bluetooth`   | installs [bluez](http://www.bluez.org/)                                                                      |
+| `pulseaudio`  | installs [PulseAudio](https://wiki.archlinux.org/title/PulseAudio)                                           |
+| `video`       | installs [OpenGL](https://wiki.archlinux.org/title/OpenGL) and [light](https://github.com/haikarainen/light) |
 
 ### install.d
 
