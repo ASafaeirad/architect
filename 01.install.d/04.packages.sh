@@ -10,7 +10,7 @@ desktop=(
   feh
   ffmpegthumbnailer
   flameshot
-  # flashfocus-git
+  flashfocus-git
   mpv
   pass
   pass-git-helper

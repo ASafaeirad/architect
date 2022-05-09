@@ -10,11 +10,11 @@ desktop=(
   papirus-icon-theme
   pavucontrol
   picom
+  pinentry-rofi
   ranger
   rofi
   slop
   tumbler
-  xf86-input-synaptics
   xorg
   xorg-xrandr
   xorg-xwininfo
