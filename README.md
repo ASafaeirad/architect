@@ -28,13 +28,15 @@
 | `sudoer`      | add your user to `/etc/sudoers` with `NOPASSWD` param.                                                    |
 | `fix-watcher` | increase max user watches on the file system to `524288`.                                                 |
 | `mirrors`     | installs [reflector][reflector] and updates `/etc/pacman.d/mirrorlist`                                    |
+| `dev`         | installs must have development packages.                                                                  |
 | `touchpad`    | installs [xf86-input-libinput](https://wiki.archlinux.org/title/Libinput) and configure tap interactions. |
+| `bluetooth`   | installs [bluez](http://www.bluez.org/)                                                                   |
+| `pulseaudio`  | installs [PulseAudio](https://wiki.archlinux.org/title/PulseAudio)                                        |
 
 ### install.d
 
 | script       | description                                                                                                                                                                                                                                                     |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dev`        | installs must have development packages.                                                                                                                                                                                                                        |
 | `paru`       | installs [paru][paru] [AUR helper][aur-helper].                                                                                                                                                                                                                 |
 | `desktop`    | installs minimal packages to run a custom DE.                                                                                                                                                                                                                   |
 | `packages`   | installs packages to open common file types.                                                                                                                                                                                                                    |

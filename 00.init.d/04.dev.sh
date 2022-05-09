@@ -9,8 +9,6 @@ dev=(
   bat
   bind-tools
   binutils
-  bluez
-  bluez-utils
   curl
   diff-so-fancy
   dosfstools
@@ -33,7 +31,6 @@ dev=(
   patch
   perl-rename
   pkgconf
-  pulseaudio
   python
   python-pip
   rust
