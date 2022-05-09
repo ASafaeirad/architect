@@ -19,6 +19,7 @@ dev=(
   gawk
   gcc
   git
+  github-cli
   go
   grep
   gzip
