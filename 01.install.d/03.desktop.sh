@@ -15,6 +15,7 @@ desktop=(
   rofi
   slop
   tumbler
+  xdotool
   xorg
   xorg-xrandr
   xorg-xwininfo
