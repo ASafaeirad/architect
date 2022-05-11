@@ -6,7 +6,6 @@ dev=(
   alsa-utils
   autoconf
   automake
-  bat
   bind-tools
   binutils
   curl

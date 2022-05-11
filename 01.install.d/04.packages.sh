@@ -3,10 +3,13 @@
 
 desktop=(
   alacritty
+  bat
   browserpass
   browserpass-chromium
   copyq
+  curlie
   emojify
+  exa
   feh
   ffmpegthumbnailer
   flameshot
