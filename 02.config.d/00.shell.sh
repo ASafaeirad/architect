@@ -3,6 +3,11 @@
 
 ZSH_PATH="$(which zsh)"
 
+title "Adding zshenv"
+sudo tee /etc/zsh/zshenv > /dev/null <<'_EOF'
+ZDOTDIR=$HOME/.config/zsh
+_EOF
+
 if ! grep -q "$ZSH_PATH" /etc/shells; then
   title "Adding $ZSH_PATH to /etc/shells"
   echo "$ZSH_PATH" | sudo tee -a /etc/shells
