@@ -14,6 +14,7 @@ desktop=(
   ranger
   rofi
   slop
+  sxhkd
   tumbler
   xdotool
   xorg
