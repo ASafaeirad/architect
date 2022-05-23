@@ -7,6 +7,7 @@ desktop=(
   capitaine-cursors
   colorpicker
   flat-remix
+  gnome-keyring
   nitrogen
   papirus-icon-theme
   pavucontrol
