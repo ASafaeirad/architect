@@ -5,6 +5,7 @@ desktop=(
   awesome
   betterlockscreen-git
   capitaine-cursors
+  colorpicker
   flat-remix
   nitrogen
   papirus-icon-theme
