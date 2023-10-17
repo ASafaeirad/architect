@@ -6,12 +6,12 @@ title "Installing Fonts..."
 fonts=(
   adobe-source-code-pro-fonts
   adobe-source-sans-pro-fonts
-  nerd-fonts-dejavu-complete
-  nerd-fonts-hack
-  nerd-fonts-meslo
-  nerd-fonts-roboto-mono
-  nerd-fonts-source-code-pro
-  nerd-fonts-ubuntu-mono
+  ttf-dejavu-nerd
+  ttf-hack-nerd
+  ttf-meslo-nerd
+  ttf-roboto-mono-nerd
+  ttf-sourcecodepro-nerd
+  ttf-ubuntu-mono-nerd
   noto-fonts
   noto-fonts-emoji
   persian-fonts
