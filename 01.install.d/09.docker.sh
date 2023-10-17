@@ -9,13 +9,11 @@ sudo usermod -aG docker "$USER"
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
 
-DCP_VERSION="v0.6.4"
-DCP_CLIENT="pass"
-DCP_URL="https://github.com/docker/docker-credential-helpers/releases/download/${DCP_VERSION}/docker-credential-${DCP_CLIENT}-${DCP_VERSION}-amd64.tar.gz"
+DCP_VERSION="v0.8.0"
+DCP_URL="https://github.com/docker/docker-credential-helpers/releases/download/${DCP_VERSION}/docker-credential-pass-${DCP_VERSION}.linux-amd64"
 
 pushd "$(mktemp -d)" || exit 1
-wget -O dcp.tar.gz $DCP_URL
-tar -xvf dcp.tar.gz
+wget -O docker-credential-pass $DCP_URL
 sudo mv docker-credential-pass /usr/bin/
 sudo chmod +x /usr/bin/docker-credential-pass
 popd || exit 1
