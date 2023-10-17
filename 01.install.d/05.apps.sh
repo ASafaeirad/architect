@@ -6,15 +6,12 @@ apps=(
   brave-bin
   discord
   firefox
-  insomnia
-  pcmanfm
+  nemo
   peek
   persepolis-git
   slack-desktop
   telegram-desktop
-  typora
   visual-studio-code-bin
-  vlc
 )
 
 title "Installing apps"
