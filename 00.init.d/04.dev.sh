@@ -22,12 +22,12 @@ dev=(
   go
   grep
   gzip
+  less
   lm_sensors
   make
   mtools
   net-tools
   nmap
-  numlockx
   patch
   perl-rename
   pkgconf
