@@ -4,25 +4,21 @@
 desktop=(
   awesome
   betterlockscreen-git
-  capitaine-cursors
   colorpicker
-  flat-remix
-  gnome-keyring
   nitrogen
-  papirus-icon-theme
-  pavucontrol
   picom
   pinentry-rofi
   ranger
   rofi
   slop
   sxhkd
-  tumbler
   xdotool
   xorg
   xorg-xrandr
   xorg-xwininfo
   xsel
+  feh
+  flashfocus-git
 )
 
 title "Installing desktop apps..."
