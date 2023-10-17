@@ -26,6 +26,7 @@ desktop=(
   tumbler
   exa
   kvantum
+  brillo
 )
 
 title "Installing desktop apps..."
