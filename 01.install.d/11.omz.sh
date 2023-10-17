@@ -26,12 +26,12 @@ progress "Done"
 
 title "Install Skill Theme"
 rmexist "$OMZ_CUSTOM/themes/skill-zsh.theme"
-wget https://raw.githubusercontent.com/frontendmonster/oh-my-zsh-skill-theme/master/skill.zsh-theme -P "$OMZ_CUSTOM/themes/"
+wget https://raw.githubusercontent.com/ASafaeirad/oh-my-zsh-skill-theme/master/skill.zsh-theme -P "$OMZ_CUSTOM/themes/"
 
 progress "Done"
 
 title "Install forgit"
 rmexist "$OMZ_CUSTOM/plugins/zsh-forgit"
-wget https://raw.githubusercontent.com/wfxr/forgit/master/forgit.plugin.zsh -P "$OMZ_CUSTOM/plugins/forgit"
+git clone https://github.com/wfxr/forgit.git ${ZSH_CUSTOM}/plugins/forgit
 
 progress "Done"
