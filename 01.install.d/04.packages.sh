@@ -27,6 +27,7 @@ desktop=(
   exa
   kvantum
   brillo
+  termdown
 )
 
 title "Installing desktop apps..."
