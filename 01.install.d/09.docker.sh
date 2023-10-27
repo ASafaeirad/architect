@@ -2,7 +2,7 @@
 . "$(dirname "$BASH_SOURCE")/../utils.sh"
 
 title "Installing Docker"
-sudo pacman -Sq docker docker-compose --noconfirm
+sudo pacman -Sq docker docker-compose docker-buildx --noconfirm
 
 title "Start Docker Service"
 sudo usermod -aG docker "$USER"
