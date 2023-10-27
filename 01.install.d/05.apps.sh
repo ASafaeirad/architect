@@ -12,6 +12,7 @@ apps=(
   slack-desktop
   telegram-desktop
   visual-studio-code-bin
+  notion-app
 )
 
 title "Installing apps"
