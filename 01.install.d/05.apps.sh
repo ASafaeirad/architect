@@ -10,9 +10,10 @@ apps=(
   peek
   persepolis-git
   slack-desktop
-  telegram-desktop
+  telegram-desktop-bin
   visual-studio-code-bin
   notion-app
+  zathura
 )
 
 title "Installing apps"
