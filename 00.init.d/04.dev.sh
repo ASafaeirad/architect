@@ -28,6 +28,7 @@ dev=(
   mtools
   net-tools
   nmap
+  ntp
   patch
   perl-rename
   pkgconf
