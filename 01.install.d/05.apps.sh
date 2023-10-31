@@ -14,6 +14,7 @@ apps=(
   visual-studio-code-bin
   notion-app
   zathura
+  zathura-pdf-mupdf
 )
 
 title "Installing apps"
