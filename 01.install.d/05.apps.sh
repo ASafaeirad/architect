@@ -6,7 +6,7 @@ apps=(
   brave-bin
   discord
   firefox
-  nemo
+  pcmanfm
   peek
   persepolis-git
   slack-desktop
@@ -28,7 +28,7 @@ for pkg in "${apps[@]}"; do
     case $confirm in
     [yY][eE][sS] | [yY])
       title "Installing $pkg_name"
-      paru -Sq "$pkg" --noconfirm > /dev/null
+      paru -Sq "$pkg" --noconfirm >/dev/null
       progress "$pkg_name Installed"
       break
       ;;

@@ -2,10 +2,10 @@
 . "$(dirname "$BASH_SOURCE")/../utils.sh"
 
 title "Installing mesa"
-sudo pacman -S mesa --no-confirm > /dev/null
+sudo pacman -S mesa --noconfirm > /dev/null
 
 title "light"
-sudo pacman -S light --no-confirm > /dev/null
+sudo pacman -S light --noconfirm > /dev/null
 
 title "Adding user to video group"
 CURRENT_USER=$USER

@@ -16,6 +16,8 @@ desktop=(
   xorg
   xorg-xrandr
   xorg-xwininfo
+  xorg-xinit
+  numlockx
   xsel
   feh
   flashfocus-git
@@ -26,5 +28,5 @@ title "Installing desktop apps..."
 for pkg in "${desktop[@]}"; do
   pkg_name=$(echo "$pkg" | awk '{print $1}')
   progress "Installing $pkg_name"
-  paru -Sq "$pkg" --noconfirm > /dev/null
+  paru -Sq "$pkg" --noconfirm >/dev/null
 done
