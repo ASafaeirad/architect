@@ -13,6 +13,7 @@ desktop=(
   slop
   sxhkd
   xdotool
+  xclip
   xorg
   xorg-xrandr
   xorg-xwininfo

@@ -10,6 +10,7 @@ apps=(
   peek
   persepolis-git
   slack-desktop
+  obsidian
   telegram-desktop-bin
   visual-studio-code-bin
   notion-app
