@@ -30,6 +30,8 @@ desktop=(
   kvantum
   brillo
   termdown
+  tesseract
+  tesseract-data-eng
 )
 
 title "Installing desktop apps..."

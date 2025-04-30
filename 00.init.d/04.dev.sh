@@ -3,6 +3,7 @@
 
 dev=(
   ack
+  acpi
   alsa-utils
   autoconf
   automake
@@ -22,6 +23,7 @@ dev=(
   go
   grep
   gzip
+  inxi
   less
   lm_sensors
   make
@@ -57,5 +59,5 @@ sudo pacman -S --needed base-devel
 for pkg in "${dev[@]}"; do
   pkg_name=$(echo "$pkg" | awk '{print $1}')
   progress "Installing $pkg_name"
-  sudo pacman -Sq "$pkg" --noconfirm > /dev/null
+  sudo pacman -Sq "$pkg" --noconfirm >/dev/null
 done

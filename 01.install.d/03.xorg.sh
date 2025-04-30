@@ -10,6 +10,7 @@ desktop=(
   pinentry-rofi
   ranger
   rofi
+  scrot
   slop
   sxhkd
   xdotool
