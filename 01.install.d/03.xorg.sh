@@ -19,6 +19,7 @@ desktop=(
   xorg-xrandr
   xorg-xwininfo
   xorg-xinit
+  xdg-desktop-portal-gtk
   numlockx
   xsel
   feh

@@ -15,6 +15,7 @@ desktop=(
   mpv
   pass
   pass-git-helper
+  pass-otp
   redshift
   colorpicker
   ranger
