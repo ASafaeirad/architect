@@ -2,7 +2,6 @@
 . "$(dirname "$BASH_SOURCE")/../utils.sh"
 
 dev=(
-  ack
   acpi
   alsa-utils
   autoconf
@@ -10,7 +9,6 @@ dev=(
   bind-tools
   binutils
   curl
-  diff-so-fancy
   dosfstools
   file
   findutils
@@ -19,6 +17,7 @@ dev=(
   gawk
   gcc
   git
+  git-delta
   github-cli
   go
   grep
@@ -36,14 +35,14 @@ dev=(
   pkgconf
   python
   python-pip
-  rust
+  rustup
   sed
   shellcheck
   sudo
   tree
   unrar
   unzip
-  vim
+  neovim
   wget
   which
   xdg-user-dirs

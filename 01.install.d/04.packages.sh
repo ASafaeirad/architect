@@ -5,8 +5,6 @@ desktop=(
   lxappearance
   alacritty
   bat
-  browserpass
-  browserpass-chromium
   copyq
   curlie
   emojify
@@ -17,9 +15,7 @@ desktop=(
   pass-git-helper
   pass-otp
   redshift
-  colorpicker
   ranger
-  vimiv
   capitaine-cursors
   flat-remix
   flat-remix-gtk
@@ -29,7 +25,6 @@ desktop=(
   tumbler
   exa
   kvantum
-  brillo
   termdown
   tesseract
   tesseract-data-eng

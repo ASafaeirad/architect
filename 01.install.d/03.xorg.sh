@@ -4,7 +4,6 @@
 desktop=(
   awesome
   betterlockscreen-git
-  colorpicker
   nitrogen
   picom
   pinentry-rofi
@@ -33,3 +32,8 @@ for pkg in "${desktop[@]}"; do
   progress "Installing $pkg_name"
   paru -Sq "$pkg" --noconfirm >/dev/null
 done
+
+
+title "Enable dark scheme"
+
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'

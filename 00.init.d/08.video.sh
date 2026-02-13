@@ -8,8 +8,7 @@ title "light"
 sudo pacman -S light --noconfirm > /dev/null
 
 title "Adding user to video group"
-CURRENT_USER=$USER
-sudo usermod -aG video "$CURRENT_USER"
+sudo usermod -aG video "$USER"
 
 # https://wiki.archlinux.org/title/backlight
 title "Adding udev rules"

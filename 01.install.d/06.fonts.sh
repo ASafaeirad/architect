@@ -26,6 +26,7 @@ fonts=(
   ttf-liberation
   ttf-mac-fonts
   ttf-monaco
+  ttf-monaspace-variable
   ttf-ms-fonts
   ttf-oxygen-gf
   ttf-roboto
