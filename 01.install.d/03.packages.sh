@@ -28,6 +28,7 @@ desktop=(
   termdown
   tesseract
   tesseract-data-eng
+  yt-dlp
 )
 
 title "Installing desktop apps..."
