@@ -23,6 +23,7 @@ dev=(
   grep
   gzip
   inxi
+  jq
   less
   lm_sensors
   make
