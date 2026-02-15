@@ -19,10 +19,12 @@ desktop=(
   xorg-xwininfo
   xorg-xinit
   xdg-desktop-portal-gtk
+  xdg-desktop-portal-kde
   numlockx
   xsel
   feh
   flashfocus-git
+  webkit2gtk
 )
 
 title "Installing desktop apps..."
