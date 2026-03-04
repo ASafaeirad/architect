@@ -4,7 +4,11 @@
 desktop=(
   awesome
   betterlockscreen-git
+  feh
+  flashfocus-git
+  jcal
   nitrogen
+  numlockx
   picom
   pinentry-rofi
   ranger
@@ -12,19 +16,16 @@ desktop=(
   scrot
   slop
   sxhkd
-  xdotool
+  webkit2gtk
   xclip
-  xorg
-  xorg-xrandr
-  xorg-xwininfo
-  xorg-xinit
   xdg-desktop-portal-gtk
   xdg-desktop-portal-kde
-  numlockx
+  xdotool
+  xorg
+  xorg-xinit
+  xorg-xrandr
+  xorg-xwininfo
   xsel
-  feh
-  flashfocus-git
-  webkit2gtk
 )
 
 title "Installing desktop apps..."

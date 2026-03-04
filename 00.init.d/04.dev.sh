@@ -10,6 +10,8 @@ dev=(
   binutils
   curl
   dosfstools
+  entr
+  fd
   file
   findutils
   fx
