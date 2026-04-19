@@ -38,6 +38,7 @@ dev=(
   pkgconf
   python
   python-pip
+  rlwrap
   rustup
   sed
   shellcheck
