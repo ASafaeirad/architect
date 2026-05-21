@@ -7,6 +7,7 @@ desktop=(
   bat
   copyq
   curlie
+  duf
   emojify
   ffmpegthumbnailer
   flameshot
