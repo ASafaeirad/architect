@@ -16,6 +16,7 @@ desktop=(
   scrot
   slop
   sxhkd
+  playerctl
   webkit2gtk
   xclip
   xdg-desktop-portal-gtk
