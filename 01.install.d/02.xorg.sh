@@ -7,7 +7,6 @@ desktop=(
   feh
   flashfocus-git
   jcal
-  nitrogen
   numlockx
   picom
   pinentry-rofi
@@ -26,6 +25,7 @@ desktop=(
   xorg-xinit
   xorg-xrandr
   xorg-xwininfo
+  xwallpaper
   xsel
 )
 
