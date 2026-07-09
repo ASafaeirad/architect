@@ -43,6 +43,7 @@ dev=(
   sed
   shellcheck
   sudo
+  shfmt
   tree
   unrar
   unzip
